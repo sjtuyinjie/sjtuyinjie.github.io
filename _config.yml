@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yin Jie"
   pronouns         : # example: "she/her"  
-  bio              : "received a BS degree in electrical engineering from Shanghai Jiao Tong University, in 2021 and received a master’s degree at Shanghai Jiao Tong University in 2014. His current research interests include computer vision, robotics, multi-sensor fusion, and simultaneous localization and mapping (SLAM)"
+  bio              : "Current research interests include robotic learning, multi-sensor fusion, and Embodied AI"
   location         : "Shanghai, China"
-  employer         : "Shanghai Jiao Tong University"
+  employer         : "Shanghai Jiao Tong Univ。"
   uri              : # URL
   email            : "sjtu_yinjie@163.com" 
 
@@ -36,14 +36,14 @@ author:
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0003-4388-3600"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "https://github.com/sjtuyinjie"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
