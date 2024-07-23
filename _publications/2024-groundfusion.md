@@ -11,7 +11,7 @@ bibtex: files/2024_groundfusion.txt
 arxiv: 
 openpdf: https://arxiv.org/abs/2112.13659
 supp: 
-teaser: images/2024_livescene.png
+teaser: images/2024_groundfusion.jpg
 videoresults: 
 videotalk: 
 poster: 
