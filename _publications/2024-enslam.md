@@ -11,7 +11,7 @@ bibtex: files/2024_enslam.txt
 arxiv: 
 openpdf: https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_Implicit_Event-RGBD_Neural_SLAM_CVPR_2024_paper.pdf
 supp: 
-teaser: images/2024_livescene.png
+teaser: images/2024_enslam.jpg
 videoresults: 
 videotalk: 
 poster: 
