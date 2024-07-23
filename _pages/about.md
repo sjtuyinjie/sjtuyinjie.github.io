@@ -36,7 +36,8 @@ Other projects
 
 Academic Service
 ------
-Serving as a reviewer for IEEE RA-L, ICRA and IROS since 2021.
+<style style="text/css"> .news{font-size:0.75em;} </style>
+{% include service.html %}
 
 
 Honors
