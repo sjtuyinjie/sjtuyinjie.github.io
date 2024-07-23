@@ -23,7 +23,8 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 
 News
 ======
-Like many other 
+<style style="text/css"> .news{font-size:0.75em;} </style>
+{% include news.html %}
 
 Publications
 ======
