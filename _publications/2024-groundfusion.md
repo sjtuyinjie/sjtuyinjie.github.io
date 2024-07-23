@@ -7,7 +7,7 @@ venue: "ICRA"
 authors: "<b>Jie Yin</b>, Lan Li, Wei Xi, Wenxian Yu, Danping Zou"
 url: 
 project: 
-bibtex: files/2024_livescene.txt
+bibtex: files/2024_groundfusion.txt
 arxiv: 
 openpdf: https://arxiv.org/abs/2112.13659
 supp: 
