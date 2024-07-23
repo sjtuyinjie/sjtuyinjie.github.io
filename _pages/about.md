@@ -12,7 +12,7 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 
 
 
- My work have been accepted to top conferences/transactions on robotics/navigation such as **ICRA, IROS, RAL, CVPR, GPS Solutions** and so on. My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 1.7k github stars ⭐️** from Github. 
+ My work have been accepted to top conferences/transactions on robotics/navigation such as **ICRA, IROS, RAL, CVPR, GPS Solutions** and so on. My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 1.7k github stars** from Github. 
 
 
  
@@ -26,7 +26,7 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 ## 🚩 Research Highlights
 <style style="text/css"> .hoverTable{ width:85%; border-collapse:collapse; border: 0px; } .hoverTable td{ padding:7px; border:#4e95f4 0px solid; } /* Define the default color for all the table rows */ .hoverTable tr{ background: #ffffff; } /* Define the hover highlight color for the table row */ .hoverTable tr:hover { background-color: #f7f7f7; } </style> {% for post in site.publications reversed %} {% include publications.html %} {% endfor %}
 
-## Projects
+## ⭐️ Projects
 <style style="text/css"> .hoverTable{ width:85%; border-collapse:collapse; border: 0px; } .hoverTable td{ padding:7px; border:#4e95f4 0px solid; } /* Define the default color for all the table rows */ .hoverTable tr{ background: #ffffff; } /* Define the hover highlight color for the table row */ .hoverTable tr:hover { background-color: #f7f7f7; } </style> {% for post in site.publications reversed %} {% include projects.html %} {% endfor %}
 
 ## Academic Service
