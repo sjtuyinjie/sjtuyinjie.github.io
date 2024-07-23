@@ -6,9 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm currently working as a research engineer on embodied AI at a robotics startup. My current research interests include Robotic learning, Embodied AI and Multi-sensor Fusion. I graduated from [Shanghai Key Laboratory of Intelligent Sensing and Navigation](https://ast.sjtu.edu.cn/web/index)(导航与感知所) of **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学)** with a bachelor degree in 2021 and with a master degree in 2024. 
+I'm currently working as a research engineer on embodied AI at a robotics startup. My current research interests include Robotic learning, Embodied AI and Multi-sensor Fusion. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学)** with a bachelor degree in 2021 and with a master degree in 2024. 
 
-🚀 Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/), [HKU Mars Lab](https://github.com/hku-mars), [Tencent Robotics X Lab](https://roboticsx.tencent.com/#/), [Shanghai AI Lab](https://www.shlab.org.cn/) and [Shanghai Beidou Research Institute](http://www.bdi.org.cn/)**.
+Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/), [HKU Mars Lab](https://github.com/hku-mars), [Tencent Robotics X Lab](https://roboticsx.tencent.com/#/), [Shanghai AI Lab](https://www.shlab.org.cn/) and [Shanghai Beidou Research Institute](http://www.bdi.org.cn/)**.
 
 
 
@@ -16,8 +16,6 @@ I'm currently working as a research engineer on embodied AI at a robotics startu
 
 
  
-
-
 💬 If you are interested in reinforcement learning or embodied AI, welcom to mail me at 1195391308@qq.com
 
 
@@ -28,6 +26,8 @@ I'm currently working as a research engineer on embodied AI at a robotics startu
 ## 🚩 Research Highlights
 <style style="text/css"> .hoverTable{ width:85%; border-collapse:collapse; border: 0px; } .hoverTable td{ padding:7px; border:#4e95f4 0px solid; } /* Define the default color for all the table rows */ .hoverTable tr{ background: #ffffff; } /* Define the hover highlight color for the table row */ .hoverTable tr:hover { background-color: #f7f7f7; } </style> {% for post in site.publications reversed %} {% include publications.html %} {% endfor %}
 
+## Projects
+<style style="text/css"> .hoverTable{ width:85%; border-collapse:collapse; border: 0px; } .hoverTable td{ padding:7px; border:#4e95f4 0px solid; } /* Define the default color for all the table rows */ .hoverTable tr{ background: #ffffff; } /* Define the hover highlight color for the table row */ .hoverTable tr:hover { background-color: #f7f7f7; } </style> {% for post in site.publications reversed %} {% include projects.html %} {% endfor %}
 
 ## Academic Service
 <style style="text/css"> .news{font-size:0.75em;} </style>
