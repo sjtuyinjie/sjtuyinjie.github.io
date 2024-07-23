@@ -1,7 +1,7 @@
 ---
-title: "M2DGR: A Multi-Sensor and Multi-Scenario SLAM Dataset for Ground Robots"
+title: "Ground-Challenge: A Multi-sensor SLAM Dataset Focusing on Corner Cases for Ground Robots"
 collection: publications
-permalink: /publication/2021-m2dgr
+permalink: /publication/2023-groundchallenge
 date: 2023-3-3
 venue: 'ROBIO'
 authors: "<b>Jie Yin</b>, Hao Yin, Conghui Liang, and Zhengyou Zhang"
