@@ -18,17 +18,27 @@ redirect_from:
 💬 If you are interested in reinforcement learning or embodied AI, welcom to mail me at 1195391308@qq.com
 
 
-A data-driven personal website
+News
 ======
 Like many other 
 
-Getting started
+Publications
 ======
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
 1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
 
 
-Site-wide configuration
+Academic Service
+------
+Serving as a reviewer for IEEE RA-L, ICRA and IROS since 2021.
+
+
+Honors
+------
+Serving as a reviewer for IEEE RA-L, ICRA and IROS since 2021.
+
+
+Teaching
 ------
 The main configuration file for the site is in the base dire
 
