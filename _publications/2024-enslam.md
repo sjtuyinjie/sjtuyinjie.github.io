@@ -3,7 +3,7 @@ title: "Implicit Event-RGBD Neural SLAM"
 collection: publications
 permalink: /publication/2024-enslam
 date: 2024-5-16
-venue: "CVPR 2024"
+venue: "CVPR"
 authors: "Delin Qu, Chi Yan, Dong Wang, <b>Jie Yin</b>, Dan Xu, Bin Zhao, Xuelong Li"
 url: 
 project: https://delinqu.github.io/EN-SLAM/
