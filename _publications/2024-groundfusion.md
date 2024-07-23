@@ -4,16 +4,16 @@ collection: publications
 permalink: /publication/2024-groundfusion
 date: 2024-5-16
 venue: "ICRA 2024"
-authors: "<b>Jie Yin</b>, Wei Xi, Wenxian Yu, Danping Zou"
+authors: "<b>Jie Yin</b>, Lan Li, Wei Xi, Wenxian Yu, Danping Zou"
 url: 
 project: 
 bibtex: files/2024_livescene.txt
 arxiv: 
-openpdf: https://arxiv.org/abs/2402.14308
+openpdf: [https://livescenes.github.io/static/livescene2024.pdf](https://arxiv.org/abs/2402.14308)
 supp: 
 teaser: images/2024_livescene.png
 videoresults: 
 videotalk: 
 poster: 
-code: [https://github.com/livescenes/livescenes.github.io](https://github.com/SJTU-ViSYS/Ground-Fusion)
+code: [https://github.com/livescenes/livescenes.github.io](https://github.com/livescenes/livescenes.github.io](https://github.com/SJTU-ViSYS/Ground-Fusion)
 ---
