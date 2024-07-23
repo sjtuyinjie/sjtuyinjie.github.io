@@ -1,0 +1,10 @@
+@article{jiang2024innovation,
+  title={Innovation-based Kalman filter fault detection and exclusion method against all-source faults for tightly coupled GNSS/INS/Vision integration},
+  author={Jiang, Haitao and Yan, Dayu and Wang, Jiale and Yin, Jie},
+  journal={GPS Solutions},
+  volume={28},
+  number={3},
+  pages={1--17},
+  year={2024},
+  publisher={Springer}
+}

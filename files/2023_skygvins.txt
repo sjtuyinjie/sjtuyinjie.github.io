@@ -1,0 +1,8 @@
+@article{yin2023sky,
+  title={Sky-GVINS: a sky-segmentation aided GNSS-Visual-Inertial system for robust navigation in urban canyons},
+  author={Yin, Jie and Li, Tao and Yin, Hao and Yu, Wenxian and Zou, Danping},
+  journal={Geo-spatial Information Science},
+  pages={1--11},
+  year={2023},
+  publisher={Taylor \& Francis}
+}

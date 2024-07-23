@@ -1,0 +1,8 @@
+@inproceedings{yin2023design,
+  title={Design, Sensing and Control of Service Robotic System for Intelligent Navigation and Operation in Internet Data Centers},
+  author={Yin, Jie and Liang, Conghui and Li, Xiong and Xu, Qiwei and Wang, Haitao and Fan, Tingxiang and Wu, Zida and Zhang, Zhengyou},
+  booktitle={2023 IEEE 19th International Conference on Automation Science and Engineering (CASE)},
+  pages={1--8},
+  year={2023},
+  organization={IEEE}
+}

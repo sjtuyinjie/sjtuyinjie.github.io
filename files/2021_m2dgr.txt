@@ -1,0 +1,10 @@
+@article{yin2021m2dgr,
+  title={M2dgr: A multi-sensor and multi-scenario slam dataset for ground robots},
+  author={Yin, Jie and Li, Ang and Li, Tao and Yu, Wenxian and Zou, Danping},
+  journal={IEEE Robotics and Automation Letters},
+  volume={7},
+  number={2},
+  pages={2266--2273},
+  year={2021},
+  publisher={IEEE}
+}

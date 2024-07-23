@@ -1,0 +1,10 @@
+@article{hua2023m2c,
+  title={M2C-GVIO: motion manifold constraint aided GNSS-visual-inertial odometry for ground vehicles},
+  author={Hua, Tong and Pei, Ling and Li, Tao and Yin, Jie and Liu, Guoqing and Yu, Wenxian},
+  journal={Satellite Navigation},
+  volume={4},
+  number={1},
+  pages={13},
+  year={2023},
+  publisher={Springer}
+}
