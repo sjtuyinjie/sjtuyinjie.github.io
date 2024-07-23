@@ -9,11 +9,11 @@ url:
 project: 
 bibtex: files/2024_livescene.txt
 arxiv: 
-openpdf: [https://livescenes.github.io/static/livescene2024.pdf](https://arxiv.org/abs/2402.14308)
+openpdf: https://arxiv.org/abs/2112.13659
 supp: 
 teaser: images/2024_livescene.png
 videoresults: 
 videotalk: 
 poster: 
-code: [https://github.com/livescenes/livescenes.github.io](https://github.com/livescenes/livescenes.github.io](https://github.com/SJTU-ViSYS/Ground-Fusion)
+code: https://github.com/SJTU-ViSYS/Ground-Fusion
 ---
