@@ -1,0 +1,49 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+{% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+{% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+{% assign title = post.title %}
+{% endif %}
+
+<table class="hoverTable">
+  <col style="width:25%" />
+  <col style="width:75%" />
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">
+      {% if post.teaser %}
+      <img style="display:block;" width="80%" src="{{post.teaser}}" />
+      {% endif %}
+    </td>
+    <td>
+      <h3 class="archive__item-title" itemprop="headline">
+        {{ title }}
+      </h3>
+      {% if post.authors%}{{ post.authors }}{% endif %}
+      <p>
+        {% if post.venue%}<span style="font-style:italic">{{ post.venue }}</span> {% endif %}
+        {% if post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
+        {% if post.oral%}<font color="red"> &nbsp; (Oral Presentation)</font> {% endif %}
+        <br>
+        [{% if post.pdf%} <a href="{{ post.pdf }}">Paper</a>{% endif %}
+        {% if post.openpdf%} <a href="{{ post.openpdf }}">Paper</a>{% endif %}
+        {% if post.supp%} | <a href="{{ post.supp }}">Supplement</a> {% endif %}
+        {% if post.videoresults%} | <a href="{{ post.videoresults }}">Video</a>{% endif %}
+        {% if post.arxiv%} | <a href="{{ post.arxiv }}">Preprint</a> {% endif %}
+        {% if post.bibtex%} | <a href="{{ post.bibtex }}">BibTex</a>{% endif %}
+        {% if post.imageresults%} | <a href="{{ post.imageresults }}">Results</a>{% endif %}
+        {% if post.videotalk%} | <a href="{{ post.videotalk }}">Talk video</a>{% endif %}
+        {% if post.poster%} | <a href="{{ post.poster }}">Poster</a>{% endif %}
+        {% if post.project%} | <a href="{{ post.project }}">Project page</a>{% endif %}
+        {% if post.code%} | <a href="{{ post.code }}">Code</a> {% endif %}
+        ]
+      </p>
+    </td>
+  </tr>
+</table>
