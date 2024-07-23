@@ -3,7 +3,7 @@ title: "Ground-Fusion: A Low-cost Ground SLAM System Robust to Corner Cases"
 collection: publications
 permalink: /publication/2024-groundfusion
 date: 2024-5-16
-venue: "ICRA 2024"
+venue: "ICRA"
 authors: "<b>Jie Yin</b>, Lan Li, Wei Xi, Wenxian Yu, Danping Zou"
 url: 
 project: 
