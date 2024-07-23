@@ -31,32 +31,23 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
 
 
-## Other projects
 
-
-##Academic Service
-
+## Academic Service
 <style style="text/css"> .news{font-size:0.75em;} </style>
 {% include service.html %}
 
 
 ## Honors
-
-HKU Summer Research Programme Scholarship 2023
-
-
-
-
+<style style="text/css"> .news{font-size:0.75em;} </style>
+{% include honors.html %}
 
 
 ## Teaching
-
-Teaching assistant for Undergraduate course - Visual Localization & Perception (EE382) in SJTU
-
+<style style="text/css"> .news{font-size:0.75em;} </style>
+{% include teaching.html %}
 
 
 ## Map
-
 <html>
   <body align="left">
   <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=2d78ad&w=400&t=tt&d=AzKZGryLz3amj3g5IaqEy4_eXki3g-RXrlssFZtJFpk&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
