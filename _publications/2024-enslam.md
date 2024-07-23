@@ -7,7 +7,7 @@ venue: "CVPR"
 authors: "Delin Qu, Chi Yan, Dong Wang, <b>Jie Yin</b>, Dan Xu, Bin Zhao, Xuelong Li"
 url: 
 project: https://delinqu.github.io/EN-SLAM/
-bibtex: files/2024_livescene.txt
+bibtex: files/2024_enslam.txt
 arxiv: 
 openpdf: https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_Implicit_Event-RGBD_Neural_SLAM_CVPR_2024_paper.pdf
 supp: 
