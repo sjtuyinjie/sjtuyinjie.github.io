@@ -3,7 +3,7 @@ title: "Sky-GVINS: a Sky-segmentation Aided GNSS-Visual-Inertial System for Robu
 collection: publications
 permalink: /publication/2023-skygvins
 date: 2023-12-12
-venue: 'Geo-spatial Information Science'
+venue: 'Geo-spatial Information Science (JCR Q1)'
 authors: "<b>Jie Yin</b>, Tao Li, Hao Yin, Wenxian Yu, Danping Zou"
 url: 
 project: https://github.com/SJTU-ViSYS/Sky-GVINS
