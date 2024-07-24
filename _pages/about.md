@@ -16,7 +16,7 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 
 
  
-💬 If you are interested in reinforcement learning or embodied AI, welcom to mail me at 1195391308@qq.com
+💬 If you are interested in reinforcement learning or embodied AI, welcom to mail me at 1195391308[at]qq[dot]com
 
 
 ## News
