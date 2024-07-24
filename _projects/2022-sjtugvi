@@ -1,0 +1,19 @@
+---
+title: "A GNSS-Visual-IMU benchmark Dataset for SLAM"
+collection: projects
+permalink: /projects/2023-sjtugvi
+date: 2022-5-30
+venue: 'Github'
+authors: "<b>Jie Yin</b>, Tong Hua"
+url: 
+project: 
+bibtex: files/2022_sjtugvi.txt
+arxiv: 
+openpdf: 
+supp: 
+teaser: images/2022_sjtugvi.jpg
+videoresults: 
+videotalk: 
+poster: 
+code: https://github.com/sjtuyinjie/SJTU_GVI
+---
