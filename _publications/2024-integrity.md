@@ -3,7 +3,7 @@ title: "Innovation-based Kalman filter fault detection and exclusion method agai
 collection: publications
 permalink: /publication/2024-integrity
 date: 2024-3-1
-venue: 'GPS Solutions'
+venue: 'GPS Solutions (JCR Q1)'
 authors: "Haitao Jiang, Dayu Yan, Jiale Wang, <b>Jie Yin</b>"
 url: 
 project: 
