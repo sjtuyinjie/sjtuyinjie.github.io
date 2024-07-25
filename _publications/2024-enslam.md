@@ -8,7 +8,7 @@ authors: "Delin Qu, Chi Yan, Dong Wang, <b>Jie Yin</b>, Dan Xu, Bin Zhao, Xuelon
 url: 
 project: https://delinqu.github.io/EN-SLAM/
 bibtex: files/2024_enslam.txt
-arxiv: 
+arxiv: https://arxiv.org/abs/2311.11013
 openpdf: https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_Implicit_Event-RGBD_Neural_SLAM_CVPR_2024_paper.pdf
 supp: 
 teaser: images/2024_enslam.jpg
