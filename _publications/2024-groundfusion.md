@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2024-groundfusion
 date: 2024-5-16
 venue: "ICRA"
-authors: "<b>Jie Yin</b>, Lan Li, Wei Xi, Wenxian Yu, Danping Zou"
+authors: "<b>Jie Yin</b>, Lan Li, Wei Xi, <a href='https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm' target='_blank'>Wenxian Yu</a>, <a href='https://drone.sjtu.edu.cn/dpzou/' target='_blank'>Danping Zou</a>"
 url: 
 project: 
 bibtex: files/2024_groundfusion.txt
