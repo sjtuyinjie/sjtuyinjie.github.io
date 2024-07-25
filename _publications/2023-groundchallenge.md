@@ -8,7 +8,7 @@ authors: "<b>Jie Yin</b>, Hao Yin, Conghui Liang, and Zhengyou Zhang"
 url: 
 project: 
 bibtex: files/2023_groundchallenge.txt
-arxiv: 
+arxiv: https://arxiv.org/abs/2307.03890
 openpdf: https://ieeexplore.ieee.org/abstract/document/10354969/
 supp: 
 teaser: images/2023_groundchallenge.jpg
