@@ -8,7 +8,7 @@ authors: "<b>Jie Yin</b>, Tao Li, Hao Yin, Wenxian Yu, Danping Zou"
 url: 
 project: https://github.com/SJTU-ViSYS/Sky-GVINS
 bibtex: files/2023_skygvins.txt
-arxiv: 
+arxiv: https://arxiv.org/abs/2304.04007
 openpdf: https://www.tandfonline.com/doi/full/10.1080/10095020.2023.2191649
 supp: 
 teaser: images/2023_skygvins.jpg
