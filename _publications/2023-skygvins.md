@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2023-skygvins
 date: 2023-12-12
 venue: 'Geo-spatial Information Science (JCR Q1)'
-authors: "<b>Jie Yin</b>, Tao Li, Hao Yin, Wenxian Yu, Danping Zou"
+authors: "<b>Jie Yin</b>, Tao Li, Hao Yin, <a href='https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm' target='_blank'>Wenxian Yu</a>, <a href='https://drone.sjtu.edu.cn/dpzou/' target='_blank'>Danping Zou</a>"
 url: 
 project: https://github.com/SJTU-ViSYS/Sky-GVINS
 bibtex: files/2023_skygvins.txt
@@ -17,5 +17,3 @@ videotalk:
 poster: 
 code: 
 ---
-
-
