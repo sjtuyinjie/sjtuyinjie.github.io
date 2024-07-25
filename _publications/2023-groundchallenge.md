@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2023-groundchallenge
 date: 2023-3-3
 venue: 'ROBIO'
-authors: "<b>Jie Yin</b>, Hao Yin, Conghui Liang, and Zhengyou Zhang"
+authors: "<b>Jie Yin</b>, Hao Yin, Conghui Liang, and <a href='https://en.wikipedia.org/wiki/Zhengyou_Zhang' target='_blank'>Zhengyou Zhang</a>"
 url: 
 project: 
 bibtex: files/2023_groundchallenge.txt
