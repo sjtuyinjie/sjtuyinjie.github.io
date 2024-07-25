@@ -8,8 +8,8 @@ authors: "<b>Jie Yin</b>, Lan Li, Wei Xi, Wenxian Yu, Danping Zou"
 url: 
 project: 
 bibtex: files/2024_groundfusion.txt
-arxiv: 
-openpdf: https://arxiv.org/abs/2112.13659
+arxiv: https://arxiv.org/abs/2112.13659
+openpdf: 
 supp: 
 teaser: images/2024_groundfusion.jpg
 videoresults: https://www.youtube.com/watch?v=kLidZKncPP4
