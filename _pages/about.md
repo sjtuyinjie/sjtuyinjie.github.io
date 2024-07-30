@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm currently working as a research engineer on embodied AI at a robotics startup. My current research interests include Robotic learning, Embodied AI and Multi-sensor Fusion. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree in 2021 and with a master of science degree in 2024. 
+I'm a senior engineer on embodied AI at a robotics startup. My current research interests include Robotic learning, Embodied AI and Multi-sensor Fusion. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree in 2021 and with a master of science degree in 2024. 
 
 Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/), [HKU Mars Lab](https://github.com/hku-mars), [Tencent Robotics X Lab](https://roboticsx.tencent.com/#/), [Shanghai AI Lab](https://www.shlab.org.cn/) and [Shanghai Beidou Research Institute](http://www.bdi.org.cn/)**.
 
