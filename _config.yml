@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : ""
 title_separator          : "-"
 name                     : &name "Jie Yin"
-description              : &description "A research engineer on Embodied AI"
+description              : &description "A senior engineer on Embodied AI"
 url                      : https://sjtuyinjie.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sjtuyinjie/sjtuyinjie.github.io"
