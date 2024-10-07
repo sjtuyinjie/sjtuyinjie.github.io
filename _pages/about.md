@@ -49,7 +49,7 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 
 <html>
   <body align="left">
-  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=640&t=tt&d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
   </body>
 </html>
 
