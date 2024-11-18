@@ -12,11 +12,11 @@ Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonail
 
 
 
- My work have been accepted to top conferences/transactions on robotics/navigation such as **ICRA, IROS, RAL, CVPR, GPS Solutions** and so on. My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 1.7k github stars** from Github and **over 160k views** from my technical blogs on [CSDN](https://blog.csdn.net/qq_42928559?spm=1010.2135.3001.5343). 
+ My work have been accepted to top conferences/transactions on robotics/navigation such as **ICRA, IROS, RAL, CVPR, GPS Solutions** and so on. My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 2k github stars** from Github and **over 160k views** from my technical blogs on [CSDN](https://blog.csdn.net/qq_42928559?spm=1010.2135.3001.5343). 
 
 
  
-💬 If you are interested in reinforcement learning or embodied AI, welcom to mail me at 1195391308[at]qq[dot]com
+💬 If you are interested in reinforcement learning or embodied AI, welcom to mail me at **robot_yinjie@outlook.com**
 
 
 ## News
