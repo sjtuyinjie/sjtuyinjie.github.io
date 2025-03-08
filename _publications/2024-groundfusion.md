@@ -9,7 +9,7 @@ url:
 project: https://sites.google.com/view/ground-fusion/home
 bibtex: files/2024_groundfusion.txt
 arxiv: https://arxiv.org/abs/2112.13659
-openpdf: 
+openpdf: https://ieeexplore.ieee.org/abstract/document/10610070
 supp: 
 teaser: images/2024_groundfusion.jpg
 videoresults: https://www.youtube.com/watch?v=kLidZKncPP4
