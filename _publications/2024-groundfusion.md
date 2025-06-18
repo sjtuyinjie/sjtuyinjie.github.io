@@ -11,7 +11,7 @@ bibtex: files/2024_groundfusion.txt
 arxiv: https://arxiv.org/abs/2112.13659
 openpdf: https://ieeexplore.ieee.org/abstract/document/10610070
 supp: 
-teaser: images/2024_groundfusion.jpg
+teaser: images/2024_groundfusion.png
 videoresults: https://www.youtube.com/watch?v=kLidZKncPP4
 videotalk: https://www.bilibili.com/video/BV1xx421m75k/?spm_id_from=333.337.search-card.all.click&vd_source=0804300aea4065df90adde5398ee74b7
 poster: 
