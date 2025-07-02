@@ -19,19 +19,11 @@ I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(ä¸Šæ
 
 <div align="center">
 
+[Github](https://github.com/sjtuyinjie)/[Google Scholar](https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en)/[Email](mailto:robot_yinjie@outlook.com)
 
-[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-blue?style=flat)](https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en)
-[![Wechat](https://img.shields.io/badge/Wechat-green?style=flat)](https://github.com/sjtuyinjie/sjtuyinjie/blob/main/assets/wechat.jpg)
-[![Email](https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:robot_yinjie@outlook.com)
-[![GitHub](https://img.shields.io/badge/GitHub-black?style=flat&logo=github)](https://github.com/sjtuyinjie)
-<a href="https://github.com/sjtuyinjie">
-<img src="https://badges.strrl.dev/years/sjtuyinjie?style=flat-square&logo=github">
-</a>
-<a href="https://github.com/sjtuyinjie?tab=repositories">
-<img src="https://badges.strrl.dev/repos/sjtuyinjie?style=flat-square&logo=github">
-</a>
 
 </div>
+
 
 
 
