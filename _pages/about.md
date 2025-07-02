@@ -17,13 +17,6 @@ I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上�
 
 💬 If you are interested in reinforcement learning or dexterous manipulation, welcom to mail me at **robot_yinjie@outlook.com**
 
-<div align="center">
-
-[Github](https://github.com/sjtuyinjie)/[Google Scholar](https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en)/[Email](mailto:robot_yinjie@outlook.com)
-
-
-</div>
-
 
 
 
