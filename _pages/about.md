@@ -15,8 +15,24 @@ I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上�
  My works have been accepted to top conferences/transactions on robotics/navigation such as **ICRA, IROS, RAL, TRO, CVPR, GPS Solutions** and so on. My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [**🔥Ground-Fusion++/M3DGR**](https://github.com/sjtuyinjie/Ground-Fusion2), [LIGO](https://github.com/Joanna-HE/LIGO.), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 3k github stars** from Github and **over 160k views** from my technical blogs on [CSDN](https://blog.csdn.net/qq_42928559?spm=1010.2135.3001.5343). 
 
 
- 
 💬 If you are interested in reinforcement learning or dexterous manipulation, welcom to mail me at **robot_yinjie@outlook.com**
+
+<div align="center">
+
+
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-blue?style=flat)](https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en)
+[![Wechat](https://img.shields.io/badge/Wechat-green?style=flat)](https://github.com/sjtuyinjie/sjtuyinjie/blob/main/assets/wechat.jpg)
+[![Email](https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:robot_yinjie@outlook.com)
+[![GitHub](https://img.shields.io/badge/GitHub-black?style=flat&logo=github)](https://github.com/sjtuyinjie)
+<a href="https://github.com/sjtuyinjie">
+<img src="https://badges.strrl.dev/years/sjtuyinjie?style=flat-square&logo=github">
+</a>
+<a href="https://github.com/sjtuyinjie?tab=repositories">
+<img src="https://badges.strrl.dev/repos/sjtuyinjie?style=flat-square&logo=github">
+</a>
+
+</div>
+
 
 
 ## News
