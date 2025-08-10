@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm a research engineer and I am broadly interested in Robotics and Embodied AI. Recently, I have been exploring **reinforcement learning**, **dexterous manipulation** and **whole-body control**, and my goal is to achieve human-level physical intelligence in humanoid robots. Previously, I focused on **multi-sensor fusion SLAM algorithms/benchmarks under corner cases**. 
+I'm a research engineer and I am broadly interested in Robotics and Embodied AI. Recently, I have been exploring **reinforcement learning**, **VLA**, **dexterous manipulation** and **whole-body control**, and my goal is to achieve human-level physical intelligence in humanoid robots. Previously, I focused on **multi-sensor fusion SLAM algorithms/benchmarks under corner cases** and **multimodal navigation**. 
 
 I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree in 2021 and with a master of science degree in 2024. Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/), [HKU MaRS Lab](https://github.com/hku-mars), [Tencent Robotics X Lab](https://roboticsx.tencent.com/#/), [Shanghai AI Lab](https://www.shlab.org.cn/) and [Shanghai Beidou Research Institute](http://www.bdi.org.cn/)**.
 
