@@ -25,39 +25,39 @@ I'm a research engineer and I am broadly interested in Robotics and Embodied AI.
 ## ⭐️ Selected Research
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
-  <div style="flex: 1 1 300px; max-width: 400px; text-align: center;">
+  <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">
       <img src="/gifs/m2dgr.gif" alt="M2DGR" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
-    <p style="margin-top: 10px;"><strong>M2DGR</strong><br><a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">GitHub Repository</a></p>
+    <p style="margin-top: 10px;"><a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank"><strong>M2DGR</strong></a></p>
   </div>
   
-  <div style="flex: 1 1 300px; max-width: 400px; text-align: center;">
+  <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">
       <img src="/gifs/gf.gif" alt="Ground-Fusion" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
-    <p style="margin-top: 10px;"><strong>Ground-Fusion</strong><br><a href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">GitHub Repository</a></p>
+    <p style="margin-top: 10px;"><a href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank"><strong>Ground-Fusion</strong></a></p>
   </div>
   
-  <div style="flex: 1 1 300px; max-width: 400px; text-align: center;">
+  <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">
       <img src="/gifs/daf.gif" alt="DAF" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
-    <p style="margin-top: 10px;"><strong>DAF</strong><br><a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">Project Page</a></p>
+    <p style="margin-top: 10px;"><a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank"><strong>DAF</strong></a></p>
   </div>
   
-  <div style="flex: 1 1 300px; max-width: 400px; text-align: center;">
+  <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://github.com/sjtuyinjie/M3DGR" target="_blank">
       <img src="/gifs/m3dgr.gif" alt="M3DGR" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
-    <p style="margin-top: 10px;"><strong>M3DGR</strong><br><a href="https://github.com/sjtuyinjie/M3DGR" target="_blank">GitHub Repository</a></p>
+    <p style="margin-top: 10px;"><a href="https://github.com/sjtuyinjie/M3DGR" target="_blank"><strong>M3DGR</strong></a></p>
   </div>
   
-  <div style="flex: 1 1 300px; max-width: 400px; text-align: center;">
+  <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank">
       <img src="/gifs/idc.gif" alt="IDC Robot" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
-    <p style="margin-top: 10px;"><strong>IDC Robot</strong><br><a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank">Project Page</a></p>
+    <p style="margin-top: 10px;"><a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank"><strong>IDC Robot</strong></a></p>
   </div>
 </div>
 
