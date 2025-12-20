@@ -12,10 +12,15 @@
 {% assign title = post.title %}
 {% endif %}
 
+{% assign is_representative = false %}
+{% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Disentangled Acoustic Fields" %}
+{% assign is_representative = true %}
+{% endif %}
+
 <table class="hoverTable">
   <col style="width:25%" />
   <col style="width:75%" />
-  <tr>
+  <tr {% if is_representative %}style="background-color: #fffacd;"{% endif %}>
     <td style="text-align: center; vertical-align: middle;">
       {% if post.teaser %}
       <img style="display:block;" width="80%" src="{{post.teaser}}" />
@@ -24,6 +29,7 @@
     <td>
       <h3 class="archive__item-title" itemprop="headline">
         {{ title }}
+        {% if is_representative %}<span style="background-color: #fffacd; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: normal; color: #333;">Representative Work</span>{% endif %}
       </h3>
       {% if post.authors%}{{ post.authors }}{% endif %}
       <p>
