@@ -18,7 +18,15 @@
   <tr>
     <td style="text-align: center; vertical-align: middle;">
       {% if post.teaser %}
+      {% assign gif_path = "" %}
+      {% if title contains "Design, Sensing and Control" %}
+        {% assign gif_path = "/gifs/idc40x.gif" | prepend: base_path %}
+      {% endif %}
+      {% if gif_path != "" %}
+      <img class="clickable-gif" style="display:block;" width="80%" src="{{post.teaser}}" data-static="{{post.teaser}}" data-gif="{{gif_path}}" />
+      {% else %}
       <img style="display:block;" width="80%" src="{{post.teaser}}" />
+      {% endif %}
       {% endif %}
     </td>
     <td>
