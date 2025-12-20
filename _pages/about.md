@@ -41,7 +41,7 @@ I'm a research engineer and I am broadly interested in Robotics and Embodied AI.
   
   <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">
-      <img src="/gifs/daf.gif" alt="DAF" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+      <img src="/gifs/daf.gif" alt="DAF" style="width: 70%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
     <p style="margin-top: 10px;"><a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank"><strong>DAF</strong></a></p>
   </div>
