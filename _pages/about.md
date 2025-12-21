@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm a research engineer and I am broadly interested in Robotics and Embodied AI. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree and a master of engineering degree, advised by [Prof. Danping Zou](https://sais.sjtu.edu.cn/faculty/zoudanping.html) and [Prof. Wenxian Yu](https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm). Previously, I used to research at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/), [HKU MaRS Lab](https://github.com/hku-mars), [Tencent Robotics X Lab](https://roboticsx.tencent.com/#/), [Shanghai AI Lab](https://www.shlab.org.cn/) and [Shanghai Beidou Research Institute](http://www.bdi.org.cn/)**.
+I'm a research engineer and I am broadly interested in Robotics and Embodied AI. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree and a master of engineering degree, advised by [Prof. Danping Zou](https://sais.sjtu.edu.cn/faculty/zoudanping.html) and [Prof. Wenxian Yu](https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm). Previously, I used to research at **[SJTU-VISYS Lab](https://drone.sjtu.edu.cn/), [MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/), [HKU MaRS Lab](https://github.com/hku-mars), [Tencent Robotics X Lab](https://roboticsx.tencent.com/#/), [Shanghai AI Lab](https://www.shlab.org.cn/) and [Shanghai Beidou Research Institute](http://www.bdi.org.cn/)**.
 
 
 
