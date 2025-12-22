@@ -6,19 +6,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a research engineer with broad interests in Robotics and Embodied AI. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree and a master of engineering degree, advised by **[Prof. Danping Zou](https://sais.sjtu.edu.cn/faculty/zoudanping.html) and [Prof. Wenxian Yu](https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm)** in **[SJTU-VISYS Lab](https://drone.sjtu.edu.cn/)**. Furthermore, I was a research intern at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/)** under the supervision of **[Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/)** and participated in [SRP2023(Summer Research Programme)](https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023) at **[HKU MaRS Lab](https://github.com/hku-mars)** advised by **[Prof. Fu Zhang](https://mech.hku.hk/academic-staff/zhang-f/)**. Previously, I also spent wonderful time researching at **[Tencent Robotics X Lab](https://roboticsx.tencent.com/#/)**, **[Shanghai AI Lab](https://www.shlab.org.cn/)** and **[Shanghai Beidou Research Institute](http://beidou.s.cn.vc/)**, where I worked on a variety of projects related to robotics and intelligent systems.
-
-
- My works have been accepted to top conferences/transactions on Robotics and AI such as **ICRA, IROS, RAL, CVPR, TRO, TAES and GPS Solutions** and so on. My research has been supported by National Key R&D Program and
-[NSFC](https://www.nsfc.gov.cn/english/site_1/index.html). My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [**🔥Ground-Fusion++/M3DGR**](https://github.com/sjtuyinjie/Ground-Fusion2), [LIGO](https://github.com/Joanna-HE/LIGO.), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 3k stars** from my [Github](https://github.com/sjtuyinjie).
-
-
-
 
 <div style="margin: 20px 0; text-align: center;">
-  <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" />
-  </a>
   <a href="https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en" target="_blank" style="margin: 0 5px;">
     <img src="https://img.shields.io/badge/Google%20Scholar-blue?style=flat" alt="Google Scholar" />
   </a>
@@ -28,6 +17,9 @@ I am a research engineer with broad interests in Robotics and Embodied AI. I gra
   <a href="mailto:robot_yinjie@outlook.com" style="margin: 0 5px;">
     <img src="https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white" alt="Email" />
   </a>
+    <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" />
+  </a>
   <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
     <img src="https://badges.strrl.dev/years/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Years" />
   </a>
@@ -35,6 +27,17 @@ I am a research engineer with broad interests in Robotics and Embodied AI. I gra
     <img src="https://badges.strrl.dev/repos/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Repos" />
   </a>
 </div>
+
+I am a research engineer with broad interests in Robotics and Embodied AI. I graduated from **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)(上海交通大学, THE 43, QS 45, ARWU 46)** with a bachelor degree and a master of engineering degree, advised by **[Prof. Danping Zou](https://sais.sjtu.edu.cn/faculty/zoudanping.html) and [Prof. Wenxian Yu](https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm)** in **[SJTU-VISYS Lab](https://drone.sjtu.edu.cn/)**. Furthermore, I was a research intern at **[MIT-IBM Watson Lab](https://mitibmwatsonailab.mit.edu/)** under the supervision of **[Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/)** and participated in [SRP2023(Summer Research Programme)](https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023) at **[HKU MaRS Lab](https://github.com/hku-mars)** advised by **[Prof. Fu Zhang](https://mech.hku.hk/academic-staff/zhang-f/)**. Previously, I also spent wonderful time researching at **[Tencent Robotics X Lab](https://roboticsx.tencent.com/#/)**, **[Shanghai AI Lab](https://www.shlab.org.cn/)** and **[Shanghai Beidou Research Institute](http://beidou.s.cn.vc/)**, where I worked on a variety of projects related to robotics and intelligent systems.
+
+
+ My works have been accepted to top conferences/transactions on Robotics and AI such as **ICRA, IROS, RAL, CVPR, TRO, TAES and GPS Solutions** and so on. My research has been supported by National Key R&D Program and
+[NSFC](https://www.nsfc.gov.cn/english/site_1/index.html). My highlighted projects include [**🔥M2DGR**](https://github.com/SJTU-ViSYS/M2DGR), [**🔥Ground-Fusion**](https://github.com/SJTU-ViSYS/Ground-Fusion), [**🔥DAF**](https://arxiv.org/abs/2407.11333), [**🔥Ground-Fusion++/M3DGR**](https://github.com/sjtuyinjie/Ground-Fusion2), [LIGO](https://github.com/Joanna-HE/LIGO.), [EN-SLAM](https://github.com/DelinQu/EN-SLAM),[Ground-Challenge](https://github.com/sjtuyinjie/Ground-Challenge), [Sky-GVINS](https://github.com/SJTU-ViSYS/Sky-GVINS) and so on, as detailed below. Furthermore, I'm also an active open-source contributor, receiving **over 3k stars** from my [Github](https://github.com/sjtuyinjie).
+
+
+
+
+
 
 
 ## News
