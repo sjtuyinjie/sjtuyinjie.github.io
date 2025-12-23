@@ -39,6 +39,27 @@ I am a research engineer with broad interests in Robotics and Embodied AI. I gra
 </div>
 
 
+<div style="margin: 20px 0; text-align: center;">
+  <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/Google%20Scholar-blue?style=flat&logo=google-scholar&logoColor=white" alt="Google Scholar" />
+  </a>
+  <a href="https://github.com/sjtuyinjie/sjtuyinjie/blob/main/assets/wechat.jpg" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/Wechat-green?style=flat&logo=wechat&logoColor=white" alt="Wechat" />
+  </a>
+  <a href="mailto:robot_yinjie@outlook.com" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
+    <img src="https://badges.strrl.dev/years/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Years" />
+  </a>
+  <a href="https://github.com/sjtuyinjie?tab=repositories" target="_blank" style="margin: 0 5px;">
+    <img src="https://badges.strrl.dev/repos/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Repos" />
+  </a>
+</div>
+
 
 ## News
 <style style="text/css"> .news{font-size:0.75em;} </style>
