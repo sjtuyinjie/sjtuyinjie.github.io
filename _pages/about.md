@@ -40,6 +40,77 @@ I am a research engineer with broad interests in Robotics and Embodied AI. I gra
 </div>
 
 
+
+<div style="margin: 20px 0; text-align: center;">
+
+  <a href="https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/Google%20Scholar-blue?style=flat&logo=google-scholar&logoColor=white" alt="Google Scholar" />
+  </a>
+  <a href="https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/Citations-Loading-blue?style=flat&logo=google-scholar&logoColor=white" alt="Citations" id="scholar-citations-badge" />
+  </a>
+  <script>
+    (function() {
+      // 使用 CORS 代理服务来获取 Google Scholar 数据
+      var userId = 'Y8LVRYIAAAAJ';
+      var proxyUrl = 'https://api.allorigins.win/raw?url=';
+      var scholarUrl = 'https://scholar.google.com/citations?user=' + userId + '&hl=en';
+      
+      fetch(proxyUrl + encodeURIComponent(scholarUrl))
+        .then(response => response.text())
+        .then(html => {
+          // 尝试多种方式从 HTML 中提取引用数
+          var match = html.match(/Cited by\s*(\d+)/i) || 
+                      html.match(/被引用次数[：:]\s*(\d+)/i) ||
+                      html.match(/id="gsc_rsb_st">[\s\S]*?<td class="gsc_rsb_std">(\d+)/i) ||
+                      html.match(/gsc_rsb_st.*?gsc_rsb_std[^>]*>(\d+)/i);
+          
+          if (match && match[1]) {
+            var citations = match[1].replace(/,/g, ''); // 移除可能的千位分隔符
+            var badge = document.getElementById('scholar-citations-badge');
+            if (badge) {
+              // 格式化数字，添加千位分隔符
+              var formattedCitations = parseInt(citations).toLocaleString();
+              badge.src = 'https://img.shields.io/badge/Citations-' + encodeURIComponent(formattedCitations) + '-blue?style=flat&logo=google-scholar&logoColor=white';
+              badge.alt = 'Citations: ' + formattedCitations;
+            }
+          } else {
+            // 如果无法提取，尝试使用备用方法
+            console.log('Could not extract citations from HTML');
+            var badge = document.getElementById('scholar-citations-badge');
+            if (badge) {
+              badge.style.display = 'none';
+            }
+          }
+        })
+        .catch(error => {
+          console.log('Failed to fetch citations:', error);
+          // 如果失败，隐藏徽章
+          var badge = document.getElementById('scholar-citations-badge');
+          if (badge) {
+            badge.style.display = 'none';
+          }
+        });
+    })();
+  </script>
+  <a href="https://github.com/sjtuyinjie/sjtuyinjie/blob/main/assets/wechat.jpg" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/Wechat-green?style=flat&logo=wechat&logoColor=white" alt="Wechat" />
+  </a>
+    <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="mailto:robot_yinjie@outlook.com" style="margin: 0 5px;">
+    <img src="https://img.shields.io/badge/-Email-c14438?style=flat&logo=Gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://github.com/sjtuyinjie" target="_blank" style="margin: 0 5px;">
+    <img src="https://badges.strrl.dev/years/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Years" />
+  </a>
+  <a href="https://github.com/sjtuyinjie?tab=repositories" target="_blank" style="margin: 0 5px;">
+    <img src="https://badges.strrl.dev/repos/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Repos" />
+  </a>
+</div>
+
+
 ## News
 <style style="text/css"> .news{font-size:0.75em;} </style>
 {% include news.html %}
