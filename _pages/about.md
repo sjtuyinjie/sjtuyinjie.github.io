@@ -77,13 +77,18 @@ I am a research engineer with broad interests in Robotics and Embodied AI. I gra
     <p style="margin-top: 10px;"><a href="https://github.com/sjtuyinjie/M3DGR" target="_blank"><strong>M3DGR</strong></a></p>
   </div>
   
-  <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
+
+</div>
+
+<!-- 隐藏IDC Robot区块，待后续调整
+ <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank">
       <img src="/gifs/idc.gif" alt="IDC Robot" style="width: 90%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
     <p style="margin-top: 10px;"><a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank"><strong>IDC Robot</strong></a></p>
   </div>
-</div>
+-->
+
 
 ## 🚩 Publication
 Currently, I focus on **reinforcement learning**, **dexterous manipulation** and **whole-body control**. My research goal is to build practical intelligent robots that can safely and reliably operate in real human environments, assisting people with everyday physical tasks. Previously, I worked on **multi-sensor fusion SLAM algorithms/benchmarks under corner cases** and **multimodal navigation**. (Representative works are <span style="background-color: #fffacd;">highlighted</span>)
