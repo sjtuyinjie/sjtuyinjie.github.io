@@ -76,13 +76,14 @@ I am a research engineer with broad interests in Robotics and Embodied AI. I gra
     </a>
     <p style="margin-top: 10px;"><a href="https://github.com/sjtuyinjie/M3DGR" target="_blank"><strong>M3DGR</strong></a></p>
   </div>
-  
+  <!--
   <div style="flex: 1 1 150px; max-width: 200px; text-align: center;">
     <a href="https://www.sharpa.com/pages/wave" target="_blank">
       <img src="/gifs/rotation.gif" alt="In-hand Rotation" style="width: 90%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
     </a>
     <p style="margin-top: 10px;"><a href="https://www.sharpa.com/pages/wave" target="_blank"><strong>In-hand Rotation</strong></a></p>
   </div>
+  -->
 
 </div>
 
