@@ -1,0 +1,7 @@
+@article{li2026inp3vio,
+  title={In-P3 VIO: Tightly-Coupled PPP-Visual-Inertial Odometry Based on Invariant Filter Approach},
+  author={Li, Tao and Hua, Tong and Yin, Jie and Yang, Xusheng and Zhang, Wen-An and others},
+  journal={IEEE Transactions on Aerospace and Electronic Systems},
+  year={2026},
+  publisher={IEEE}
+}
