@@ -12,8 +12,9 @@ redirect_from:
     --about-primary: #2563eb;
     --about-accent: #0f766e;
     --about-hover: #6d28d9;
-    --about-author: #7c3aed;
-    --about-author-bg: #f3e8ff;
+    --about-work: #b45309;
+    --about-author: var(--about-accent);
+    --about-author-bg: #ecfdf5;
     --about-ink: #1f2937;
     --about-muted: #64748b;
     --about-surface: #f8fafc;
@@ -62,21 +63,30 @@ redirect_from:
   }
 
   .about-page a.person-name {
-    color: var(--about-primary);
-    font-weight: 700;
-  }
-
-  .about-page a.person-name:hover {
-    color: #1d4ed8;
-  }
-
-  .about-page a.org-link {
     color: var(--about-accent);
     font-weight: 700;
   }
 
-  .about-page a.org-link:hover {
+  .about-page a.person-name:hover {
     color: #0b5f58;
+  }
+
+  .about-page a.org-link {
+    color: var(--about-primary);
+    font-weight: 700;
+  }
+
+  .about-page a.org-link:hover {
+    color: #1d4ed8;
+  }
+
+  .about-page a.work-link {
+    color: var(--about-work);
+    font-weight: 700;
+  }
+
+  .about-page a.work-link:hover {
+    color: #92400e;
   }
 
   .about-chip-row,
@@ -250,7 +260,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="org-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="org-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="org-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="org-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="org-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="org-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="org-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="org-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>. I am also an active open-source contributor, with <strong>3k+ GitHub stars</strong> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>. I am also an active open-source contributor, with <strong>3k+ GitHub stars</strong> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -292,28 +302,28 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
     <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">
       <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
     </a>
-    <p class="research-card-title"><a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">M2DGR</a></p>
+    <p class="research-card-title"><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">M2DGR</a></p>
   </div>
   
   <div class="research-card">
     <a href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">
       <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
     </a>
-    <p class="research-card-title"><a href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">Ground-Fusion</a></p>
+    <p class="research-card-title"><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">Ground-Fusion</a></p>
   </div>
   
   <div class="research-card">
     <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">
       <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
     </a>
-    <p class="research-card-title"><a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">DAF</a></p>
+    <p class="research-card-title"><a class="work-link" href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">DAF</a></p>
   </div>
   
   <div class="research-card">
     <a href="https://github.com/sjtuyinjie/M3DGR" target="_blank">
       <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
     </a>
-    <p class="research-card-title"><a href="https://github.com/sjtuyinjie/M3DGR" target="_blank">M3DGR</a></p>
+    <p class="research-card-title"><a class="work-link" href="https://github.com/sjtuyinjie/M3DGR" target="_blank">M3DGR</a></p>
   </div>
 </div>
 
