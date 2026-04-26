@@ -28,6 +28,20 @@
 {% endif %}
 {% endif %}
 
+{% assign github_url_extra = "" %}
+{% if post.url and post.url contains "github.com/" %}
+{% assign github_url_extra = post.url %}
+{% endif %}
+{% assign github_repo_extra = "" %}
+{% if github_url_extra != "" %}
+{% assign github_repo_extra_parts = github_url_extra | split: "github.com/" | last | split: "/" %}
+{% if github_repo_extra_parts.size >= 2 %}
+{% assign github_owner_extra = github_repo_extra_parts[0] %}
+{% assign github_repo_name_extra = github_repo_extra_parts[1] | split: "?" | first | split: "#" | first | remove: ".git" %}
+{% assign github_repo_extra = github_owner_extra | append: "/" | append: github_repo_name_extra %}
+{% endif %}
+{% endif %}
+
 {% assign is_representative = false %}
 {% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Disentangled Acoustic Fields" %}
 {% assign is_representative = true %}
@@ -77,13 +91,13 @@
         {% if post.poster%} | <a href="{{ post.poster }}">Poster</a>{% endif %}
         {% if post.project%} | <a href="{{ post.project }}">Project page</a>{% endif %}
         {% if post.code%} | <a href="{{ post.code }}">Code</a> {% endif %}
-        ]
-        {% if github_repo != "" %}
-        <br>
-        <a href="{{ github_url }}" target="_blank" rel="noopener">
-          <img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" />
-        </a>
+        {% if title contains "Towards Robust Sensor-Fusion Ground SLAM" and github_repo_extra != "" and github_repo_extra != github_repo %}
+        | <a href="{{ github_url_extra }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_extra }}" src="https://img.shields.io/github/stars/{{ github_repo_extra }}?style=flat-square" /></a>
         {% endif %}
+        {% if github_repo != "" %}
+        | <a href="{{ github_url }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" /></a>
+        {% endif %}
+        ]
       </p>
     </td>
   </tr>
