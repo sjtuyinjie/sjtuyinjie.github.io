@@ -226,12 +226,19 @@ redirect_from:
   }
 
   .visitor-map {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
     margin-top: 0.8rem;
     padding: 0.8rem;
     border: 1px solid #e2e8f0;
     border-radius: 14px;
     background: #ffffff;
     text-align: left;
+  }
+
+  .visitor-map #clustrmaps-widget-v2 {
+    max-width: 100% !important;
   }
 
   @media (max-width: 900px) {
@@ -247,6 +254,10 @@ redirect_from:
 
     .research-grid {
       grid-template-columns: 1fr;
+    }
+
+    .visitor-map {
+      padding: 0.5rem;
     }
   }
 </style>
@@ -354,7 +365,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 ## Map
 
 <div class="visitor-map">
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cl=ffffff&w=800&t=tt"></script>
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cl=ffffff&w=a&t=tt"></script>
 </div>
 
 </div>
