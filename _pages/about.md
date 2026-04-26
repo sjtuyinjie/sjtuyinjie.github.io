@@ -236,10 +236,39 @@ redirect_from:
   }
 
   .about-meta-note {
-    display: block;
-    margin-top: 0.25rem;
-    color: var(--about-muted);
-    font-size: 0.82rem;
+    position: absolute;
+    bottom: calc(100% + 0.45rem);
+    left: 50%;
+    z-index: 10;
+    display: inline-block;
+    width: max-content;
+    max-width: min(220px, 80vw);
+    padding: 0.25rem 0.45rem;
+    border-radius: 0.35rem;
+    margin-top: 0;
+    background: rgba(15, 23, 42, 0.92);
+    color: #ffffff;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(0.25rem);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+    visibility: hidden;
+    white-space: nowrap;
+  }
+
+  .scholar-citation-wrap {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+  }
+
+  .scholar-citation-wrap:hover .about-meta-note,
+  .scholar-citation-wrap:focus-within .about-meta-note {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    visibility: visible;
   }
 
   .visitor-map {
@@ -321,7 +350,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with Google Scholar <span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span>.<span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span>. I am also an active open-source contributor, with <span class="about-highlight-red"><strong>3k+ GitHub stars</strong></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="scholar-citation-wrap"><span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span></span>. I am also an active open-source contributor, with <span class="about-highlight-red"><strong>3k+ GitHub stars</strong></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -468,7 +497,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         if (citations === null) {
           return;
         }
-        citationNode.innerHTML = '<strong>' + citations + ' citations</strong>';
+        citationNode.innerHTML = '<strong>' + citations + ' Google Scholar citations</strong>';
         if (updatedNode) {
           var today = new Date().toISOString().slice(0, 10);
           updatedNode.textContent = 'last updated: ' + today;
