@@ -41,7 +41,7 @@
         {{ title }}
         {% if is_representative %}<span style="background-color: #fffacd; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: normal; color: #333;">Representative Work</span>{% endif %}
       </h3>
-      {% if post.authors%}{{ post.authors }}{% endif %}
+      {% if post.authors%}<span class="publication-authors">{{ post.authors }}</span>{% endif %}
       <p>
         {% if post.venue%}<span style="font-style:italic">{{ post.venue }}</span> {% endif %}
         {% if post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}

@@ -11,6 +11,8 @@ redirect_from:
   .about-page {
     --about-primary: #2563eb;
     --about-accent: #0f766e;
+    --about-hover: #6d28d9;
+    --about-author: #4f46e5;
     --about-ink: #1f2937;
     --about-muted: #64748b;
     --about-surface: #f8fafc;
@@ -23,7 +25,7 @@ redirect_from:
   }
 
   .about-page a:hover {
-    color: var(--about-accent);
+    color: var(--about-hover);
     text-decoration: underline;
   }
 
@@ -90,7 +92,7 @@ redirect_from:
   }
 
   .about-section-note {
-    color: var(--about-muted);
+    color: #111827;
     line-height: 1.65;
   }
 
@@ -167,6 +169,19 @@ redirect_from:
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
   }
 
+  .about-page .publication-authors {
+    color: #111827;
+  }
+
+  .about-page .publication-authors b,
+  .about-page .publication-authors strong {
+    padding: 0.03rem 0.18rem;
+    border-radius: 0.25rem;
+    color: var(--about-author);
+    background: #eef2ff;
+    font-weight: 800;
+  }
+
   .highlight-soft {
     padding: 0.05rem 0.28rem;
     border-radius: 0.3rem;
@@ -217,11 +232,10 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
-  <span class="about-chip">Embodied AI</span>
+  <span class="about-chip">Reinforcement Learning</span>
   <span class="about-chip">Dexterous Manipulation</span>
   <span class="about-chip">Whole-Body Control</span>
-  <span class="about-chip">Multi-Sensor SLAM</span>
-  <span class="about-chip">Robotics Benchmarks</span>
+  <span class="about-chip">Multi-modal Navigation</span>
 </div>
 </section>
 
