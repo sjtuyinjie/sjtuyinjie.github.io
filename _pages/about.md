@@ -244,9 +244,6 @@ redirect_from:
 
   .visitor-map #clustrmaps-widget-v2 {
     max-width: 100% !important;
-    transform: scale(2);
-    transform-origin: center;
-    filter: contrast(1.18) saturate(1.1);
   }
 
   .floating-robot {
@@ -407,6 +404,36 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 <script>
   (function () {
     var ignoredSelector = 'a, button, input, textarea, select, label, img, iframe, video, audio, canvas, svg, #clustrmaps-widget-v2, .clickable-gif';
+    var enhanceVisitorDots = function () {
+      var widget = document.getElementById('clustrmaps-widget-v2');
+      if (!widget) {
+        return false;
+      }
+
+      var layers = widget.querySelectorAll('canvas, svg');
+      if (layers.length <= 1) {
+        return false;
+      }
+
+      for (var i = 1; i < layers.length; i += 1) {
+        layers[i].style.transform = 'scale(2)';
+        layers[i].style.transformOrigin = 'center';
+      }
+
+      return true;
+    };
+
+    if (!enhanceVisitorDots()) {
+      var observer = new MutationObserver(function () {
+        if (enhanceVisitorDots()) {
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () {
+        observer.disconnect();
+      }, 8000);
+    }
 
     document.addEventListener('click', function (event) {
       if (event.target.closest(ignoredSelector)) {
