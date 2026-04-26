@@ -54,8 +54,10 @@
 {% assign github_repo_dataset = github_owner_dataset | append: "/" | append: github_repo_name_dataset %}
 {% endif %}
 {% endif %}
-{% assign is_towards_iros = post.permalink == "/publication/2025-gf2" %}
-
+{% assign hf_dataset_url = "" %}
+{% if post.dataset and post.dataset contains "huggingface.co/datasets/" %}
+{% assign hf_dataset_url = post.dataset %}
+{% endif %}
 {% assign is_representative = false %}
 {% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Disentangled Acoustic Fields" %}
 {% assign is_representative = true %}
@@ -104,11 +106,11 @@
         {% if post.videotalk%} | <a href="{{ post.videotalk }}">Talk video</a>{% endif %}
         {% if post.poster%} | <a href="{{ post.poster }}">Poster</a>{% endif %}
         {% if post.project%} | <a href="{{ post.project }}">Project page</a>{% endif %}
-        {% if post.dataset%} | <a href="{{ post.dataset }}">Dataset</a>{% endif %}
-        {% if is_towards_iros and post.url %} | <a href="{{ post.url }}">M3DGR</a>{% endif %}
+        {% if post.permalink == "/publication/2025-gf2" and post.url contains "github.com/sjtuyinjie/M3DGR" %} | <a href="{{ post.url }}">M3DGR</a>{% endif %}
         {% if post.code%} | <a href="{{ post.code }}">Code</a> {% endif %}
+        {% if post.dataset%} | <a href="{{ post.dataset }}">Dataset</a>{% endif %}
         ]
-        {% if is_towards_iros and github_repo_extra != "" and github_repo_extra != github_repo %}
+        {% if post.permalink == "/publication/2025-gf2" and github_repo_extra != "" and github_repo_extra != github_repo %}
         <a href="{{ github_url_extra }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_extra }}" src="https://img.shields.io/github/stars/{{ github_repo_extra }}?style=flat-square" /></a>
         {% endif %}
         {% if github_repo != "" %}
@@ -116,6 +118,9 @@
         {% endif %}
         {% if github_repo_dataset != "" and github_repo_dataset != github_repo and github_repo_dataset != github_repo_extra %}
         <a href="{{ github_url_dataset }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_dataset }}" src="https://img.shields.io/github/stars/{{ github_repo_dataset }}?style=flat-square" /></a>
+        {% endif %}
+        {% if hf_dataset_url != "" %}
+        <a href="{{ hf_dataset_url }}" target="_blank" rel="noopener"><img alt="Hugging Face Dataset" src="https://img.shields.io/badge/HuggingFace-Dataset-FFD21E?style=flat-square&logo=huggingface&logoColor=black" /></a>
         {% endif %}
       </p>
     </td>

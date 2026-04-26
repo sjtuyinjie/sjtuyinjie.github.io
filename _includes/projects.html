@@ -66,8 +66,8 @@
         {% if post.videotalk%} | <a href="{{ post.videotalk }}">Talk video</a>{% endif %}
         {% if post.poster%} | <a href="{{ post.poster }}">Poster</a>{% endif %}
         {% if post.project%} | <a href="{{ post.project }}">Project page</a>{% endif %}
-        {% if post.dataset%} | <a href="{{ post.dataset }}">Dataset</a>{% endif %}
         {% if post.code%} | <a href="{{ post.code }}">Code</a> {% endif %}
+        {% if post.dataset%} | <a href="{{ post.dataset }}">Dataset</a>{% endif %}
         ]
         {% if github_repo != "" %}
         <a href="{{ github_url }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" /></a>
