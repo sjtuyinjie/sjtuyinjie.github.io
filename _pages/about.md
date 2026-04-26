@@ -214,6 +214,11 @@ redirect_from:
     font-weight: 800;
   }
 
+  .about-page .venue-note {
+    color: #b91c1c;
+    font-weight: 800;
+  }
+
   .highlight-soft {
     padding: 0.05rem 0.28rem;
     border-radius: 0.3rem;
