@@ -321,7 +321,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>. I am also an active open-source contributor, with <span class="about-highlight-red"><strong>3k+ GitHub stars</strong></span> across my projects, and my <a class="org-link" href="https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> profile has <span class="about-highlight-red"><strong>{{ site.data.scholar_stats.citations | default: 540 }}+ citations</strong></span>.<span class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span>
+My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>. I am also an active open-source contributor, with <span class="about-highlight-red"><strong>3k+ GitHub stars</strong></span> across my projects, and my <a class="org-link" href="https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> profile has <span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 520 }}"><strong>{{ site.data.scholar_stats.citations | default: 520 }} citations</strong></span>.<span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span>
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -416,6 +416,68 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 <script>
   (function () {
     var ignoredSelector = 'a, button, input, textarea, select, label, img, iframe, video, audio, canvas, svg, #clustrmaps-widget-v2, .clickable-gif';
+    var scholarUrl = 'https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en';
+    var citationNode = document.getElementById('scholar-citations');
+    var updatedNode = document.getElementById('scholar-last-updated');
+    var parseScholarCitations = function (text) {
+      var htmlPattern = /class="gsc_rsb_std">([\d,]+)<\/td>/;
+      var markdownPattern = /Citations[\s\S]*?\n\s*([\d,]+)/i;
+      var match = text.match(htmlPattern) || text.match(markdownPattern);
+      if (!match) {
+        return null;
+      }
+
+      var numeric = Number(match[1].replace(/,/g, ''));
+      return Number.isFinite(numeric) ? numeric : null;
+    };
+    var updateScholarOnVisit = function () {
+      if (!citationNode) {
+        return;
+      }
+
+      var proxies = [
+        'https://api.allorigins.win/raw?url=' + encodeURIComponent(scholarUrl),
+        'https://r.jina.ai/http://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en'
+      ];
+
+      var tryFetch = function (idx) {
+        if (idx >= proxies.length) {
+          return Promise.resolve(null);
+        }
+
+        return fetch(proxies[idx], { method: 'GET' })
+          .then(function (resp) {
+            if (!resp.ok) {
+              throw new Error('bad response');
+            }
+            return resp.text();
+          })
+          .then(function (text) {
+            var citations = parseScholarCitations(text);
+            if (citations === null) {
+              throw new Error('parse failed');
+            }
+            return citations;
+          })
+          .catch(function () {
+            return tryFetch(idx + 1);
+          });
+      };
+
+      tryFetch(0).then(function (citations) {
+        if (citations === null) {
+          return;
+        }
+        citationNode.innerHTML = '<strong>' + citations + ' citations</strong>';
+        if (updatedNode) {
+          var today = new Date().toISOString().slice(0, 10);
+          updatedNode.textContent = 'last updated: ' + today;
+        }
+      });
+    };
+
+    updateScholarOnVisit();
+
     var enhanceVisitorDots = function () {
       var widget = document.getElementById('clustrmaps-widget-v2');
       if (!widget) {

@@ -1,8 +1,6 @@
 name: Update Scholar Citations
 
 on:
-  schedule:
-    - cron: "15 2 * * *"
   workflow_dispatch:
 
 permissions:
