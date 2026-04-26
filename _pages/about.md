@@ -412,7 +412,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
       var robot = document.createElement('span');
       robot.className = 'floating-robot';
-      robot.textContent = '🤖';
+      robot.textContent = '🤖✨';
       robot.style.left = event.clientX + 'px';
       robot.style.top = event.clientY + 'px';
       robot.style.setProperty('--robot-drift', (Math.random() * 36 - 18).toFixed(0) + 'px');
