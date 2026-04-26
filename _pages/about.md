@@ -61,6 +61,15 @@ redirect_from:
     margin-bottom: 0;
   }
 
+  .about-page a.person-name {
+    color: var(--about-accent);
+    font-weight: 700;
+  }
+
+  .about-page a.person-name:hover {
+    color: #0b5f58;
+  }
+
   .about-chip-row,
   .about-links {
     display: flex;
@@ -224,11 +233,11 @@ redirect_from:
 <!-- <p class="about-eyebrow">Research Engineer · Robotics & Embodied AI</p> -->
 
 <p class="about-intro">
-I am a research engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from <strong><a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a> (上海交通大学, THE 43, QS 45, ARWU 46)</strong>, where I was advised by <strong><a href="https://sais.sjtu.edu.cn/faculty/zoudanping.html">Prof. Danping Zou</a></strong> and <strong><a href="https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm">Prof. Wenxian Yu</a></strong> at <strong><a href="https://drone.sjtu.edu.cn/">SJTU-VISYS Lab</a></strong>.
+I am a research engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from <strong><a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a> (上海交通大学, THE 43, QS 45, ARWU 46)</strong>, where I was advised by <strong><a class="person-name" href="https://sais.sjtu.edu.cn/faculty/zoudanping.html">Prof. Danping Zou</a></strong> and <strong><a class="person-name" href="https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm">Prof. Wenxian Yu</a></strong> at <strong><a href="https://drone.sjtu.edu.cn/">SJTU-VISYS Lab</a></strong>.
 </p>
 
 <p class="about-intro">
-I have also been fortunate to work with <strong><a href="https://people.csail.mit.edu/ganchuang/">Prof. Chuang Gan</a></strong> as a research intern at the <strong><a href="https://mitibmwatsonailab.mit.edu/">MIT-IBM Watson AI Lab</a></strong>, and with <strong><a href="https://mech.hku.hk/academic-staff/zhang-f/">Prof. Fu Zhang</a></strong> during <a href="https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023">SRP2023</a> at <strong><a href="https://github.com/hku-mars">HKU MaRS Lab</a></strong>. Previously, I spent productive and memorable time at <strong><a href="https://roboticsx.tencent.com/#/">Tencent Robotics X Lab</a></strong>, <strong><a href="https://www.shlab.org.cn/">Shanghai AI Lab</a></strong>, and <strong><a href="http://www.bdi.org.cn/">Shanghai Beidou Research Institute</a></strong>, working on robotics and intelligent systems.
+I have also been fortunate to work with <strong><a class="person-name" href="https://people.csail.mit.edu/ganchuang/">Prof. Chuang Gan</a></strong> as a research intern at the <strong><a href="https://mitibmwatsonailab.mit.edu/">MIT-IBM Watson AI Lab</a></strong>, and with <strong><a class="person-name" href="https://mech.hku.hk/academic-staff/zhang-f/">Prof. Fu Zhang</a></strong> during <a href="https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023">SRP2023</a> at <strong><a href="https://github.com/hku-mars">HKU MaRS Lab</a></strong>. Previously, I spent productive and memorable time at <strong><a href="https://roboticsx.tencent.com/#/">Tencent Robotics X Lab</a></strong>, <strong><a href="https://www.shlab.org.cn/">Shanghai AI Lab</a></strong>, and <strong><a href="http://www.bdi.org.cn/">Shanghai Beidou Research Institute</a></strong>, working on robotics and intelligent systems.
 </p>
 
 <p class="about-intro">
