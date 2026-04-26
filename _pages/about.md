@@ -350,7 +350,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red" data-default="3000"><strong>3k+ GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note">last updated: N/A</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red" data-default="3000"><strong>3k+ GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note">updating GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -518,7 +518,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       });
     };
 
-    var fetchGithubJson = function (url) {
+    var fetchGithubJsonDirect = function (url) {
       return fetch(url, {
         method: 'GET',
         headers: {
@@ -531,19 +531,73 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         return resp.json();
       });
     };
-    var fetchUserRepoStars = function (page, total) {
-      return fetchGithubJson('https://api.github.com/users/sjtuyinjie/repos?per_page=100&page=' + page)
+    var fetchGithubJsonViaProxy = function (url) {
+      return fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url), {
+        method: 'GET'
+      }).then(function (resp) {
+        if (!resp.ok) {
+          throw new Error('bad response');
+        }
+        return resp.json();
+      });
+    };
+    var fetchGithubJson = function (url, retries) {
+      var attemptsLeft = typeof retries === 'number' ? retries : 2;
+
+      return fetchGithubJsonDirect(url).catch(function (err) {
+        if (attemptsLeft <= 0) {
+          return fetchGithubJsonViaProxy(url);
+        }
+
+        return fetchGithubJson(url, attemptsLeft - 1);
+      });
+    };
+    var fetchUserRepoStarsFromReposApi = function (type, page, total) {
+      return fetchGithubJson('https://api.github.com/users/sjtuyinjie/repos?type=' + type + '&per_page=100&page=' + page)
         .then(function (repos) {
           var pageTotal = repos.reduce(function (sum, repo) {
             return sum + (repo.stargazers_count || 0);
           }, total);
 
           if (repos.length === 100) {
-            return fetchUserRepoStars(page + 1, pageTotal);
+            return fetchUserRepoStarsFromReposApi(type, page + 1, pageTotal);
           }
 
           return pageTotal;
         });
+    };
+    var fetchUserRepoStarsFromSearchApi = function (page, total) {
+      return fetchGithubJson('https://api.github.com/search/repositories?q=user:sjtuyinjie+fork:true&per_page=100&page=' + page)
+        .then(function (result) {
+          var repos = result.items || [];
+          var pageTotal = repos.reduce(function (sum, repo) {
+            return sum + (repo.stargazers_count || 0);
+          }, total);
+
+          if (repos.length === 100 && page < 10) {
+            return fetchUserRepoStarsFromSearchApi(page + 1, pageTotal);
+          }
+
+          return pageTotal;
+        });
+    };
+    var fetchUserRepoStars = function () {
+      var methods = [
+        function () { return fetchUserRepoStarsFromReposApi('owner', 1, 0); },
+        function () { return fetchUserRepoStarsFromReposApi('all', 1, 0); },
+        function () { return fetchUserRepoStarsFromSearchApi(1, 0); }
+      ];
+      var tryMethod = function (idx) {
+        if (idx >= methods.length) {
+          return Promise.reject(new Error('all user star methods failed'));
+        }
+
+        return methods[idx]().catch(function () {
+          return tryMethod(idx + 1);
+        });
+      };
+
+      return tryMethod(0);
     };
     var fetchRepoStars = function (fullName) {
       return fetchGithubJson('https://api.github.com/repos/' + fullName)
@@ -557,7 +611,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }
 
       Promise.all([
-        fetchUserRepoStars(1, 0),
+        fetchUserRepoStars(),
         Promise.all(featuredGithubRepos.map(fetchRepoStars))
       ]).then(function (results) {
         var userStars = results[0];
@@ -571,7 +625,9 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
           githubStarsUpdatedNode.textContent = 'last updated: ' + todayString();
         }
       }).catch(function () {
-        // Keep the static fallback if GitHub rate limits or the network is unavailable.
+        if (githubStarsUpdatedNode) {
+          githubStarsUpdatedNode.textContent = 'GitHub stars update failed';
+        }
       });
     };
 
