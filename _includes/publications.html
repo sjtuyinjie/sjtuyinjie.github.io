@@ -41,6 +41,20 @@
 {% assign github_repo_extra = github_owner_extra | append: "/" | append: github_repo_name_extra %}
 {% endif %}
 {% endif %}
+{% assign github_url_dataset = "" %}
+{% if post.dataset and post.dataset contains "github.com/" %}
+{% assign github_url_dataset = post.dataset %}
+{% endif %}
+{% assign github_repo_dataset = "" %}
+{% if github_url_dataset != "" %}
+{% assign github_repo_dataset_parts = github_url_dataset | split: "github.com/" | last | split: "/" %}
+{% if github_repo_dataset_parts.size >= 2 %}
+{% assign github_owner_dataset = github_repo_dataset_parts[0] %}
+{% assign github_repo_name_dataset = github_repo_dataset_parts[1] | split: "?" | first | split: "#" | first | remove: ".git" %}
+{% assign github_repo_dataset = github_owner_dataset | append: "/" | append: github_repo_name_dataset %}
+{% endif %}
+{% endif %}
+{% assign is_towards_iros = post.permalink == "/publication/2025-gf2" %}
 
 {% assign is_representative = false %}
 {% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Disentangled Acoustic Fields" %}
@@ -90,14 +104,19 @@
         {% if post.videotalk%} | <a href="{{ post.videotalk }}">Talk video</a>{% endif %}
         {% if post.poster%} | <a href="{{ post.poster }}">Poster</a>{% endif %}
         {% if post.project%} | <a href="{{ post.project }}">Project page</a>{% endif %}
+        {% if post.dataset%} | <a href="{{ post.dataset }}">Dataset</a>{% endif %}
+        {% if is_towards_iros and post.url %} | <a href="{{ post.url }}">M3DGR</a>{% endif %}
         {% if post.code%} | <a href="{{ post.code }}">Code</a> {% endif %}
-        {% if title contains "Towards Robust Sensor-Fusion Ground SLAM" and github_repo_extra != "" and github_repo_extra != github_repo %}
-        | <a href="{{ github_url_extra }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_extra }}" src="https://img.shields.io/github/stars/{{ github_repo_extra }}?style=flat-square" /></a>
+        ]
+        {% if is_towards_iros and github_repo_extra != "" and github_repo_extra != github_repo %}
+        <a href="{{ github_url_extra }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_extra }}" src="https://img.shields.io/github/stars/{{ github_repo_extra }}?style=flat-square" /></a>
         {% endif %}
         {% if github_repo != "" %}
-        | <a href="{{ github_url }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" /></a>
+        <a href="{{ github_url }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" /></a>
         {% endif %}
-        ]
+        {% if github_repo_dataset != "" and github_repo_dataset != github_repo and github_repo_dataset != github_repo_extra %}
+        <a href="{{ github_url_dataset }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_dataset }}" src="https://img.shields.io/github/stars/{{ github_repo_dataset }}?style=flat-square" /></a>
+        {% endif %}
       </p>
     </td>
   </tr>
