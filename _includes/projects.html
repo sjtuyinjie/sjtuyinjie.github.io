@@ -12,6 +12,22 @@
 {% assign title = post.title %}
 {% endif %}
 
+{% assign github_url = "" %}
+{% if post.code and post.code contains "github.com/" %}
+{% assign github_url = post.code %}
+{% elsif post.project and post.project contains "github.com/" %}
+{% assign github_url = post.project %}
+{% endif %}
+{% assign github_repo = "" %}
+{% if github_url != "" %}
+{% assign github_repo_parts = github_url | split: "github.com/" | last | split: "/" %}
+{% if github_repo_parts.size >= 2 %}
+{% assign github_owner = github_repo_parts[0] %}
+{% assign github_repo_name = github_repo_parts[1] | split: "?" | first | split: "#" | first | remove: ".git" %}
+{% assign github_repo = github_owner | append: "/" | append: github_repo_name %}
+{% endif %}
+{% endif %}
+
 <table class="hoverTable">
   <col style="width:25%" />
   <col style="width:75%" />
@@ -52,6 +68,12 @@
         {% if post.project%} | <a href="{{ post.project }}">Project page</a>{% endif %}
         {% if post.code%} | <a href="{{ post.code }}">Code</a> {% endif %}
         ]
+        {% if github_repo != "" %}
+        <br>
+        <a href="{{ github_url }}" target="_blank" rel="noopener">
+          <img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" />
+        </a>
+        {% endif %}
       </p>
     </td>
   </tr>
