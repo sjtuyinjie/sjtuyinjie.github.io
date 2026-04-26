@@ -246,6 +246,34 @@ redirect_from:
     max-width: 100% !important;
   }
 
+  .floating-robot {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 1.45rem;
+    transform: translate(-50%, -50%);
+    animation: robot-fly-up 1.15s ease-out forwards;
+    will-change: transform, opacity;
+  }
+
+  @keyframes robot-fly-up {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -20%) scale(0.78) rotate(-8deg);
+    }
+
+    12% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(calc(-50% + var(--robot-drift, 0px)), -130px) scale(1.25) rotate(12deg);
+    }
+  }
+
   @media (max-width: 900px) {
     .research-grid {
       grid-template-columns: repeat(2, minmax(140px, 1fr));
@@ -372,5 +400,29 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 <div class="visitor-map">
   <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cl=ffffff&w=800&t=tt"></script>
 </div>
+
+<script>
+  (function () {
+    var ignoredSelector = 'a, button, input, textarea, select, label, img, iframe, video, audio, canvas, svg, #clustrmaps-widget-v2, .clickable-gif';
+
+    document.addEventListener('click', function (event) {
+      if (event.target.closest(ignoredSelector)) {
+        return;
+      }
+
+      var robot = document.createElement('span');
+      robot.className = 'floating-robot';
+      robot.textContent = '🤖';
+      robot.style.left = event.clientX + 'px';
+      robot.style.top = event.clientY + 'px';
+      robot.style.setProperty('--robot-drift', (Math.random() * 36 - 18).toFixed(0) + 'px');
+
+      document.body.appendChild(robot);
+      robot.addEventListener('animationend', function () {
+        robot.remove();
+      });
+    });
+  })();
+</script>
 
 </div>
