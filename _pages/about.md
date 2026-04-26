@@ -12,7 +12,8 @@ redirect_from:
     --about-primary: #2563eb;
     --about-accent: #0f766e;
     --about-hover: #6d28d9;
-    --about-author: #4f46e5;
+    --about-author: var(--about-accent);
+    --about-author-bg: #ecfdf5;
     --about-ink: #1f2937;
     --about-muted: #64748b;
     --about-surface: #f8fafc;
@@ -169,16 +170,19 @@ redirect_from:
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
   }
 
-  .about-page .publication-authors {
+  .about-page .publication-authors,
+  .about-page .project-authors {
     color: #111827;
   }
 
   .about-page .publication-authors b,
-  .about-page .publication-authors strong {
+  .about-page .publication-authors strong,
+  .about-page .project-authors b,
+  .about-page .project-authors strong {
     padding: 0.03rem 0.18rem;
     border-radius: 0.25rem;
     color: var(--about-author);
-    background: #eef2ff;
+    background: var(--about-author-bg);
     font-weight: 800;
   }
 
@@ -217,7 +221,7 @@ redirect_from:
 <div class="about-page" markdown="1">
 
 <section class="about-hero" markdown="1">
-<p class="about-eyebrow">Research Engineer · Robotics & Embodied AI</p>
+<!-- <p class="about-eyebrow">Research Engineer · Robotics & Embodied AI</p> -->
 
 <p class="about-intro">
 I am a research engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from <strong><a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a> (上海交通大学, THE 43, QS 45, ARWU 46)</strong>, where I was advised by <strong><a href="https://sais.sjtu.edu.cn/faculty/zoudanping.html">Prof. Danping Zou</a></strong> and <strong><a href="https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm">Prof. Wenxian Yu</a></strong> at <strong><a href="https://drone.sjtu.edu.cn/">SJTU-VISYS Lab</a></strong>.

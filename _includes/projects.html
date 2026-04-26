@@ -33,7 +33,7 @@
       <h3 class="archive__item-title" itemprop="headline">
         {{ title }}
       </h3>
-      {% if post.authors%}{{ post.authors }}{% endif %}
+      {% if post.authors%}<span class="project-authors">{{ post.authors }}</span>{% endif %}
       <p>
         {% if post.venue%}<span style="font-style:italic">{{ post.venue }}</span> {% endif %}
         {% if post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
