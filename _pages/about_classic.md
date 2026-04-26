@@ -1,10 +1,7 @@
 ---
-permalink: /
+permalink: /about-classic/
 title: ""
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
 
