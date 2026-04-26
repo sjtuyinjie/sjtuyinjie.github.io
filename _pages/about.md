@@ -258,14 +258,14 @@ redirect_from:
     white-space: nowrap;
   }
 
-  .scholar-citation-wrap {
+  .metric-tooltip-wrap {
     position: relative;
     display: inline-block;
     cursor: help;
   }
 
-  .scholar-citation-wrap:hover .about-meta-note,
-  .scholar-citation-wrap:focus-within .about-meta-note {
+  .metric-tooltip-wrap:hover .about-meta-note,
+  .metric-tooltip-wrap:focus-within .about-meta-note {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
     visibility: visible;
@@ -350,7 +350,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="scholar-citation-wrap"><span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span></span>. I am also an active open-source contributor, with <span class="about-highlight-red"><strong>3k+ GitHub stars</strong></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red" data-default="3000"><strong>3k+ GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note">last updated: N/A</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -448,6 +448,20 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     var scholarUrl = 'https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en';
     var citationNode = document.getElementById('scholar-citations');
     var updatedNode = document.getElementById('scholar-last-updated');
+    var githubStarsNode = document.getElementById('github-stars');
+    var githubStarsUpdatedNode = document.getElementById('github-stars-last-updated');
+    var featuredGithubRepos = [
+      'SJTU-ViSYS/M2DGR',
+      'SJTU-ViSYS/Ground-Fusion',
+      'SJTU-ViSYS/M2DGR-plus',
+      'SJTU-ViSYS/Sky-GVINS'
+    ];
+    var todayString = function () {
+      return new Date().toISOString().slice(0, 10);
+    };
+    var formatNumber = function (value) {
+      return value.toLocaleString('en-US');
+    };
     var parseScholarCitations = function (text) {
       var htmlPattern = /class="gsc_rsb_std">([\d,]+)<\/td>/;
       var markdownPattern = /Citations[\s\S]*?\n\s*([\d,]+)/i;
@@ -499,13 +513,70 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         }
         citationNode.innerHTML = '<strong>' + citations + ' Google Scholar citations</strong>';
         if (updatedNode) {
-          var today = new Date().toISOString().slice(0, 10);
-          updatedNode.textContent = 'last updated: ' + today;
+          updatedNode.textContent = 'last updated: ' + todayString();
         }
       });
     };
 
+    var fetchGithubJson = function (url) {
+      return fetch(url, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/vnd.github+json'
+        }
+      }).then(function (resp) {
+        if (!resp.ok) {
+          throw new Error('bad response');
+        }
+        return resp.json();
+      });
+    };
+    var fetchUserRepoStars = function (page, total) {
+      return fetchGithubJson('https://api.github.com/users/sjtuyinjie/repos?per_page=100&page=' + page)
+        .then(function (repos) {
+          var pageTotal = repos.reduce(function (sum, repo) {
+            return sum + (repo.stargazers_count || 0);
+          }, total);
+
+          if (repos.length === 100) {
+            return fetchUserRepoStars(page + 1, pageTotal);
+          }
+
+          return pageTotal;
+        });
+    };
+    var fetchRepoStars = function (fullName) {
+      return fetchGithubJson('https://api.github.com/repos/' + fullName)
+        .then(function (repo) {
+          return repo.stargazers_count || 0;
+        });
+    };
+    var updateGithubStarsOnVisit = function () {
+      if (!githubStarsNode) {
+        return;
+      }
+
+      Promise.all([
+        fetchUserRepoStars(1, 0),
+        Promise.all(featuredGithubRepos.map(fetchRepoStars))
+      ]).then(function (results) {
+        var userStars = results[0];
+        var featuredStars = results[1].reduce(function (sum, stars) {
+          return sum + stars;
+        }, 0);
+        var totalStars = userStars + featuredStars;
+
+        githubStarsNode.innerHTML = '<strong>' + formatNumber(totalStars) + ' GitHub stars</strong>';
+        if (githubStarsUpdatedNode) {
+          githubStarsUpdatedNode.textContent = 'last updated: ' + todayString();
+        }
+      }).catch(function () {
+        // Keep the static fallback if GitHub rate limits or the network is unavailable.
+      });
+    };
+
     updateScholarOnVisit();
+    updateGithubStarsOnVisit();
 
     var enhanceVisitorDots = function () {
       var widget = document.getElementById('clustrmaps-widget-v2');
