@@ -31,6 +31,10 @@ redirect_from:
     text-decoration: underline;
   }
 
+  .sidebar .author__name {
+    text-align: center;
+  }
+
   .about-hero {
     margin: 0 0 1.6rem;
     padding: 1.4rem 1.5rem;
@@ -98,6 +102,7 @@ redirect_from:
   }
 
   .about-chip-row {
+    justify-content: center;
     margin-top: 1rem;
   }
 
