@@ -44,7 +44,8 @@
       {% if post.authors%}<span class="publication-authors">{{ post.authors }}</span>{% endif %}
       <p>
         {% if post.venue%}<span style="font-style:italic">{{ post.venue }}</span> {% endif %}
-        {% if post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
+        {% if post.venue_year %}{{ post.venue_year }}{% elsif post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
+        {% if post.venue_note %} ({{ post.venue_note }}){% endif %}
         {% if post.oral%}<font color="red"> &nbsp; (Oral Presentation)</font> {% endif %}
         <br>
         [{% if post.pdf%} <a href="{{ post.pdf }}">Paper</a>{% endif %}
