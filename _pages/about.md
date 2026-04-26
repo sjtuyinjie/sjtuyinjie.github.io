@@ -244,6 +244,9 @@ redirect_from:
 
   .visitor-map #clustrmaps-widget-v2 {
     max-width: 100% !important;
+    transform: scale(1.08);
+    transform-origin: center;
+    filter: contrast(1.18) saturate(1.1);
   }
 
   .floating-robot {
