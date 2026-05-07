@@ -4,14 +4,21 @@ import pathlib
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 
 SCHOLAR_URL = "https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en"
 OUTPUT_PATH = pathlib.Path("_data/scholar_stats.yml")
+SCHOLAR_SOURCES = [
+    SCHOLAR_URL,
+    "https://api.allorigins.win/raw?url="
+    + urllib.parse.quote(SCHOLAR_URL, safe=""),
+    "https://r.jina.ai/http://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en",
+]
 
 
-def fetch_html(url: str) -> str:
+def fetch_text(url: str) -> str:
     request = urllib.request.Request(
         url,
         headers={
@@ -26,13 +33,41 @@ def fetch_html(url: str) -> str:
         return response.read().decode("utf-8", errors="ignore")
 
 
-def extract_citations(html: str) -> int:
-    # Google Scholar profile sidebar usually renders total citations
-    # as the first "gsc_rsb_std" value.
-    matches = re.findall(r'class="gsc_rsb_std">([\d,]+)</td>', html)
-    if not matches:
-        raise ValueError("Failed to locate citation count in Scholar page")
-    return int(matches[0].replace(",", ""))
+def fetch_text_with_retries(url: str, retries: int = 2) -> str:
+    last_error: Exception | None = None
+    for _ in range(retries + 1):
+        try:
+            return fetch_text(url)
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last_error = exc
+    raise last_error or RuntimeError("Failed to fetch Scholar source")
+
+
+def extract_citations(text: str) -> int:
+    patterns = [
+        r'class="gsc_rsb_std">([\d,]+)</td>',
+        r"<td[^>]*>\s*Citations\s*</td>\s*<td[^>]*>\s*([\d,]+)\s*</td>",
+        r"Citations[\s\S]*?\n\s*([\d,]+)",
+        r"Citations\s+([\d,]+)",
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, text, flags=re.IGNORECASE)
+        if match:
+            return int(match.group(1).replace(",", ""))
+
+    raise ValueError("Failed to locate citation count in Scholar page")
+
+
+def fetch_citations() -> int:
+    errors = []
+    for source in SCHOLAR_SOURCES:
+        try:
+            return extract_citations(fetch_text_with_retries(source))
+        except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+            errors.append(f"{source}: {exc}")
+
+    raise RuntimeError("; ".join(errors))
 
 
 def write_yaml(citations: int) -> None:
@@ -43,10 +78,9 @@ def write_yaml(citations: int) -> None:
 
 def main() -> int:
     try:
-        html = fetch_html(SCHOLAR_URL)
-        citations = extract_citations(html)
+        citations = fetch_citations()
         write_yaml(citations)
-    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+    except RuntimeError as exc:
         print(f"[scholar-update] {exc}", file=sys.stderr)
         # Keep workflow green when Scholar blocks requests temporarily.
         return 0

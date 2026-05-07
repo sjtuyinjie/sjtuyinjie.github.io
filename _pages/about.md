@@ -350,7 +350,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red" data-default="{{ site.data.scholar_stats.citations | default: 540 }}"><strong>{{ site.data.scholar_stats.citations | default: 540 }} Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">last updated: {{ site.data.scholar_stats.updated_at | default: "N/A" }}</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red" data-default="3000"><strong>3k+ GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note">updating GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong>, <a class="work-link" href="https://github.com/Joanna-HE/LIGO.">LIGO</a>, <a class="work-link" href="https://github.com/DelinQu/EN-SLAM">EN-SLAM</a>, <a class="work-link" href="https://github.com/sjtuyinjie/Ground-Challenge">Ground-Challenge</a>, and <a class="work-link" href="https://github.com/SJTU-ViSYS/Sky-GVINS">Sky-GVINS</a>, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -456,16 +456,63 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       'SJTU-ViSYS/M2DGR-plus',
       'SJTU-ViSYS/Sky-GVINS'
     ];
-    var todayString = function () {
-      return new Date().toISOString().slice(0, 10);
+    var scholarCacheKey = 'aboutScholarCitations';
+    var githubStarsCacheKey = 'aboutGithubStars';
+    var nowString = function () {
+      return new Date().toLocaleString();
     };
     var formatNumber = function (value) {
       return value.toLocaleString('en-US');
     };
+    var readMetricCache = function (key) {
+      try {
+        var cached = localStorage.getItem(key);
+        return cached ? JSON.parse(cached) : null;
+      } catch (err) {
+        return null;
+      }
+    };
+    var writeMetricCache = function (key, value) {
+      var cache = {
+        value: value,
+        updatedAt: nowString()
+      };
+
+      try {
+        localStorage.setItem(key, JSON.stringify(cache));
+      } catch (err) {
+        return cache;
+      }
+
+      return cache;
+    };
+    var renderMetricUpdate = function (node, updatedNode, value, label, cache) {
+      if (node) {
+        node.innerHTML = '<strong>' + formatNumber(value) + ' ' + label + '</strong>';
+      }
+      if (updatedNode && cache && cache.updatedAt) {
+        updatedNode.textContent = 'last update: ' + cache.updatedAt;
+      }
+    };
     var parseScholarCitations = function (text) {
-      var htmlPattern = /class="gsc_rsb_std">([\d,]+)<\/td>/;
-      var markdownPattern = /Citations[\s\S]*?\n\s*([\d,]+)/i;
-      var match = text.match(htmlPattern) || text.match(markdownPattern);
+      var htmlPatterns = [
+        /class="gsc_rsb_std">([\d,]+)<\/td>/,
+        /<td[^>]*>\s*Citations\s*<\/td>\s*<td[^>]*>\s*([\d,]+)\s*<\/td>/i
+      ];
+      var markdownPatterns = [
+        /Citations[\s\S]*?\n\s*([\d,]+)/i,
+        /Citations\s+([\d,]+)/i
+      ];
+      var patterns = htmlPatterns.concat(markdownPatterns);
+      var match = null;
+
+      for (var i = 0; i < patterns.length; i += 1) {
+        match = text.match(patterns[i]);
+        if (match) {
+          break;
+        }
+      }
+
       if (!match) {
         return null;
       }
@@ -473,12 +520,33 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       var numeric = Number(match[1].replace(/,/g, ''));
       return Number.isFinite(numeric) ? numeric : null;
     };
+    var fetchTextWithRetries = function (url, retries) {
+      var attemptsLeft = typeof retries === 'number' ? retries : 2;
+
+      return fetch(url, { method: 'GET' }).then(function (resp) {
+        if (!resp.ok) {
+          throw new Error('bad response');
+        }
+        return resp.text();
+      }).catch(function (err) {
+        if (attemptsLeft <= 0) {
+          throw err;
+        }
+        return fetchTextWithRetries(url, attemptsLeft - 1);
+      });
+    };
     var updateScholarOnVisit = function () {
       if (!citationNode) {
         return;
       }
 
+      var cachedScholar = readMetricCache(scholarCacheKey);
+      if (cachedScholar && Number.isFinite(cachedScholar.value)) {
+        renderMetricUpdate(citationNode, updatedNode, cachedScholar.value, 'Google Scholar citations', cachedScholar);
+      }
+
       var proxies = [
+        scholarUrl,
         'https://api.allorigins.win/raw?url=' + encodeURIComponent(scholarUrl),
         'https://r.jina.ai/http://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en'
       ];
@@ -488,13 +556,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
           return Promise.resolve(null);
         }
 
-        return fetch(proxies[idx], { method: 'GET' })
-          .then(function (resp) {
-            if (!resp.ok) {
-              throw new Error('bad response');
-            }
-            return resp.text();
-          })
+        return fetchTextWithRetries(proxies[idx], 2)
           .then(function (text) {
             var citations = parseScholarCitations(text);
             if (citations === null) {
@@ -511,10 +573,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         if (citations === null) {
           return;
         }
-        citationNode.innerHTML = '<strong>' + citations + ' Google Scholar citations</strong>';
-        if (updatedNode) {
-          updatedNode.textContent = 'last updated: ' + todayString();
-        }
+        renderMetricUpdate(citationNode, updatedNode, citations, 'Google Scholar citations', writeMetricCache(scholarCacheKey, citations));
       });
     };
 
@@ -541,12 +600,26 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         return resp.json();
       });
     };
+    var fetchGithubJsonFromJina = function (url) {
+      return fetch('https://r.jina.ai/http://' + url.replace(/^https?:\/\//, ''), {
+        method: 'GET'
+      }).then(function (resp) {
+        if (!resp.ok) {
+          throw new Error('bad response');
+        }
+        return resp.text();
+      }).then(function (text) {
+        return JSON.parse(text);
+      });
+    };
     var fetchGithubJson = function (url, retries) {
       var attemptsLeft = typeof retries === 'number' ? retries : 2;
 
       return fetchGithubJsonDirect(url).catch(function (err) {
         if (attemptsLeft <= 0) {
-          return fetchGithubJsonViaProxy(url);
+          return fetchGithubJsonViaProxy(url).catch(function () {
+            return fetchGithubJsonFromJina(url);
+          });
         }
 
         return fetchGithubJson(url, attemptsLeft - 1);
@@ -605,14 +678,37 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
           return repo.stargazers_count || 0;
         });
     };
+    var fetchRepoStarsWithFallback = function (fullName) {
+      return fetchRepoStars(fullName).catch(function () {
+        return fetchTextWithRetries('https://r.jina.ai/http://github.com/' + fullName, 1)
+          .then(function (text) {
+            var match = text.match(/([\d,.]+[kK]?)\s+stars/i);
+            if (!match) {
+              throw new Error('repo star parse failed');
+            }
+            var raw = match[1].replace(/,/g, '');
+            var multiplier = /k$/i.test(raw) ? 1000 : 1;
+            var numeric = Number(raw.replace(/k$/i, '')) * multiplier;
+            if (!Number.isFinite(numeric)) {
+              throw new Error('repo star parse failed');
+            }
+            return Math.round(numeric);
+          });
+      });
+    };
     var updateGithubStarsOnVisit = function () {
       if (!githubStarsNode) {
         return;
       }
 
+      var cachedGithubStars = readMetricCache(githubStarsCacheKey);
+      if (cachedGithubStars && Number.isFinite(cachedGithubStars.value)) {
+        renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, cachedGithubStars.value, 'GitHub stars', cachedGithubStars);
+      }
+
       Promise.all([
         fetchUserRepoStars(),
-        Promise.all(featuredGithubRepos.map(fetchRepoStars))
+        Promise.all(featuredGithubRepos.map(fetchRepoStarsWithFallback))
       ]).then(function (results) {
         var userStars = results[0];
         var featuredStars = results[1].reduce(function (sum, stars) {
@@ -620,12 +716,9 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         }, 0);
         var totalStars = userStars + featuredStars;
 
-        githubStarsNode.innerHTML = '<strong>' + formatNumber(totalStars) + ' GitHub stars</strong>';
-        if (githubStarsUpdatedNode) {
-          githubStarsUpdatedNode.textContent = 'last updated: ' + todayString();
-        }
+        renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, totalStars, 'GitHub stars', writeMetricCache(githubStarsCacheKey, totalStars));
       }).catch(function () {
-        if (githubStarsUpdatedNode) {
+        if (!cachedGithubStars && githubStarsUpdatedNode) {
           githubStarsUpdatedNode.textContent = 'GitHub stars update failed';
         }
       });
