@@ -396,17 +396,17 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
   </div>
   
   <div class="research-card">
-    <a href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">
+    <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank">
       <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
     </a>
-    <p class="research-card-title"><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2" target="_blank">Ground-Fusion</a></p>
+    <p class="research-card-title"><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank">Ground-Fusion</a></p>
   </div>
   
   <div class="research-card">
     <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">
       <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
     </a>
-    <p class="research-card-title"><a class="work-link" href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">DAF</a></p>
+    <p class="research-card-title"><a class="work-link" href="https://github.com/sjtuyinjie/DAF" target="_blank">DAF</a></p>
   </div>
   
   <div class="research-card">
