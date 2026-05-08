@@ -458,6 +458,11 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     ];
     var scholarCacheKey = 'aboutScholarCitations';
     var githubStarsCacheKey = 'aboutGithubStars';
+    var scholarMetricRendered = false;
+    var sharedScholarFallback = {
+      value: Number('{{ site.data.scholar_stats.citations | default: 0 }}'),
+      updatedAt: '{{ site.data.scholar_stats.updated_at | default: "" }}'
+    };
     var nowString = function () {
       return new Date().toLocaleString();
     };
@@ -489,6 +494,9 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     var renderMetricUpdate = function (node, updatedNode, value, label, cache) {
       if (node) {
         node.innerHTML = '<strong>' + formatNumber(value) + ' ' + label + '</strong>';
+      }
+      if (node === citationNode) {
+        scholarMetricRendered = true;
       }
       if (updatedNode && cache && cache.updatedAt) {
         updatedNode.textContent = 'last update: ' + cache.updatedAt;
@@ -544,6 +552,14 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       if (cachedScholar && Number.isFinite(cachedScholar.value)) {
         renderMetricUpdate(citationNode, updatedNode, cachedScholar.value, 'Google Scholar citations', cachedScholar);
       }
+
+      setTimeout(function () {
+        if (!scholarMetricRendered && Number.isFinite(sharedScholarFallback.value) && sharedScholarFallback.value > 0) {
+          renderMetricUpdate(citationNode, updatedNode, sharedScholarFallback.value, 'Google Scholar citations', {
+            updatedAt: sharedScholarFallback.updatedAt || 'shared fallback'
+          });
+        }
+      }, 3000);
 
       var proxies = [
         scholarUrl,
