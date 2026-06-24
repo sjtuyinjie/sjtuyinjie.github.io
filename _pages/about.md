@@ -156,7 +156,8 @@ redirect_from:
     transform: translateY(-3px);
   }
 
-  .research-card img {
+  .research-card img,
+  .research-card video {
     width: 100%;
     height: 125px;
     object-fit: contain;
@@ -388,6 +389,15 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 ## Selected Research
 
 <div class="research-grid">
+  <div class="research-card">
+    <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank">
+      <video autoplay muted loop playsinline preload="metadata" aria-label="Ultra-Fusion demo">
+        <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
+      </video>
+    </a>
+    <p class="research-card-title"><a class="work-link" href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank">Ultra-Fusion</a></p>
+  </div>
+
   <div class="research-card">
     <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">
       <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
