@@ -141,26 +141,25 @@ redirect_from:
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: #60a5fa #e2e8f0;
+    scrollbar-color: #cbd5e1 transparent;
   }
 
   .research-grid::-webkit-scrollbar {
-    height: 10px;
+    height: 6px;
   }
 
   .research-grid::-webkit-scrollbar-track {
     border-radius: 999px;
-    background: #e2e8f0;
+    background: transparent;
   }
 
   .research-grid::-webkit-scrollbar-thumb {
-    border: 2px solid #e2e8f0;
     border-radius: 999px;
-    background: #60a5fa;
+    background: rgba(148, 163, 184, 0.45);
   }
 
   .research-grid::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
+    background: rgba(148, 163, 184, 0.7);
   }
 
   .research-card {
