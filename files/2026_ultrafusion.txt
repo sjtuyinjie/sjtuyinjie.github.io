@@ -1,0 +1,6 @@
+@article{tian2026ultrafusion,
+  author  = {Yihong Tian and Junjie Zhang and Liuyang Li and Deteng Zhang and Yunfei Zuo and Jie Yin},
+  title   = {Ultra-Fusion: A Resilient Tightly-Coupled Multi-Sensor Fusion SLAM Framework under Sensor Degradation and Spatiotemporal Perturbation for Intelligent Transportation Systems},
+  journal = {arXiv preprint arXiv:2606.21223},
+  year    = {2026},
+}
