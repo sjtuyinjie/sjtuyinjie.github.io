@@ -303,7 +303,9 @@ redirect_from:
   .visitor-map {
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
+    overflow: visible;
+    min-height: 280px;
     margin-top: 0.8rem;
     padding: 0.8rem;
     border: 1px solid #e2e8f0;
@@ -313,7 +315,9 @@ redirect_from:
   }
 
   .visitor-map #clustrmaps-widget-v2 {
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    min-height: 260px;
   }
 
   .floating-robot {
@@ -471,16 +475,11 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
 ## Map
 
-
-
-
+{::nomarkdown}
 <div class="visitor-map">
-<script
-  type="text/javascript"
-  id="clustrmaps"
-  src="//clustrmaps.com/map_v2.js?d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cl=ffffff&w=800&t=tt">
-</script>
+<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cl=ffffff&w=800&t=tt"></script>
 </div>
+{:/nomarkdown}
 
 <script>
   (function () {
@@ -782,37 +781,6 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
     updateScholarOnVisit();
     updateGithubStarsOnVisit();
-
-    var enhanceVisitorDots = function () {
-      var widget = document.getElementById('clustrmaps-widget-v2');
-      if (!widget) {
-        return false;
-      }
-
-      var layers = widget.querySelectorAll('canvas, svg');
-      if (layers.length <= 1) {
-        return false;
-      }
-
-      for (var i = 1; i < layers.length; i += 1) {
-        layers[i].style.transform = 'scale(2)';
-        layers[i].style.transformOrigin = 'center';
-      }
-
-      return true;
-    };
-
-    if (!enhanceVisitorDots()) {
-      var observer = new MutationObserver(function () {
-        if (enhanceVisitorDots()) {
-          observer.disconnect();
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-      setTimeout(function () {
-        observer.disconnect();
-      }, 8000);
-    }
 
     document.addEventListener('click', function (event) {
       if (event.target.closest(ignoredSelector)) {
