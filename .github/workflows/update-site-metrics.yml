@@ -1,15 +1,16 @@
-name: Update Scholar Citations
+name: Update Site Metrics
 
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 3 * * *"
+    - cron: "17 15 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  update-citations:
+  update-metrics:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,11 +21,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Update scholar stats
+      - name: Update Scholar citations
         run: python scripts/update_scholar_citations.py
+
+      - name: Update GitHub stars
+        run: python scripts/update_github_stars.py
 
       - name: Auto commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update Google Scholar citations"
-          file_pattern: _data/scholar_stats.yml
+          commit_message: "chore: update site metrics"
+          file_pattern: _data/scholar_stats.yml _data/github_stars.yml

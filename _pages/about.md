@@ -466,9 +466,14 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     var scholarCacheKey = 'aboutScholarCitations';
     var githubStarsCacheKey = 'aboutGithubStars';
     var scholarMetricRendered = false;
+    var githubMetricRendered = false;
     var sharedScholarFallback = {
       value: Number('{{ site.data.scholar_stats.citations | default: 0 }}'),
       updatedAt: '{{ site.data.scholar_stats.updated_at | default: "" }}'
+    };
+    var sharedGithubFallback = {
+      value: Number('{{ site.data.github_stars.stars | default: 0 }}'),
+      updatedAt: '{{ site.data.github_stars.updated_at | default: "" }}'
     };
     var nowString = function () {
       return new Date().toLocaleString();
@@ -504,6 +509,9 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }
       if (node === citationNode) {
         scholarMetricRendered = true;
+      }
+      if (node === githubStarsNode) {
+        githubMetricRendered = true;
       }
       if (updatedNode && cache && cache.updatedAt) {
         updatedNode.textContent = 'last update: ' + cache.updatedAt;
@@ -729,6 +737,14 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, cachedGithubStars.value, 'GitHub stars', cachedGithubStars);
       }
 
+      setTimeout(function () {
+        if (!githubMetricRendered && Number.isFinite(sharedGithubFallback.value) && sharedGithubFallback.value > 0) {
+          renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, sharedGithubFallback.value, 'GitHub stars', {
+            updatedAt: sharedGithubFallback.updatedAt || 'shared fallback'
+          });
+        }
+      }, 3000);
+
       Promise.all([
         fetchUserRepoStars(),
         Promise.all(featuredGithubRepos.map(fetchRepoStarsWithFallback))
@@ -741,6 +757,12 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
         renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, totalStars, 'GitHub stars', writeMetricCache(githubStarsCacheKey, totalStars));
       }).catch(function () {
+        if (!githubMetricRendered && !cachedGithubStars && Number.isFinite(sharedGithubFallback.value) && sharedGithubFallback.value > 0) {
+          renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, sharedGithubFallback.value, 'GitHub stars', {
+            updatedAt: sharedGithubFallback.updatedAt || 'shared fallback'
+          });
+          return;
+        }
         if (!cachedGithubStars && githubStarsUpdatedNode) {
           githubStarsUpdatedNode.textContent = 'GitHub stars update failed';
         }
