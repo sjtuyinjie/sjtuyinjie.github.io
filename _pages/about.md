@@ -19,6 +19,7 @@ redirect_from:
     --about-muted: #64748b;
     --about-surface: #f8fafc;
     --about-border: #dbeafe;
+    overflow: visible;
   }
 
   .about-page a {
@@ -44,6 +45,7 @@ redirect_from:
       radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 32%),
       linear-gradient(135deg, #ffffff 0%, var(--about-surface) 100%);
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    overflow: visible;
   }
 
   .about-eyebrow {
@@ -60,6 +62,7 @@ redirect_from:
     color: var(--about-ink);
     font-size: 1.02rem;
     line-height: 1.72;
+    overflow: visible;
   }
 
   .about-intro:last-child {
@@ -268,29 +271,31 @@ redirect_from:
     position: absolute;
     bottom: calc(100% + 0.45rem);
     left: 50%;
-    z-index: 10;
-    display: inline-block;
+    z-index: 20;
+    display: block;
     width: max-content;
-    max-width: min(220px, 80vw);
-    padding: 0.25rem 0.45rem;
+    max-width: none;
+    padding: 0.3rem 0.55rem;
     border-radius: 0.35rem;
     margin-top: 0;
     background: rgba(15, 23, 42, 0.92);
     color: #ffffff;
     font-size: 0.78rem;
-    line-height: 1.3;
+    line-height: 1.35;
     opacity: 0;
     pointer-events: none;
     transform: translateX(-50%) translateY(0.25rem);
     transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
     visibility: hidden;
     white-space: nowrap;
+    overflow: visible;
   }
 
   .metric-tooltip-wrap {
     position: relative;
     display: inline-block;
     cursor: help;
+    overflow: visible;
   }
 
   .metric-tooltip-wrap:hover .about-meta-note,
@@ -476,7 +481,11 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       updatedAt: '{{ site.data.github_stars.updated_at | default: "" }}'
     };
     var nowString = function () {
-      return new Date().toLocaleString();
+      var d = new Date();
+      var pad = function (n) {
+        return String(n).padStart(2, '0');
+      };
+      return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
     };
     var formatNumber = function (value) {
       return value.toLocaleString('en-US');
