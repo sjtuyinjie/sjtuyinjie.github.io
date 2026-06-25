@@ -437,7 +437,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 
 ## Publication
 <p class="about-section-note">
-Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous manipulation</strong>, and <strong>whole-body control</strong>. My long-term goal is to build practical intelligent robots that can operate safely and reliably in human environments, assisting people with everyday physical tasks. Previously, I worked on <strong>multi-sensor fusion SLAM algorithms and benchmarks under corner cases</strong> and <strong>multimodal navigation</strong>. Representative works are <span class="highlight-soft">highlighted</span>.
+Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous manipulation</strong>, and <strong>whole-body control</strong>. My long-term goal is to build practical intelligent robots that can operate safely and reliably in human environments, assisting people with everyday physical tasks. Previously, I worked on <strong>multi-sensor fusion SLAM algorithms</strong> and <strong>benchmarks under corner cases</strong> and <strong>multimodal navigation</strong>. Representative works are <span class="highlight-soft">highlighted</span>.
 </p>
 
 {% for post in site.publications reversed %} {% include publications.html %} {% endfor %}
