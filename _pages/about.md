@@ -300,26 +300,6 @@ redirect_from:
     visibility: visible;
   }
 
-  .visitor-map {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    min-height: 280px;
-    margin-top: 0.8rem;
-    padding: 0.8rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    background: #ffffff;
-    text-align: left;
-  }
-
-  .visitor-map #clustrmaps-widget-v2 {
-    width: 100% !important;
-    max-width: 800px !important;
-    min-height: 260px;
-  }
-
   .floating-robot {
     position: fixed;
     left: 0;
@@ -356,10 +336,6 @@ redirect_from:
     .research-card {
       flex-basis: 200px;
       min-width: 200px;
-    }
-
-    .visitor-map {
-      padding: 0.5rem;
     }
   }
 </style>
@@ -473,17 +449,9 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 ## Teaching
 {% include teaching.html %}
 
-## Map
-
-{::nomarkdown}
-<div class="visitor-map">
-<script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=vTCiAvCm0aG85BtQG8a4pBHf0ElbAyAwmz5KIj6EvrY&co=2d78ad&cl=ffffff&w=800&t=tt"></script>
-</div>
-{:/nomarkdown}
-
 <script>
   (function () {
-    var ignoredSelector = 'a, button, input, textarea, select, label, img, iframe, video, audio, canvas, svg, #clustrmaps-widget-v2, .clickable-gif';
+    var ignoredSelector = 'a, button, input, textarea, select, label, img, iframe, video, audio, canvas, svg, .clickable-gif';
     var scholarUrl = 'https://scholar.google.com/citations?user=Y8LVRYIAAAAJ&hl=en';
     var citationNode = document.getElementById('scholar-citations');
     var updatedNode = document.getElementById('scholar-last-updated');
