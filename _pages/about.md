@@ -609,6 +609,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       var current = 0;
       var timer = null;
       var videoEndHandler = null;
+      var AUTO_INTERVAL = 10000;
 
       function clearAdvanceTimer() {
         if (timer) {
@@ -643,9 +644,26 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         img.src = src + '?cycle=' + Date.now();
       }
 
-      function playSlideMedia(slide, onDone) {
+      function startSlideMedia(slide) {
         var video = slide.querySelector('video');
         var img = slide.querySelector('img');
+
+        if (video) {
+          video.currentTime = 0;
+          var playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function () {});
+          }
+          return;
+        }
+
+        if (img) {
+          restartGif(img);
+        }
+      }
+
+      function scheduleAfterFullPlayback(slide, onDone) {
+        var video = slide.querySelector('video');
 
         if (video) {
           videoEndHandler = function () {
@@ -663,13 +681,14 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           return;
         }
 
+        var img = slide.querySelector('img');
         if (img) {
           restartGif(img);
           timer = setTimeout(onDone, slideDuration(slide));
         }
       }
 
-      function showSlide(index) {
+      function showSlide(index, fromDotClick) {
         clearAdvanceTimer();
         resetSlideMedia(slides[current]);
         slides[current].classList.remove('active');
@@ -677,19 +696,28 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         current = ((index % slides.length) + slides.length) % slides.length;
         slides[current].classList.add('active');
         dots[current].classList.add('active');
-        playSlideMedia(slides[current], function () {
-          showSlide(current + 1);
-        });
+
+        if (fromDotClick) {
+          scheduleAfterFullPlayback(slides[current], function () {
+            showSlide(current + 1, false);
+          });
+          return;
+        }
+
+        startSlideMedia(slides[current]);
+        timer = setTimeout(function () {
+          showSlide(current + 1, false);
+        }, AUTO_INTERVAL);
       }
 
       dots.forEach(function (dot) {
         dot.addEventListener('click', function (event) {
           event.preventDefault();
-          showSlide(parseInt(this.dataset.index, 10));
+          showSlide(parseInt(this.dataset.index, 10), true);
         });
       });
 
-      showSlide(0);
+      showSlide(0, false);
     });
   });
 </script>
