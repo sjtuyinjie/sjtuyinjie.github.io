@@ -133,75 +133,184 @@ redirect_from:
     line-height: 1.65;
   }
 
-  .research-grid {
-    display: flex;
-    flex-wrap: nowrap;
+  .research-themes {
+    margin: 0.5rem 0 1.8rem;
+  }
+
+  .research-intro {
+    margin: 0 0 1.25rem;
+    color: var(--about-ink);
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
-    margin: 1rem 0 1.6rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 0.65rem;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 transparent;
   }
 
-  .research-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .research-grid::-webkit-scrollbar-track {
-    border-radius: 999px;
-    background: transparent;
-  }
-
-  .research-grid::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: rgba(148, 163, 184, 0.45);
-  }
-
-  .research-grid::-webkit-scrollbar-thumb:hover {
-    background: rgba(148, 163, 184, 0.7);
-  }
-
-  .research-card {
+  .theme-card {
     display: flex;
-    flex: 0 0 220px;
-    min-width: 220px;
-    min-height: 180px;
     flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     background: #ffffff;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
-    scroll-snap-align: start;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   }
 
-  .research-card:hover {
+  .theme-card:hover {
     border-color: #93c5fd;
     box-shadow: 0 16px 32px rgba(37, 99, 235, 0.14);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
-  .research-card img,
-  .research-card video {
-    width: 100%;
-    height: 125px;
-    object-fit: contain;
-    padding: 0.75rem;
+  .theme-preview {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     background: linear-gradient(180deg, #f8fafc, #eef6ff);
   }
 
-  .research-card-title {
+  .theme-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+  }
+
+  .theme-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .theme-slide a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-slide img,
+  .theme-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.65rem;
+  }
+
+  .theme-slide-label {
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.55rem;
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .theme-slide-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 0.55rem;
+    z-index: 2;
+    display: flex;
+    gap: 0.35rem;
+    transform: translateX(-50%);
+  }
+
+  .theme-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.55);
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
+  }
+
+  .theme-dot.active {
+    background: var(--about-primary);
+    transform: scale(1.15);
+  }
+
+  .theme-body {
+    padding: 1rem 1.05rem 1.1rem;
+  }
+
+  .theme-header {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .theme-icon {
+    display: inline-flex;
+    width: 1.85rem;
+    height: 1.85rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.55rem;
+    background: rgba(239, 246, 255, 0.95);
+    color: var(--about-primary);
+    font-size: 0.82rem;
+  }
+
+  .theme-card h3 {
     margin: 0;
-    padding: 0.75rem 0.9rem 0.9rem;
-    color: var(--about-ink);
+    color: #0f172a;
+    font-size: 1.02rem;
     font-weight: 700;
-    text-align: center;
+  }
+
+  .theme-tagline {
+    margin: 0 0 0.45rem;
+    color: var(--about-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .theme-description {
+    margin: 0 0 0.75rem;
+    color: var(--about-muted);
+    font-size: 0.84rem;
+    line-height: 1.62;
+  }
+
+  .theme-papers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .theme-paper-tag {
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.35rem;
+    background: rgba(239, 246, 255, 0.95);
+    color: #1d4ed8;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+
+  .theme-paper-tag:hover {
+    background: var(--about-primary);
+    color: #ffffff;
+    text-decoration: none;
   }
 
   .about-page h2 {
@@ -333,14 +442,15 @@ redirect_from:
     }
   }
 
+  @media (max-width: 768px) {
+    .themes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 520px) {
     .about-hero {
       padding: 1.1rem;
-    }
-
-    .research-card {
-      flex-basis: 200px;
-      min-width: 200px;
     }
   }
 </style>
@@ -394,46 +504,132 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 ## News
 {% include news.html %}
 
-## Selected Research
+## Research Themes
 
-<div class="research-grid">
-  <div class="research-card">
-    <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank">
-      <video autoplay muted loop playsinline preload="metadata" aria-label="Ultra-Fusion demo">
-        <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
-      </video>
-    </a>
-    <p class="research-card-title"><a class="work-link" href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank">Ultra-Fusion</a></p>
-  </div>
+<div class="research-themes">
 
-  <div class="research-card">
-    <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">
-      <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
-    </a>
-    <p class="research-card-title"><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank">M2DGR</a></p>
+<p class="research-intro">Reliable localization and rich scene understanding are prerequisites for robots that operate in the real world. My research builds this foundation through <strong>multi-sensor fusion SLAM</strong> and <strong>multimodal navigation</strong> — unifying LiDAR, vision, IMU, GNSS, audio, and reflectance cues for robust perception and autonomous mobility under corner cases.</p>
+
+<div class="themes-grid">
+
+<div class="theme-card">
+  <div class="theme-preview" data-interval="5000">
+    <div class="theme-slide active">
+      <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Ultra-Fusion demo">
+          <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
+        </video>
+      </a>
+      <span class="theme-slide-label">Ultra-Fusion</span>
+    </div>
+    <div class="theme-slide">
+      <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank" rel="noopener noreferrer">
+        <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
+      </a>
+      <span class="theme-slide-label">M2DGR</span>
+    </div>
+    <div class="theme-slide">
+      <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer">
+        <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
+      </a>
+      <span class="theme-slide-label">Ground-Fusion</span>
+    </div>
+    <div class="theme-slide">
+      <a href="https://sjtuyinjie.github.io/M3DGR-website/" target="_blank" rel="noopener noreferrer">
+        <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
+      </a>
+      <span class="theme-slide-label">M3DGR</span>
+    </div>
+    <div class="theme-slide-dots">
+      <button class="theme-dot active" data-index="0" aria-label="Show Ultra-Fusion"></button>
+      <button class="theme-dot" data-index="1" aria-label="Show M2DGR"></button>
+      <button class="theme-dot" data-index="2" aria-label="Show Ground-Fusion"></button>
+      <button class="theme-dot" data-index="3" aria-label="Show M3DGR"></button>
+    </div>
   </div>
-  
-  <div class="research-card">
-    <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank">
-      <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
-    </a>
-    <p class="research-card-title"><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank">Ground-Fusion</a></p>
-  </div>
-  
-  <div class="research-card">
-    <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank">
-      <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
-    </a>
-    <p class="research-card-title"><a class="work-link" href="https://github.com/sjtuyinjie/DAF" target="_blank">DAF</a></p>
-  </div>
-  
-  <div class="research-card">
-    <a href="https://github.com/sjtuyinjie/M3DGR" target="_blank">
-      <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
-    </a>
-    <p class="research-card-title"><a class="work-link" href="https://github.com/sjtuyinjie/M3DGR" target="_blank">M3DGR</a></p>
+  <div class="theme-body">
+    <div class="theme-header">
+      <div class="theme-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+      <h3>Multi-sensor Fusion SLAM</h3>
+    </div>
+    <p class="theme-tagline">Where is the robot?</p>
+    <p class="theme-description">Tightly-coupled fusion frameworks and large-scale benchmarks that keep ground robots localized under sensor degradation, spatiotemporal perturbation, and challenging outdoor corner cases.</p>
+    <div class="theme-papers">
+      <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ultra-Fusion</a>
+      <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ground-Fusion</a>
+      <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">M2DGR</a>
+      <a href="https://sjtuyinjie.github.io/M3DGR-website/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">M3DGR</a>
+    </div>
   </div>
 </div>
+
+<div class="theme-card">
+  <div class="theme-preview" data-interval="5000">
+    <div class="theme-slide active">
+      <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer">
+        <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
+      </a>
+      <span class="theme-slide-label">DAF</span>
+    </div>
+    <div class="theme-slide">
+      <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="NIDAR demo">
+          <source src="/gifs/nidar.mp4" type="video/mp4" />
+        </video>
+      </a>
+      <span class="theme-slide-label">NIDAR</span>
+    </div>
+    <div class="theme-slide-dots">
+      <button class="theme-dot active" data-index="0" aria-label="Show DAF"></button>
+      <button class="theme-dot" data-index="1" aria-label="Show NIDAR"></button>
+    </div>
+  </div>
+  <div class="theme-body">
+    <div class="theme-header">
+      <div class="theme-icon"><i class="fa fa-compass" aria-hidden="true"></i></div>
+      <h3>Multimodal Navigation</h3>
+    </div>
+    <p class="theme-tagline">What lies beyond geometry?</p>
+    <p class="theme-description">Multimodal perception and navigation modules that unify vision, audio, and LiDAR reflectance for richer physical scene understanding, simulation-ready sensing, and downstream autonomy.</p>
+    <div class="theme-papers">
+      <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">DAF</a>
+      <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">NIDAR</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.theme-preview').forEach(function (preview) {
+      var slides = preview.querySelectorAll('.theme-slide');
+      var dots = preview.querySelectorAll('.theme-dot');
+      var interval = parseInt(preview.dataset.interval, 10) || 5000;
+      var current = 0;
+
+      function showSlide(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = index % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      setInterval(function () {
+        showSlide(current + 1);
+      }, interval);
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function (event) {
+          event.preventDefault();
+          showSlide(parseInt(this.dataset.index, 10));
+        });
+      });
+    });
+  });
+</script>
 
 ## Publication
 <p class="about-section-note">
