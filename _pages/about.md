@@ -188,19 +188,7 @@ redirect_from:
   }
 
   .theme-slide-intro-veil {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    opacity: 0;
-    background:
-      radial-gradient(circle at center, rgba(255, 255, 255, 0.55) 0%, rgba(238, 246, 255, 0.92) 68%),
-      linear-gradient(180deg, #f8fafc, #eef6ff);
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-  }
-
-  .theme-slide.introducing .theme-slide-intro-veil {
-    opacity: 1;
+    display: none;
   }
 
   .theme-slide-media {
@@ -210,12 +198,6 @@ redirect_from:
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transform: scale(1.03);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-  }
-
-  .theme-slide.playing .theme-slide-media {
     opacity: 1;
     transform: scale(1);
   }
@@ -242,10 +224,10 @@ redirect_from:
     left: 50%;
     bottom: 50%;
     padding: 0.42rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 0.55rem;
-    background: rgba(15, 23, 42, 0.84);
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.2);
+    background: rgba(15, 23, 42, 0.88);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
     color: #ffffff;
     font-size: 1.05rem;
     font-weight: 700;
@@ -255,15 +237,15 @@ redirect_from:
     transform: translate(-50%, 50%) scale(1.28);
     pointer-events: none;
     white-space: nowrap;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .theme-slide.introducing .theme-slide-label {
-    animation: theme-label-intro 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: theme-label-intro 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  .theme-slide.playing .theme-slide-label {
+  .theme-slide:not(.introducing).active .theme-slide-label {
     left: 0.65rem;
     bottom: 0.55rem;
     padding: 0.18rem 0.55rem;
@@ -287,12 +269,24 @@ redirect_from:
       font-weight: 700;
       opacity: 0;
       transform: translate(-50%, 50%) scale(1.28);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.2);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
     }
 
-    14% {
+    6% {
       opacity: 1;
       transform: translate(-50%, 50%) scale(1.28);
+    }
+
+    50% {
+      left: 50%;
+      bottom: 50%;
+      padding: 0.42rem 1rem;
+      border-radius: 0.55rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      opacity: 1;
+      transform: translate(-50%, 50%) scale(1.28);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
     }
 
     100% {
@@ -715,14 +709,19 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       var dots = preview.querySelectorAll('.theme-dot');
       var current = 0;
       var timer = null;
+      var introTimer = null;
       var videoEndHandler = null;
       var AUTO_INTERVAL = 10000;
-      var INTRO_DURATION = 1000;
+      var INTRO_DURATION = 2000;
 
       function clearAdvanceTimer() {
         if (timer) {
           clearTimeout(timer);
           timer = null;
+        }
+        if (introTimer) {
+          clearTimeout(introTimer);
+          introTimer = null;
         }
       }
 
@@ -818,27 +817,21 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         }
       }
 
-      function beginSlidePlayback(slide, fromDotClick, onAdvance) {
-        slide.classList.remove('introducing');
-        slide.classList.add('playing');
+      function runSlideIntro(slide, fromDotClick, onAdvance) {
+        restartLabelAnimation(slide);
+        slide.classList.add('introducing');
+        startSlideMedia(slide);
+
+        introTimer = setTimeout(function () {
+          slide.classList.remove('introducing');
+        }, INTRO_DURATION);
 
         if (fromDotClick) {
           scheduleAfterFullPlayback(slide, onAdvance);
           return;
         }
 
-        startSlideMedia(slide);
         timer = setTimeout(onAdvance, AUTO_INTERVAL);
-      }
-
-      function runSlideIntro(slide, fromDotClick, onAdvance) {
-        restartLabelAnimation(slide);
-        slide.classList.remove('playing');
-        slide.classList.add('introducing');
-
-        timer = setTimeout(function () {
-          beginSlidePlayback(slide, fromDotClick, onAdvance);
-        }, INTRO_DURATION);
       }
 
       function showSlide(index, fromDotClick) {
