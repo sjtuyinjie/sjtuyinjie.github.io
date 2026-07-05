@@ -513,28 +513,28 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 <div class="themes-grid">
 
 <div class="theme-card">
-  <div class="theme-preview" data-interval="5000">
-    <div class="theme-slide active">
+  <div class="theme-preview">
+    <div class="theme-slide active" data-duration="20411">
       <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
-        <video autoplay muted loop playsinline preload="metadata" aria-label="Ultra-Fusion demo">
+        <video autoplay muted playsinline preload="metadata" aria-label="Ultra-Fusion demo">
           <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
         </video>
       </a>
       <span class="theme-slide-label">Ultra-Fusion</span>
     </div>
-    <div class="theme-slide">
+    <div class="theme-slide" data-duration="19200">
       <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank" rel="noopener noreferrer">
         <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
       </a>
       <span class="theme-slide-label">M2DGR</span>
     </div>
-    <div class="theme-slide">
+    <div class="theme-slide" data-duration="6800">
       <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer">
         <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
       </a>
       <span class="theme-slide-label">Ground-Fusion</span>
     </div>
-    <div class="theme-slide">
+    <div class="theme-slide" data-duration="29900">
       <a href="https://sjtuyinjie.github.io/M3DGR-website/" target="_blank" rel="noopener noreferrer">
         <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
       </a>
@@ -564,16 +564,16 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 </div>
 
 <div class="theme-card">
-  <div class="theme-preview" data-interval="5000">
-    <div class="theme-slide active">
+  <div class="theme-preview">
+    <div class="theme-slide active" data-duration="6240">
       <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer">
         <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
       </a>
       <span class="theme-slide-label">DAF</span>
     </div>
-    <div class="theme-slide">
+    <div class="theme-slide" data-duration="21386">
       <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer">
-        <video autoplay muted loop playsinline preload="metadata" aria-label="NIDAR demo">
+        <video autoplay muted playsinline preload="metadata" aria-label="NIDAR demo">
           <source src="/gifs/nidar.mp4" type="video/mp4" />
         </video>
       </a>
@@ -606,20 +606,81 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
     document.querySelectorAll('.theme-preview').forEach(function (preview) {
       var slides = preview.querySelectorAll('.theme-slide');
       var dots = preview.querySelectorAll('.theme-dot');
-      var interval = parseInt(preview.dataset.interval, 10) || 5000;
       var current = 0;
+      var timer = null;
+      var videoEndHandler = null;
 
-      function showSlide(index) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = index % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
+      function clearAdvanceTimer() {
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
       }
 
-      setInterval(function () {
-        showSlide(current + 1);
-      }, interval);
+      function clearVideoEndHandler(slide) {
+        var video = slide.querySelector('video');
+        if (video && videoEndHandler) {
+          video.removeEventListener('ended', videoEndHandler);
+          videoEndHandler = null;
+        }
+      }
+
+      function resetSlideMedia(slide) {
+        clearVideoEndHandler(slide);
+        var video = slide.querySelector('video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+
+      function slideDuration(slide) {
+        return parseInt(slide.dataset.duration, 10) || 5000;
+      }
+
+      function restartGif(img) {
+        var src = img.getAttribute('src').split('?')[0];
+        img.src = src + '?cycle=' + Date.now();
+      }
+
+      function playSlideMedia(slide, onDone) {
+        var video = slide.querySelector('video');
+        var img = slide.querySelector('img');
+
+        if (video) {
+          videoEndHandler = function () {
+            clearVideoEndHandler(slide);
+            onDone();
+          };
+          video.addEventListener('ended', videoEndHandler);
+          video.currentTime = 0;
+          var playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function () {
+              timer = setTimeout(onDone, slideDuration(slide));
+            });
+          }
+          return;
+        }
+
+        if (img) {
+          restartGif(img);
+          timer = setTimeout(onDone, slideDuration(slide));
+        }
+      }
+
+      function showSlide(index) {
+        clearAdvanceTimer();
+        resetSlideMedia(slides[current]);
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = ((index % slides.length) + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        playSlideMedia(slides[current], function () {
+          showSlide(current + 1);
+        });
+      }
 
       dots.forEach(function (dot) {
         dot.addEventListener('click', function (event) {
@@ -627,6 +688,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           showSlide(parseInt(this.dataset.index, 10));
         });
       });
+
+      showSlide(0);
     });
   });
 </script>
