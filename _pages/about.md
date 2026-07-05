@@ -208,7 +208,7 @@ redirect_from:
 
   .theme-slide-label {
     position: absolute;
-    right: 0.65rem;
+    left: 0.65rem;
     bottom: 0.55rem;
     padding: 0.18rem 0.5rem;
     border-radius: 999px;
