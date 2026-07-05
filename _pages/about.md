@@ -177,9 +177,6 @@ redirect_from:
   .theme-slide {
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.45s ease;
@@ -190,7 +187,40 @@ redirect_from:
     pointer-events: auto;
   }
 
-  .theme-slide a {
+  .theme-slide-intro-veil {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    background:
+      radial-gradient(circle at center, rgba(255, 255, 255, 0.55) 0%, rgba(238, 246, 255, 0.92) 68%),
+      linear-gradient(180deg, #f8fafc, #eef6ff);
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .theme-slide.introducing .theme-slide-intro-veil {
+    opacity: 1;
+  }
+
+  .theme-slide-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .theme-slide.playing .theme-slide-media {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .theme-slide-media a {
     display: flex;
     width: 100%;
     height: 100%;
@@ -208,15 +238,74 @@ redirect_from:
 
   .theme-slide-label {
     position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 50%;
+    padding: 0.42rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.55rem;
+    background: rgba(15, 23, 42, 0.84);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.2);
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translate(-50%, 50%) scale(1.28);
+    pointer-events: none;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .theme-slide.introducing .theme-slide-label {
+    animation: theme-label-intro 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .theme-slide.playing .theme-slide-label {
     left: 0.65rem;
     bottom: 0.55rem;
-    padding: 0.18rem 0.5rem;
+    padding: 0.18rem 0.55rem;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.72);
-    color: #ffffff;
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.02em;
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+    animation: none;
+  }
+
+  @keyframes theme-label-intro {
+    0% {
+      left: 50%;
+      bottom: 50%;
+      padding: 0.42rem 1rem;
+      border-radius: 0.55rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translate(-50%, 50%) scale(1.28);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.2);
+    }
+
+    14% {
+      opacity: 1;
+      transform: translate(-50%, 50%) scale(1.28);
+    }
+
+    100% {
+      left: 0.65rem;
+      bottom: 0.55rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+    }
   }
 
   .theme-slide-dots {
@@ -515,29 +604,41 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 <div class="theme-card">
   <div class="theme-preview">
     <div class="theme-slide active" data-duration="20411">
-      <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
-        <video autoplay muted playsinline preload="metadata" aria-label="Ultra-Fusion demo">
-          <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
-        </video>
-      </a>
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="Ultra-Fusion demo">
+            <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
       <span class="theme-slide-label">Ultra-Fusion</span>
     </div>
     <div class="theme-slide" data-duration="19200">
-      <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank" rel="noopener noreferrer">
-        <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
-      </a>
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank" rel="noopener noreferrer">
+          <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
+        </a>
+      </div>
       <span class="theme-slide-label">M2DGR</span>
     </div>
     <div class="theme-slide" data-duration="6800">
-      <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer">
-        <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
-      </a>
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer">
+          <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
+        </a>
+      </div>
       <span class="theme-slide-label">Ground-Fusion</span>
     </div>
     <div class="theme-slide" data-duration="29900">
-      <a href="https://sjtuyinjie.github.io/M3DGR-website/" target="_blank" rel="noopener noreferrer">
-        <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
-      </a>
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://sjtuyinjie.github.io/M3DGR-website/" target="_blank" rel="noopener noreferrer">
+          <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
+        </a>
+      </div>
       <span class="theme-slide-label">M3DGR</span>
     </div>
     <div class="theme-slide-dots">
@@ -566,17 +667,23 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 <div class="theme-card">
   <div class="theme-preview">
     <div class="theme-slide active" data-duration="6240">
-      <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer">
-        <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
-      </a>
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer">
+          <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
+        </a>
+      </div>
       <span class="theme-slide-label">DAF</span>
     </div>
     <div class="theme-slide" data-duration="21386">
-      <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer">
-        <video autoplay muted playsinline preload="metadata" aria-label="NIDAR demo">
-          <source src="/gifs/nidar.mp4" type="video/mp4" />
-        </video>
-      </a>
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="NIDAR demo">
+            <source src="/gifs/nidar.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
       <span class="theme-slide-label">NIDAR</span>
     </div>
     <div class="theme-slide-dots">
@@ -610,11 +717,29 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       var timer = null;
       var videoEndHandler = null;
       var AUTO_INTERVAL = 10000;
+      var INTRO_DURATION = 1000;
 
       function clearAdvanceTimer() {
         if (timer) {
           clearTimeout(timer);
           timer = null;
+        }
+      }
+
+      function clearSlideState(slide) {
+        if (!slide) {
+          return;
+        }
+        clearVideoEndHandler(slide);
+        slide.classList.remove('introducing', 'playing');
+        var video = slide.querySelector('video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+        var label = slide.querySelector('.theme-slide-label');
+        if (label) {
+          label.style.animation = 'none';
         }
       }
 
@@ -627,12 +752,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       }
 
       function resetSlideMedia(slide) {
-        clearVideoEndHandler(slide);
-        var video = slide.querySelector('video');
-        if (video) {
-          video.pause();
-          video.currentTime = 0;
-        }
+        clearSlideState(slide);
       }
 
       function slideDuration(slide) {
@@ -642,6 +762,16 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       function restartGif(img) {
         var src = img.getAttribute('src').split('?')[0];
         img.src = src + '?cycle=' + Date.now();
+      }
+
+      function restartLabelAnimation(slide) {
+        var label = slide.querySelector('.theme-slide-label');
+        if (!label) {
+          return;
+        }
+        label.style.animation = 'none';
+        void label.offsetWidth;
+        label.style.animation = '';
       }
 
       function startSlideMedia(slide) {
@@ -688,26 +818,41 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         }
       }
 
+      function beginSlidePlayback(slide, fromDotClick, onAdvance) {
+        slide.classList.remove('introducing');
+        slide.classList.add('playing');
+
+        if (fromDotClick) {
+          scheduleAfterFullPlayback(slide, onAdvance);
+          return;
+        }
+
+        startSlideMedia(slide);
+        timer = setTimeout(onAdvance, AUTO_INTERVAL);
+      }
+
+      function runSlideIntro(slide, fromDotClick, onAdvance) {
+        restartLabelAnimation(slide);
+        slide.classList.remove('playing');
+        slide.classList.add('introducing');
+
+        timer = setTimeout(function () {
+          beginSlidePlayback(slide, fromDotClick, onAdvance);
+        }, INTRO_DURATION);
+      }
+
       function showSlide(index, fromDotClick) {
         clearAdvanceTimer();
-        resetSlideMedia(slides[current]);
+        clearSlideState(slides[current]);
         slides[current].classList.remove('active');
         dots[current].classList.remove('active');
         current = ((index % slides.length) + slides.length) % slides.length;
         slides[current].classList.add('active');
         dots[current].classList.add('active');
 
-        if (fromDotClick) {
-          scheduleAfterFullPlayback(slides[current], function () {
-            showSlide(current + 1, false);
-          });
-          return;
-        }
-
-        startSlideMedia(slides[current]);
-        timer = setTimeout(function () {
+        runSlideIntro(slides[current], fromDotClick, function () {
           showSlide(current + 1, false);
-        }, AUTO_INTERVAL);
+        });
       }
 
       dots.forEach(function (dot) {
