@@ -351,30 +351,101 @@ redirect_from:
     }
   }
 
-  .theme-slide-dots {
+  .theme-slide-nav {
     position: absolute;
-    left: 50%;
-    bottom: 0.55rem;
-    z-index: 2;
-    display: flex;
-    gap: 0.35rem;
-    transform: translateX(-50%);
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
   }
 
-  .theme-dot {
-    width: 0.45rem;
-    height: 0.45rem;
+  .theme-nav-btn {
+    position: absolute;
+    top: 50%;
+    display: inline-flex;
+    width: 3rem;
+    height: 3.75rem;
+    min-width: 48px;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
     padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(148, 163, 184, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 0.75rem;
+    background: rgba(15, 23, 42, 0.62);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.22);
     cursor: pointer;
-    transition: background 0.18s ease, transform 0.18s ease;
+    pointer-events: auto;
+    transform: translateY(-50%);
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0.92;
   }
 
-  .theme-dot.active {
-    background: var(--about-primary);
-    transform: scale(1.15);
+  .theme-nav-btn:hover {
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(37, 99, 235, 0.86);
+    box-shadow: 0 10px 26px rgba(37, 99, 235, 0.32);
+    opacity: 1;
+  }
+
+  .theme-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  .theme-nav-btn:focus-visible {
+    outline: 2px solid rgba(37, 99, 235, 0.85);
+    outline-offset: 2px;
+  }
+
+  .theme-nav-prev {
+    left: 0.55rem;
+  }
+
+  .theme-nav-next {
+    right: 0.55rem;
+  }
+
+  .theme-nav-triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.28));
+    pointer-events: none;
+    transition: transform 0.18s ease;
+  }
+
+  .theme-nav-btn:hover .theme-nav-triangle {
+    transform: scale(1.08);
+  }
+
+  .theme-nav-triangle-prev {
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-right: 16px solid #ffffff;
+    margin-left: -3px;
+  }
+
+  .theme-nav-triangle-next {
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 16px solid #ffffff;
+    margin-right: -3px;
+  }
+
+  @media (max-width: 520px) {
+    .theme-nav-btn {
+      width: 2.35rem;
+      height: 3rem;
+    }
+
+    .theme-nav-prev {
+      left: 0.35rem;
+    }
+
+    .theme-nav-next {
+      right: 0.35rem;
+    }
   }
 
   .theme-body {
@@ -684,11 +755,13 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       </div>
       <span class="theme-slide-label">M3DGR</span>
     </div>
-    <div class="theme-slide-dots">
-      <button class="theme-dot active" data-index="0" aria-label="Show Ultra-Fusion"></button>
-      <button class="theme-dot" data-index="1" aria-label="Show M2DGR"></button>
-      <button class="theme-dot" data-index="2" aria-label="Show Ground-Fusion"></button>
-      <button class="theme-dot" data-index="3" aria-label="Show M3DGR"></button>
+    <div class="theme-slide-nav">
+      <button class="theme-nav-btn theme-nav-prev" type="button" aria-label="上一条" title="上一条">
+        <span class="theme-nav-triangle theme-nav-triangle-prev" aria-hidden="true"></span>
+      </button>
+      <button class="theme-nav-btn theme-nav-next" type="button" aria-label="下一条" title="下一条">
+        <span class="theme-nav-triangle theme-nav-triangle-next" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
   <div class="theme-body">
@@ -729,9 +802,13 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       </div>
       <span class="theme-slide-label">NIDAR</span>
     </div>
-    <div class="theme-slide-dots">
-      <button class="theme-dot active" data-index="0" aria-label="Show DAF"></button>
-      <button class="theme-dot" data-index="1" aria-label="Show NIDAR"></button>
+    <div class="theme-slide-nav">
+      <button class="theme-nav-btn theme-nav-prev" type="button" aria-label="上一条" title="上一条">
+        <span class="theme-nav-triangle theme-nav-triangle-prev" aria-hidden="true"></span>
+      </button>
+      <button class="theme-nav-btn theme-nav-next" type="button" aria-label="下一条" title="下一条">
+        <span class="theme-nav-triangle theme-nav-triangle-next" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
   <div class="theme-body">
@@ -755,7 +832,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.theme-preview').forEach(function (preview) {
       var slides = preview.querySelectorAll('.theme-slide');
-      var dots = preview.querySelectorAll('.theme-dot');
+      var prevBtn = preview.querySelector('.theme-nav-prev');
+      var nextBtn = preview.querySelector('.theme-nav-next');
       var current = 0;
       var timer = null;
       var introTimer = null;
@@ -866,7 +944,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         }
       }
 
-      function runSlideIntro(slide, fromDotClick, onAdvance) {
+      function runSlideIntro(slide, fromManualNav, onAdvance) {
         restartLabelAnimation(slide);
         slide.classList.add('introducing');
         startSlideMedia(slide);
@@ -875,7 +953,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           slide.classList.remove('introducing');
         }, INTRO_DURATION);
 
-        if (fromDotClick) {
+        if (fromManualNav) {
           scheduleAfterFullPlayback(slide, onAdvance);
           return;
         }
@@ -883,26 +961,33 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         timer = setTimeout(onAdvance, AUTO_INTERVAL);
       }
 
-      function showSlide(index, fromDotClick) {
+      function showSlide(index, fromManualNav) {
         clearAdvanceTimer();
         clearSlideState(slides[current]);
         slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
         current = ((index % slides.length) + slides.length) % slides.length;
         slides[current].classList.add('active');
-        dots[current].classList.add('active');
 
-        runSlideIntro(slides[current], fromDotClick, function () {
+        runSlideIntro(slides[current], fromManualNav, function () {
           showSlide(current + 1, false);
         });
       }
 
-      dots.forEach(function (dot) {
-        dot.addEventListener('click', function (event) {
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (event) {
           event.preventDefault();
-          showSlide(parseInt(this.dataset.index, 10), true);
+          event.stopPropagation();
+          showSlide(current - 1, true);
         });
-      });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          showSlide(current + 1, true);
+        });
+      }
 
       showSlide(0, false);
     });
