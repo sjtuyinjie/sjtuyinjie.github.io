@@ -223,22 +223,25 @@ redirect_from:
     z-index: 3;
     left: 50%;
     bottom: 50%;
-    padding: 0.42rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 0.55rem;
-    background: rgba(15, 23, 42, 0.88);
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
+    padding: 0;
+    border: 0 solid transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     color: #ffffff;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    line-height: 1.2;
+    font-size: 1.22rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1.15;
     opacity: 0;
     transform: translate(-50%, 50%) scale(1.28);
     pointer-events: none;
     white-space: nowrap;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-text-stroke: 2px #0f172a;
+    paint-order: stroke fill;
+    text-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .theme-slide.introducing .theme-slide-label {
@@ -249,13 +252,19 @@ redirect_from:
     left: 0.65rem;
     bottom: 0.55rem;
     padding: 0.18rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
+    background: rgba(15, 23, 42, 0.88);
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     opacity: 1;
     transform: translate(0, 0) scale(1);
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+    -webkit-text-stroke: 0 transparent;
+    text-shadow: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     animation: none;
   }
 
@@ -263,13 +272,20 @@ redirect_from:
     0% {
       left: 50%;
       bottom: 50%;
-      padding: 0.42rem 1rem;
-      border-radius: 0.55rem;
-      font-size: 1.05rem;
-      font-weight: 700;
+      padding: 0;
+      border-width: 0;
+      border-color: transparent;
+      border-radius: 0;
+      background: transparent;
+      font-size: 1.22rem;
+      font-weight: 800;
       opacity: 0;
       transform: translate(-50%, 50%) scale(1.28);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
+      box-shadow: none;
+      -webkit-text-stroke: 2px #0f172a;
+      text-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     6% {
@@ -280,25 +296,58 @@ redirect_from:
     50% {
       left: 50%;
       bottom: 50%;
-      padding: 0.42rem 1rem;
-      border-radius: 0.55rem;
-      font-size: 1.05rem;
-      font-weight: 700;
+      padding: 0;
+      border-width: 0;
+      border-color: transparent;
+      border-radius: 0;
+      background: transparent;
+      font-size: 1.22rem;
+      font-weight: 800;
       opacity: 1;
       transform: translate(-50%, 50%) scale(1.28);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
+      box-shadow: none;
+      -webkit-text-stroke: 2px #0f172a;
+      text-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    88% {
+      left: 0.72rem;
+      bottom: 0.58rem;
+      padding: 0;
+      border-width: 0;
+      border-color: transparent;
+      border-radius: 0;
+      background: transparent;
+      font-size: 0.72rem;
+      font-weight: 700;
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+      box-shadow: none;
+      -webkit-text-stroke: 1px #0f172a;
+      text-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     100% {
       left: 0.65rem;
       bottom: 0.55rem;
       padding: 0.18rem 0.55rem;
+      border-width: 1px;
+      border-color: rgba(255, 255, 255, 0.12);
       border-radius: 999px;
+      background: rgba(15, 23, 42, 0.88);
       font-size: 0.68rem;
       font-weight: 600;
       opacity: 1;
       transform: translate(0, 0) scale(1);
       box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+      -webkit-text-stroke: 0 transparent;
+      text-shadow: none;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
   }
 
