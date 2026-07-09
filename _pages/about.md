@@ -225,17 +225,22 @@ redirect_from:
     top: 50%;
     margin: 0;
     color: #ffffff;
-    font-size: 1.28rem;
-    font-weight: 700;
+    font-size: 1.62rem;
+    font-weight: 800;
     letter-spacing: 0.06em;
     line-height: 1.2;
     opacity: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     white-space: nowrap;
+    -webkit-text-stroke: 2.5px #0f172a;
+    paint-order: stroke fill;
     text-shadow:
-      0 1px 2px rgba(15, 23, 42, 0.6),
-      0 6px 22px rgba(15, 23, 42, 0.38);
+      -1px 0 0 #0f172a,
+      1px 0 0 #0f172a,
+      0 -1px 0 #0f172a,
+      0 1px 0 #0f172a,
+      0 4px 16px rgba(15, 23, 42, 0.32);
   }
 
   .theme-slide-tag {
