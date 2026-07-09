@@ -619,7 +619,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
   <span class="about-chip">Reinforcement Learning</span>
   <span class="about-chip">Dexterous Manipulation</span>
   <span class="about-chip">Whole-Body Control</span>
-  <span class="about-chip">Multi-modal Navigation</span>
+  <span class="about-chip">Multimodal Reasoning</span>
 </div>
 </section>
 
@@ -651,7 +651,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 
 <div class="research-themes">
 
-<p class="research-intro">Reliable localization and rich scene understanding are prerequisites for robots that operate in the real world. My research builds this foundation through <strong>multi-sensor fusion SLAM</strong> and <strong>multimodal navigation</strong> — unifying LiDAR, vision, IMU, GNSS, audio, and reflectance cues for robust perception and autonomous mobility under corner cases.</p>
+<p class="research-intro">Reliable localization and rich scene understanding are prerequisites for robots that operate in the real world. My research builds this foundation through <strong>multi-sensor fusion SLAM</strong> and <strong>multimodal reasoning</strong> — unifying LiDAR, vision, IMU, GNSS, audio, and reflectance cues for robust perception and autonomous mobility under corner cases.</p>
 
 <div class="themes-grid">
 
@@ -748,7 +748,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
   <div class="theme-body">
     <div class="theme-header">
       <div class="theme-icon"><i class="fa fa-compass" aria-hidden="true"></i></div>
-      <h3>Multimodal Navigation</h3>
+      <h3>Multimodal Reasoning</h3>
     </div>
     <p class="theme-tagline">What lies beyond geometry?</p>
     <p class="theme-description">Multimodal perception and navigation modules that unify vision, audio, and LiDAR reflectance for richer physical scene understanding, simulation-ready sensing, and downstream autonomy.</p>
@@ -922,7 +922,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 
 ## Publication
 <p class="about-section-note">
-Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous manipulation</strong>, and <strong>whole-body control</strong>. My long-term goal is to build practical intelligent robots that can operate safely and reliably in human environments, assisting people with everyday physical tasks. Previously, I worked on <strong>multi-sensor fusion SLAM algorithms</strong> and <strong>benchmarks under corner cases</strong> and <strong>multimodal navigation</strong>. Representative works are <span class="highlight-soft">highlighted</span>.
+Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous manipulation</strong>, and <strong>whole-body control</strong>. My long-term goal is to build practical intelligent robots that can operate safely and reliably in human environments, assisting people with everyday physical tasks. Previously, I worked on <strong>multi-sensor fusion SLAM</strong>(algorithms and benchmarks) and <strong>multimodal reasoning</strong>. Representative works are <span class="highlight-soft">highlighted</span>.
 </p>
 
 {% for post in site.publications reversed %} {% include publications.html %} {% endfor %}
