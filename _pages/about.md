@@ -218,136 +218,106 @@ redirect_from:
     padding: 0.65rem;
   }
 
-  .theme-slide-label {
+  .theme-slide-title {
     position: absolute;
     z-index: 3;
     left: 50%;
-    bottom: 50%;
-    padding: 0;
-    border: 0 solid transparent;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
+    top: 50%;
+    margin: 0;
     color: #ffffff;
-    font-size: 1.22rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    line-height: 1.15;
+    font-size: 1.28rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
     opacity: 0;
-    transform: translate(-50%, 50%) scale(1.28);
+    transform: translate(-50%, -50%);
     pointer-events: none;
     white-space: nowrap;
-    -webkit-text-stroke: 2px #0f172a;
-    paint-order: stroke fill;
-    text-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    text-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.6),
+      0 6px 22px rgba(15, 23, 42, 0.38);
   }
 
-  .theme-slide.introducing .theme-slide-label {
-    animation: theme-label-intro 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  .theme-slide:not(.introducing).active .theme-slide-label {
+  .theme-slide-tag {
+    position: absolute;
+    z-index: 3;
     left: 0.65rem;
     bottom: 0.55rem;
     padding: 0.18rem 0.55rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
     background: rgba(15, 23, 42, 0.88);
+    color: #ffffff;
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
+    line-height: 1.2;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
-    -webkit-text-stroke: 0 transparent;
-    text-shadow: none;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    animation: none;
   }
 
-  @keyframes theme-label-intro {
+  .theme-slide.introducing .theme-slide-title {
+    animation: theme-title-fade 1.6s ease forwards;
+  }
+
+  .theme-slide.introducing .theme-slide-tag {
+    animation: theme-tag-fade 1.6s ease forwards;
+  }
+
+  .theme-slide:not(.introducing).active .theme-slide-title {
+    opacity: 0;
+  }
+
+  .theme-slide:not(.introducing).active .theme-slide-tag {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes theme-title-fade {
     0% {
-      left: 50%;
-      bottom: 50%;
-      padding: 0;
-      border-width: 0;
-      border-color: transparent;
-      border-radius: 0;
-      background: transparent;
-      font-size: 1.22rem;
-      font-weight: 800;
       opacity: 0;
-      transform: translate(-50%, 50%) scale(1.28);
-      box-shadow: none;
-      -webkit-text-stroke: 2px #0f172a;
-      text-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+      transform: translate(-50%, -50%) scale(0.98);
     }
 
-    6% {
+    14% {
       opacity: 1;
-      transform: translate(-50%, 50%) scale(1.28);
+      transform: translate(-50%, -50%) scale(1);
     }
 
-    50% {
-      left: 50%;
-      bottom: 50%;
-      padding: 0;
-      border-width: 0;
-      border-color: transparent;
-      border-radius: 0;
-      background: transparent;
-      font-size: 1.22rem;
-      font-weight: 800;
+    62% {
       opacity: 1;
-      transform: translate(-50%, 50%) scale(1.28);
-      box-shadow: none;
-      -webkit-text-stroke: 2px #0f172a;
-      text-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+      transform: translate(-50%, -50%) scale(1);
     }
 
-    88% {
-      left: 0.72rem;
-      bottom: 0.58rem;
-      padding: 0;
-      border-width: 0;
-      border-color: transparent;
-      border-radius: 0;
-      background: transparent;
-      font-size: 0.72rem;
-      font-weight: 700;
-      opacity: 1;
-      transform: translate(0, 0) scale(1);
-      box-shadow: none;
-      -webkit-text-stroke: 1px #0f172a;
-      text-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+    78% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     100% {
-      left: 0.65rem;
-      bottom: 0.55rem;
-      padding: 0.18rem 0.55rem;
-      border-width: 1px;
-      border-color: rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.88);
-      font-size: 0.68rem;
-      font-weight: 600;
+      opacity: 0;
+    }
+  }
+
+  @keyframes theme-tag-fade {
+    0%,
+    64% {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+
+    80% {
       opacity: 1;
-      transform: translate(0, 0) scale(1);
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
-      -webkit-text-stroke: 0 transparent;
-      text-shadow: none;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -666,7 +636,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           </video>
         </a>
       </div>
-      <span class="theme-slide-label">Ultra-Fusion</span>
+      <span class="theme-slide-title">Ultra-Fusion</span>
+      <span class="theme-slide-tag">Ultra-Fusion</span>
     </div>
     <div class="theme-slide" data-duration="19200">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
@@ -675,7 +646,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
         </a>
       </div>
-      <span class="theme-slide-label">M2DGR</span>
+      <span class="theme-slide-title">M2DGR</span>
+      <span class="theme-slide-tag">M2DGR</span>
     </div>
     <div class="theme-slide" data-duration="6800">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
@@ -684,7 +656,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           <img src="/gifs/gf.gif" alt="Ground-Fusion demo" loading="lazy" />
         </a>
       </div>
-      <span class="theme-slide-label">Ground-Fusion</span>
+      <span class="theme-slide-title">Ground-Fusion</span>
+      <span class="theme-slide-tag">Ground-Fusion</span>
     </div>
     <div class="theme-slide" data-duration="29900">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
@@ -693,7 +666,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
         </a>
       </div>
-      <span class="theme-slide-label">M3DGR</span>
+      <span class="theme-slide-title">M3DGR</span>
+      <span class="theme-slide-tag">M3DGR</span>
     </div>
     <div class="theme-slide-dots">
       <button class="theme-dot active" data-index="0" type="button" aria-label="Show Ultra-Fusion"></button>
@@ -727,7 +701,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           <img src="/gifs/daf.gif" alt="DAF demo" loading="lazy" />
         </a>
       </div>
-      <span class="theme-slide-label">DAF</span>
+      <span class="theme-slide-title">DAF</span>
+      <span class="theme-slide-tag">DAF</span>
     </div>
     <div class="theme-slide" data-duration="21386">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
@@ -738,7 +713,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           </video>
         </a>
       </div>
-      <span class="theme-slide-label">NIDAR</span>
+      <span class="theme-slide-title">NIDAR</span>
+      <span class="theme-slide-tag">NIDAR</span>
     </div>
     <div class="theme-slide-dots">
       <button class="theme-dot active" data-index="0" type="button" aria-label="Show DAF"></button>
@@ -772,7 +748,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       var introTimer = null;
       var videoEndHandler = null;
       var AUTO_INTERVAL = 10000;
-      var INTRO_DURATION = 2000;
+      var INTRO_DURATION = 1600;
 
       function clearAdvanceTimer() {
         if (timer) {
@@ -796,9 +772,13 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
           video.pause();
           video.currentTime = 0;
         }
-        var label = slide.querySelector('.theme-slide-label');
+        var label = slide.querySelector('.theme-slide-title');
+        var tag = slide.querySelector('.theme-slide-tag');
         if (label) {
           label.style.animation = 'none';
+        }
+        if (tag) {
+          tag.style.animation = 'none';
         }
       }
 
@@ -824,13 +804,17 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       }
 
       function restartLabelAnimation(slide) {
-        var label = slide.querySelector('.theme-slide-label');
-        if (!label) {
-          return;
-        }
-        label.style.animation = 'none';
-        void label.offsetWidth;
-        label.style.animation = '';
+        var title = slide.querySelector('.theme-slide-title');
+        var tag = slide.querySelector('.theme-slide-tag');
+
+        [title, tag].forEach(function (node) {
+          if (!node) {
+            return;
+          }
+          node.style.animation = 'none';
+          void node.offsetWidth;
+          node.style.animation = '';
+        });
       }
 
       function startSlideMedia(slide) {
