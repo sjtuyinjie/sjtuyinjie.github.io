@@ -647,6 +647,8 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 <div class="themes-grid">
 
 <div class="theme-card" id="theme-fusion-slam">
+  <div class="theme-preview">
+    <div class="theme-slide active" data-duration="20400">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
@@ -714,7 +716,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
   </div>
 </div>
 
-<div class="theme-card">
+<div class="theme-card" id="theme-multimodal-reasoning">
   <div class="theme-preview">
     <div class="theme-slide active" data-duration="6240">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
@@ -756,7 +758,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
   </div>
 </div>
 
-<div class="theme-card">
+<div class="theme-card" id="theme-whole-body-control">
   <div class="theme-preview">
     <div class="theme-slide active" data-duration="4800">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
