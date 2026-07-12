@@ -146,7 +146,7 @@ redirect_from:
 
   .themes-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   }
 
@@ -560,6 +560,12 @@ redirect_from:
     }
   }
 
+  @media (max-width: 1100px) {
+    .themes-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   @media (max-width: 768px) {
     .themes-grid {
       grid-template-columns: 1fr;
@@ -626,13 +632,13 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 
 <div class="research-themes">
 
-<p class="research-intro">Reliable localization and rich scene understanding are prerequisites for robots that operate in the real world. My research builds this foundation through <strong>multi-sensor fusion SLAM</strong> and <strong>multi-modal reasoning</strong> — unifying LiDAR, vision, IMU, GNSS, audio, and reflectance cues for robust perception and autonomous mobility under corner cases.</p>
+<p class="research-intro">Reliable localization and rich scene understanding are prerequisites for robots that operate in the real world. My research builds this foundation through <strong>multi-sensor fusion SLAM</strong>, <strong>multi-modal reasoning</strong>, and <strong>whole-body control</strong> — unifying LiDAR, vision, IMU, GNSS, audio, and reflectance cues for robust perception, and extending coordinated locomotion and manipulation for embodied autonomy under corner cases.</p>
 
 <div class="themes-grid">
 
 <div class="theme-card">
   <div class="theme-preview">
-    <div class="theme-slide active" data-duration="20411">
+    <div class="theme-slide active" data-duration="20400">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
@@ -644,11 +650,13 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <span class="theme-slide-title">Ultra-Fusion</span>
       <span class="theme-slide-tag">Ultra-Fusion</span>
     </div>
-    <div class="theme-slide" data-duration="19200">
+    <div class="theme-slide" data-duration="9620" data-playback-rate="2">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://github.com/SJTU-ViSYS/M2DGR" target="_blank" rel="noopener noreferrer">
-          <img src="/gifs/m2dgr.gif" alt="M2DGR demo" loading="lazy" />
+          <video muted playsinline preload="metadata" aria-label="M2DGR demo">
+            <source src="/gifs/m2dgr.mp4" type="video/mp4" />
+          </video>
         </a>
       </div>
       <span class="theme-slide-title">M2DGR</span>
@@ -664,11 +672,13 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <span class="theme-slide-title">Ground-Fusion</span>
       <span class="theme-slide-tag">Ground-Fusion</span>
     </div>
-    <div class="theme-slide" data-duration="29900">
+    <div class="theme-slide" data-duration="9970" data-playback-rate="3">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://sjtuyinjie.github.io/M3DGR-website/" target="_blank" rel="noopener noreferrer">
-          <img src="/gifs/m3dgr.gif" alt="M3DGR demo" loading="lazy" />
+          <video muted playsinline preload="metadata" aria-label="M3DGR demo">
+            <source src="/gifs/m3dgr.mp4" type="video/mp4" />
+          </video>
         </a>
       </div>
       <span class="theme-slide-title">M3DGR</span>
@@ -709,7 +719,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <span class="theme-slide-title">DAF</span>
       <span class="theme-slide-tag">DAF</span>
     </div>
-    <div class="theme-slide" data-duration="21386">
+    <div class="theme-slide" data-duration="21367">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer">
@@ -736,6 +746,35 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
     <div class="theme-papers">
       <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">DAF</a>
       <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">NIDAR</a>
+    </div>
+  </div>
+</div>
+
+<div class="theme-card">
+  <div class="theme-preview">
+    <div class="theme-slide active" data-duration="4800">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer">
+          <img src="/gifs/idc.gif" alt="Mobile Manipulation demo" loading="lazy" />
+        </a>
+      </div>
+      <span class="theme-slide-title">Mobile Manipulation</span>
+      <span class="theme-slide-tag">Mobile Manipulation</span>
+    </div>
+    <div class="theme-slide-dots">
+      <button class="theme-dot active" data-index="0" type="button" aria-label="Show Mobile Manipulation"></button>
+    </div>
+  </div>
+  <div class="theme-body">
+    <div class="theme-header">
+      <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
+      <h3>Whole-body Control</h3>
+    </div>
+    <p class="theme-tagline">How does the robot move and manipulate?</p>
+    <p class="theme-description">Coordinated whole-body control for mobile manipulators — coupling locomotion, balance, and dexterous interaction so robots can operate fluidly in human-centric environments.</p>
+    <div class="theme-papers">
+      <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Mobile Manipulation</a>
     </div>
   </div>
 </div>
@@ -803,6 +842,15 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         return parseInt(slide.dataset.duration, 10) || 5000;
       }
 
+      function slidePlaybackRate(slide) {
+        return parseFloat(slide.dataset.playbackRate) || 1;
+      }
+
+      function prepareVideoPlayback(video, slide) {
+        video.playbackRate = slidePlaybackRate(slide);
+        video.currentTime = 0;
+      }
+
       function restartGif(img) {
         var src = img.getAttribute('src').split('?')[0];
         img.src = src + '?cycle=' + Date.now();
@@ -827,7 +875,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
         var img = slide.querySelector('img');
 
         if (video) {
-          video.currentTime = 0;
+          prepareVideoPlayback(video, slide);
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function () {});
@@ -849,7 +897,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
             onDone();
           };
           video.addEventListener('ended', videoEndHandler);
-          video.currentTime = 0;
+          prepareVideoPlayback(video, slide);
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function () {
