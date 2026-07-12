@@ -364,6 +364,9 @@ redirect_from:
   }
 
   .theme-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 1rem 1.05rem 1.1rem;
   }
 
@@ -394,7 +397,9 @@ redirect_from:
   }
 
   .theme-description {
+    flex: 1;
     margin: 0 0 0.75rem;
+    min-height: calc(0.84rem * 1.62 * 2);
     color: var(--about-muted);
     font-size: 0.84rem;
     line-height: 1.62;
@@ -689,7 +694,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <h3>Multi-sensor Fusion SLAM</h3>
     </div>
-    <p class="theme-description">Tightly-coupled fusion and large-scale benchmarks for robust ground-robot localization under sensor degradation and outdoor corner cases.</p>
+    <p class="theme-description">Fusion frameworks and benchmarks for robust localization under sensor failure and outdoor corner cases.</p>
     <div class="theme-papers">
       <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ultra-Fusion</a>
       <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ground-Fusion</a>
@@ -733,7 +738,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-compass" aria-hidden="true"></i></div>
       <h3>Multi-modal Reasoning</h3>
     </div>
-    <p class="theme-description">Unifying vision, audio, and LiDAR reflectance for scene understanding and navigation.</p>
+    <p class="theme-description">Cross-modal perception and navigation using vision, audio, and LiDAR reflectance for scene understanding.</p>
     <div class="theme-papers">
       <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">DAF</a>
       <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">NIDAR</a>
@@ -762,7 +767,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-description">Whole-body control for mobile manipulators — coordinating locomotion, navigation, and dexterous manipulation.</p>
+    <p class="theme-description">Whole-body control coordinating locomotion, balance, and manipulation for mobile robots in human environments.</p>
     <div class="theme-papers">
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Mobile Manipulation</a>
     </div>
