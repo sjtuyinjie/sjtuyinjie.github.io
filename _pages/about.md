@@ -423,19 +423,22 @@ redirect_from:
     gap: 0.35rem;
   }
 
+  .about-page a.theme-paper-tag {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+
   .theme-paper-tag {
     padding: 0.2rem 0.5rem;
     border-radius: 0.35rem;
     background: rgba(239, 246, 255, 0.95);
-    color: #1d4ed8;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.01em;
-    text-decoration: none;
     transition: background 0.18s ease, color 0.18s ease;
   }
 
-  .theme-paper-tag:hover {
+  .about-page a.theme-paper-tag:hover {
     background: var(--about-primary);
     color: #ffffff;
     text-decoration: none;
