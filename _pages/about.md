@@ -393,13 +393,6 @@ redirect_from:
     font-weight: 700;
   }
 
-  .theme-tagline {
-    margin: 0 0 0.45rem;
-    color: var(--about-accent);
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
   .theme-description {
     margin: 0 0 0.75rem;
     color: var(--about-muted);
@@ -632,7 +625,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 
 <div class="research-themes">
 
-<p class="research-intro">Reliable localization and rich scene understanding are prerequisites for robots that operate in the real world. My research builds this foundation through <strong>multi-sensor fusion SLAM</strong>, <strong>multi-modal reasoning</strong>, and <strong>whole-body control</strong> — unifying LiDAR, vision, IMU, GNSS, audio, and reflectance cues for robust perception, and extending coordinated locomotion and manipulation for embodied autonomy under corner cases.</p>
+<p class="research-intro">My research spans <strong>multi-sensor fusion SLAM</strong>, <strong>multi-modal reasoning</strong>, and <strong>whole-body control</strong> — building robust perception and embodied autonomy for real-world robots.</p>
 
 <div class="themes-grid">
 
@@ -696,8 +689,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <h3>Multi-sensor Fusion SLAM</h3>
     </div>
-    <p class="theme-tagline">Where is the robot?</p>
-    <p class="theme-description">Tightly-coupled fusion frameworks and large-scale benchmarks that keep ground robots localized under sensor degradation, spatiotemporal perturbation, and challenging outdoor corner cases.</p>
+    <p class="theme-description">Tightly-coupled fusion and large-scale benchmarks for robust ground-robot localization under sensor degradation and outdoor corner cases.</p>
     <div class="theme-papers">
       <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ultra-Fusion</a>
       <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ground-Fusion</a>
@@ -741,8 +733,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-compass" aria-hidden="true"></i></div>
       <h3>Multi-modal Reasoning</h3>
     </div>
-    <p class="theme-tagline">How to reason across modalities?</p>
-    <p class="theme-description">Multi-modal perception and navigation modules that unify vision, audio, and LiDAR reflectance for richer physical scene understanding, simulation-ready sensing, and downstream autonomy.</p>
+    <p class="theme-description">Unifying vision, audio, and LiDAR reflectance for scene understanding and navigation.</p>
     <div class="theme-papers">
       <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">DAF</a>
       <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">NIDAR</a>
@@ -771,8 +762,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-tagline">How to manipulate on mobile robots?</p>
-    <p class="theme-description">Coordinated whole-body control for mobile manipulators — coupling locomotion, balance, and dexterous interaction so robots can operate fluidly in human-centric environments.</p>
+    <p class="theme-description">Whole-body control for mobile manipulators — coordinating locomotion, navigation, and dexterous manipulation.</p>
     <div class="theme-papers">
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Mobile Manipulation</a>
     </div>
