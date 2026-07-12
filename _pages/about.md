@@ -752,14 +752,14 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer">
-          <img src="/gifs/idc.gif" alt="Mobile Manipulation demo" loading="lazy" />
+          <img src="/gifs/idc.gif" alt=" demo" loading="lazy" />
         </a>
       </div>
-      <span class="theme-slide-title">Mobile Manipulation</span>
-      <span class="theme-slide-tag">Mobile Manipulation</span>
+      <span class="theme-slide-title">IDC Robot</span>
+      <span class="theme-slide-tag">IDC Robot</span>
     </div>
     <div class="theme-slide-dots">
-      <button class="theme-dot active" data-index="0" type="button" aria-label="Show Mobile Manipulation"></button>
+      <button class="theme-dot active" data-index="0" type="button" aria-label="Show IDC Robot"></button>
     </div>
   </div>
   <div class="theme-body">
@@ -769,7 +769,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
     </div>
     <p class="theme-description">Whole-body control coordinating locomotion, balance, and manipulation for mobile robots in human environments.</p>
     <div class="theme-papers">
-      <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Mobile Manipulation</a>
+      <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">IDC Robot</a>
     </div>
   </div>
 </div>
