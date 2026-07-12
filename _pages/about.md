@@ -741,7 +741,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-compass" aria-hidden="true"></i></div>
       <h3>Multi-modal Reasoning</h3>
     </div>
-    <p class="theme-tagline">What do we reason across modalities?</p>
+    <p class="theme-tagline">How to reason across modalities?</p>
     <p class="theme-description">Multi-modal perception and navigation modules that unify vision, audio, and LiDAR reflectance for richer physical scene understanding, simulation-ready sensing, and downstream autonomy.</p>
     <div class="theme-papers">
       <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">DAF</a>
@@ -771,7 +771,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-tagline">How does the robot move and manipulate?</p>
+    <p class="theme-tagline">How to manipulate on mobile robots?</p>
     <p class="theme-description">Coordinated whole-body control for mobile manipulators — coupling locomotion, balance, and dexterous interaction so robots can operate fluidly in human-centric environments.</p>
     <div class="theme-papers">
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Mobile Manipulation</a>
