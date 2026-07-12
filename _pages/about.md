@@ -767,7 +767,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-description">Whole-body control coordinating locomotion, balance, and manipulation for mobile robots in human environments.</p>
+    <p class="theme-description">Whole-body control coordinating navigation, balance, and manipulation for mobile robots in human environments.</p>
     <div class="theme-papers">
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">IDC Robot</a>
     </div>
