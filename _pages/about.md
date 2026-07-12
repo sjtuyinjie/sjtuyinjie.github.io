@@ -119,6 +119,17 @@ redirect_from:
     font-weight: 600;
   }
 
+  a.about-chip {
+    text-decoration: none;
+    transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+  }
+
+  a.about-chip:hover {
+    border-color: #60a5fa;
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
   .about-links {
     justify-content: center;
     margin: 1rem 0 1.4rem;
@@ -159,6 +170,7 @@ redirect_from:
     background: #ffffff;
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    scroll-margin-top: 5rem;
   }
 
   .theme-card:hover {
@@ -595,10 +607,10 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
-  <span class="about-chip">Reinforcement Learning</span>
+  <a href="#theme-fusion-slam" class="about-chip">Multi-sensor Fusion SLAM</a>
   <span class="about-chip">Dexterous Manipulation</span>
-  <span class="about-chip">Whole-Body Control</span>
-  <span class="about-chip">Multi-modal Reasoning</span>
+  <a href="#theme-multimodal-reasoning" class="about-chip">Multi-modal Reasoning</a>
+  <a href="#theme-whole-body-control" class="about-chip">Whole-Body Control</a>
 </div>
 </section>
 
@@ -634,9 +646,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
 
 <div class="themes-grid">
 
-<div class="theme-card">
-  <div class="theme-preview">
-    <div class="theme-slide active" data-duration="20400">
+<div class="theme-card" id="theme-fusion-slam">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
@@ -751,7 +761,7 @@ My work has appeared in leading robotics and AI venues, including <strong>ICRA, 
     <div class="theme-slide active" data-duration="4800">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
-        <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer">
+        <a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank" rel="noopener noreferrer">
           <img src="/gifs/idc.gif" alt=" demo" loading="lazy" />
         </a>
       </div>
