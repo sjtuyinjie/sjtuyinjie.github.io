@@ -5,7 +5,6 @@ permalink: /projects/2023-groundchallenge
 date: 2023-7-3
 venue: 'ROBIO'
 venue_year: "2023"
-venue_note: "Internship at Tencent Robotics X Lab"
 authors: "<b>Jie Yin</b>, Hao Yin, Conghui Liang, and <a href='https://en.wikipedia.org/wiki/Zhengyou_Zhang' target='_blank'>Zhengyou Zhang</a>"
 url: 
 project: 
