@@ -695,11 +695,28 @@ redirect_from:
     left: 0;
     top: 0;
     z-index: 9999;
+    display: inline-flex;
+    width: 1.85rem;
+    height: 1.85rem;
+    align-items: center;
+    justify-content: center;
     pointer-events: none;
-    font-size: 1.45rem;
+    color: #0f766e;
+    filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.18));
     transform: translate(-50%, -50%);
     animation: robot-fly-up 1.15s ease-out forwards;
     will-change: transform, opacity;
+  }
+
+  .floating-robot svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  html[data-theme="dark"] .floating-robot {
+    color: #5eead4;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
   }
 
   @keyframes robot-fly-up {
@@ -1801,6 +1818,15 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     updateScholarOnVisit();
     updateGithubStarsOnVisit();
 
+    var robotIcons = [
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 11.2c.4-1.8 1.8-3.2 3.8-3.2s3.4 1.4 3.8 3.2"/><path d="M7 14.2c.6 2.2 2.5 3.8 5 3.8s4.4-1.6 5-3.8"/><path d="M9.2 8.4V5.8M12 7.6V4.8M14.8 8.4V5.8"/><path d="M8.4 12.2H6.6M15.6 12.2h1.8"/><circle cx="9.2" cy="5.4" r="0.7" fill="currentColor" stroke="none"/><circle cx="12" cy="4.5" r="0.7" fill="currentColor" stroke="none"/><circle cx="14.8" cy="5.4" r="0.7" fill="currentColor" stroke="none"/><circle cx="6.2" cy="12.2" r="0.7" fill="currentColor" stroke="none"/><circle cx="17.8" cy="12.2" r="0.7" fill="currentColor" stroke="none"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9.1" y="3.2" width="5.8" height="4.2" rx="1.4"/><path d="M10.2 7.4h3.6v2.1H10.2z"/><path d="M8.4 9.5h7.2v5.4c0 .8-.6 1.4-1.4 1.4H9.8c-.8 0-1.4-.6-1.4-1.4z"/><path d="M8.4 11.2H6.5c-.7 0-1.2.5-1.2 1.2v2.4"/><path d="M15.6 11.2h1.9c.7 0 1.2.5 1.2 1.2v2.4"/><path d="M10.2 16.3v4.2M13.8 16.3v4.2"/><path d="M9.1 20.5h2.2M12.7 20.5h2.2"/><circle cx="10.8" cy="5.2" r="0.55" fill="currentColor" stroke="none"/><circle cx="13.2" cy="5.2" r="0.55" fill="currentColor" stroke="none"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.6" r="1.7"/><path d="M12 6.3v4.2"/><path d="M8.2 9.1 12 10.5l3.8-1.4"/><path d="M12 10.5v4.4"/><path d="M9.1 19.4 12 14.9l2.9 4.5"/><circle cx="12" cy="4.6" r="0.45" fill="currentColor" stroke="none"/><circle cx="8.2" cy="9.1" r="0.45" fill="currentColor" stroke="none"/><circle cx="15.8" cy="9.1" r="0.45" fill="currentColor" stroke="none"/><circle cx="12" cy="10.5" r="0.45" fill="currentColor" stroke="none"/><circle cx="12" cy="14.9" r="0.45" fill="currentColor" stroke="none"/><circle cx="9.1" cy="19.4" r="0.45" fill="currentColor" stroke="none"/><circle cx="14.9" cy="19.4" r="0.45" fill="currentColor" stroke="none"/><path d="M7.4 7.8c1.2-1.4 2.8-2.1 4.6-2.1s3.4.7 4.6 2.1" opacity=".55"/><path d="M6.8 15.2c1.5 1.8 3.3 2.7 5.2 2.7s3.7-.9 5.2-2.7" opacity=".55"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7.2" y="8.2" width="9.6" height="5.2" rx="1.6"/><path d="M16.8 10.2h1.7c.7 0 1.2.5 1.2 1.2v1.1"/><circle cx="18.9" cy="13.4" r="1.1"/><path d="M8.4 13.4 6.2 17M10.8 13.4l-.8 3.6M13.2 13.4l.8 3.6M15.6 13.4 17.8 17"/><circle cx="6.2" cy="17.4" r="1.15"/><circle cx="10" cy="17.4" r="1.15"/><circle cx="14" cy="17.4" r="1.15"/><circle cx="17.8" cy="17.4" r="1.15"/><path d="M9.4 8.2V6.6c0-.7.5-1.2 1.2-1.2h2.8c.7 0 1.2.5 1.2 1.2v1.6"/><circle cx="11.1" cy="6.7" r="0.45" fill="currentColor" stroke="none"/><circle cx="12.9" cy="6.7" r="0.45" fill="currentColor" stroke="none"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 19.4h4.2"/><path d="M7.3 19.4V8.8"/><path d="M7.3 8.8h6.1c.9 0 1.6.7 1.6 1.6v1.1"/><path d="M15 11.5h2.4c.7 0 1.2.5 1.2 1.2v2.1"/><path d="M18.6 14.8h-2.1"/><path d="M16.5 14.8v2.1l1.5 1.3M16.5 16.9l-1.5 1.3"/><circle cx="7.3" cy="8.8" r="1.15"/><circle cx="15" cy="11.5" r="1.05"/><circle cx="18.6" cy="14.8" r="1.05"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.2" y="9.4" width="13.6" height="6.2" rx="1.8"/><circle cx="8.1" cy="17.2" r="1.55"/><circle cx="15.9" cy="17.2" r="1.55"/><path d="M9.7 9.4V7.6c0-.7.5-1.2 1.2-1.2h2.2c.7 0 1.2.5 1.2 1.2v1.8"/><circle cx="12" cy="6.4" r="1.05"/><path d="M12 5.35V4.2"/><circle cx="12" cy="3.7" r="0.55" fill="currentColor" stroke="none"/><path d="M7.4 11.4h2.1M14.5 11.4h2.1"/></svg>'
+    ];
+
     document.addEventListener('click', function (event) {
       if (event.target.closest(ignoredSelector)) {
         return;
@@ -1808,7 +1834,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
       var robot = document.createElement('span');
       robot.className = 'floating-robot';
-      robot.textContent = '🤖✨';
+      robot.innerHTML = robotIcons[Math.floor(Math.random() * robotIcons.length)];
       robot.style.left = event.clientX + 'px';
       robot.style.top = event.clientY + 'px';
       robot.style.setProperty('--robot-drift', (Math.random() * 36 - 18).toFixed(0) + 'px');
