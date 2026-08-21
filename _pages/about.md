@@ -531,15 +531,19 @@ redirect_from:
     overflow: visible;
   }
 
-  .about-meta-note.github-stars-card {
+  .about-meta-note.metric-breakdown-card {
+    top: 50%;
+    bottom: auto;
+    left: calc(100% + 0.55rem);
     width: 17.5rem;
-    max-width: min(17.5rem, calc(100vw - 1.5rem));
+    max-width: min(17.5rem, calc(100vw - 2rem));
     padding: 0.7rem 0.75rem 0.55rem;
     border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: 0.65rem;
     background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
     box-shadow: 0 14px 36px rgba(15, 23, 42, 0.28);
     white-space: normal;
+    transform: translateY(-50%) translateX(0.25rem);
   }
 
   .stars-card-title {
@@ -578,7 +582,8 @@ redirect_from:
   .stars-row {
     display: grid;
     grid-template-columns: 0.55rem minmax(0, 1fr) auto;
-    gap: 0.4rem;
+    column-gap: 0.4rem;
+    row-gap: 0.16rem;
     align-items: center;
   }
 
@@ -642,6 +647,11 @@ redirect_from:
     visibility: visible;
   }
 
+  .metric-tooltip-wrap:hover .about-meta-note.metric-breakdown-card,
+  .metric-tooltip-wrap:focus-within .about-meta-note.metric-breakdown-card {
+    transform: translateY(-50%) translateX(0);
+  }
+
   .floating-robot {
     position: fixed;
     left: 0;
@@ -703,7 +713,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note github-stars-card">loading latest GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -732,6 +742,9 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
   </a>
   <a href="https://github.com/sjtuyinjie?tab=repositories" target="_blank">
     <img src="https://badges.strrl.dev/repos/sjtuyinjie?style=flat-square&logo=github" alt="GitHub Repos" />
+  </a>
+  <a href="https://github.com/sjtuyinjie" target="_blank">
+    <img src="https://img.shields.io/github/followers/sjtuyinjie?style=flat-square&logo=github&logoColor=white&label=Followers&color=00C000" alt="GitHub Followers" />
   </a>
 </div>
 
@@ -1097,13 +1110,18 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       'SJTU-ViSYS/M2DGR-plus',
       'SJTU-ViSYS/Sky-GVINS'
     ];
-    var scholarCacheKey = 'aboutScholarCitations';
+    var scholarCacheKey = 'aboutScholarCitationsV2';
     var githubStarsCacheKey = 'aboutGithubStarsV2';
     var scholarMetricRendered = false;
     var githubMetricRendered = false;
     var sharedScholarFallback = {
       value: Number('{{ site.data.scholar_stats.citations | default: 0 }}'),
-      updatedAt: '{{ site.data.scholar_stats.updated_at | default: "" }}'
+      updatedAt: '{{ site.data.scholar_stats.updated_at | default: "" }}',
+      breakdown: [
+        {% for paper in site.data.scholar_stats.papers %}
+        { name: {{ paper.name | jsonify }}, stars: Number('{{ paper.citations }}') }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
     };
     var sharedGithubFallback = {
       value: Number('{{ site.data.github_stars.stars | default: 0 }}'),
@@ -1111,6 +1129,20 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     };
     var starPalette = ['#60a5fa', '#2dd4bf', '#fbbf24', '#f87171', '#38bdf8', '#a78bfa', '#34d399', '#fb923c'];
     var othersColor = '#94a3b8';
+    var paperNameAliases = [
+      [/Innovation-based Kalman filter/i, 'Innovation-KF'],
+      [/Towards Robust Sensor-Fusion Ground SLAM/i, 'M3DGR & GF2'],
+      [/Implicit Event-RGBD Neural SLAM/i, 'EN-SLAM'],
+      [/Disentangled Acoustic Fields/i, 'DAF'],
+      [/Ground-[Cc]hallenge/i, 'Ground-Challenge'],
+      [/Ground-Fusion/i, 'Ground-Fusion'],
+      [/M2C-GVIO/i, 'M2C-GVIO'],
+      [/Sky-GVINS/i, 'Sky-GVINS'],
+      [/Ultra-Fusion/i, 'Ultra-Fusion'],
+      [/In-P3 VIO/i, 'In-P3 VIO'],
+      [/\bLIGO\b/i, 'LIGO'],
+      [/\bM2DGR\b/i, 'M2DGR']
+    ];
     var nowString = function () {
       var d = new Date();
       var pad = function (n) {
@@ -1125,21 +1157,31 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       var parts = String(fullName || '').split('/');
       return parts.length > 1 ? parts[parts.length - 1] : fullName;
     };
-    var buildStarsBreakdown = function (repos) {
-      var sorted = repos.slice().sort(function (a, b) {
+    var shortPaperName = function (title) {
+      var clean = String(title || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      for (var i = 0; i < paperNameAliases.length; i += 1) {
+        if (paperNameAliases[i][0].test(clean)) {
+          return paperNameAliases[i][1];
+        }
+      }
+      var beforeColon = clean.split(/[:：]/)[0].trim();
+      return beforeColon.length > 28 ? (beforeColon.slice(0, 26) + '…') : beforeColon;
+    };
+    var buildThresholdBreakdown = function (items, threshold) {
+      var sorted = items.slice().sort(function (a, b) {
         return b.stars - a.stars;
       });
       var major = [];
       var others = 0;
 
-      sorted.forEach(function (repo) {
-        if (repo.stars > 100) {
+      sorted.forEach(function (item) {
+        if (item.stars >= threshold) {
           major.push({
-            name: shortRepoName(repo.name),
-            stars: repo.stars
+            name: item.name,
+            stars: item.stars
           });
         } else {
-          others += repo.stars;
+          others += item.stars;
         }
       });
 
@@ -1149,13 +1191,29 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
       return major;
     };
-    var renderGithubStarsCard = function (updatedNode, total, breakdown, updatedAt) {
+    var buildStarsBreakdown = function (repos) {
+      return buildThresholdBreakdown(repos.map(function (repo) {
+        return {
+          name: shortRepoName(repo.name),
+          stars: repo.stars
+        };
+      }), 101);
+    };
+    var buildCitationBreakdown = function (papers) {
+      return buildThresholdBreakdown(papers.map(function (paper) {
+        return {
+          name: shortPaperName(paper.name),
+          stars: paper.stars
+        };
+      }), 25);
+    };
+    var renderMetricBreakdownCard = function (updatedNode, total, breakdown, updatedAt, title) {
       if (!updatedNode) {
         return;
       }
 
       if (!breakdown || !breakdown.length) {
-        updatedNode.textContent = updatedAt ? ('last update: ' + updatedAt) : 'loading latest GitHub stars...';
+        updatedNode.textContent = updatedAt ? ('last update: ' + updatedAt) : 'loading...';
         return;
       }
 
@@ -1179,7 +1237,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }).join('');
 
       updatedNode.innerHTML =
-        '<p class="stars-card-title">Stars by project</p>' +
+        '<p class="stars-card-title">' + title + '</p>' +
         '<div class="stars-stack">' + stackHtml + '</div>' +
         '<ul class="stars-list">' + rowsHtml + '</ul>' +
         (updatedAt ? ('<div class="stars-updated">last update: ' + updatedAt + '</div>') : '');
@@ -1218,15 +1276,60 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }
       if (node === citationNode) {
         scholarMetricRendered = true;
+        renderMetricBreakdownCard(updatedNode, value, cache && cache.breakdown, cache && cache.updatedAt, 'Citations by paper');
+        return;
       }
       if (node === githubStarsNode) {
         githubMetricRendered = true;
-        renderGithubStarsCard(updatedNode, value, cache && cache.breakdown, cache && cache.updatedAt);
+        renderMetricBreakdownCard(updatedNode, value, cache && cache.breakdown, cache && cache.updatedAt, 'Stars by project');
         return;
       }
       if (updatedNode && cache && cache.updatedAt) {
         updatedNode.textContent = 'last update: ' + cache.updatedAt;
       }
+    };
+    var stripHtml = function (value) {
+      return String(value || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    };
+    var parseScholarPapers = function (text) {
+      var papers = [];
+      var seen = {};
+      var htmlRe = /class="gsc_a_at"[^>]*>([\s\S]*?)<\/a>[\s\S]*?class="gsc_a_ac[^"]*"[^>]*>\s*([\d,]*)/gi;
+      var htmlMatch = htmlRe.exec(text);
+
+      while (htmlMatch) {
+        var htmlTitle = stripHtml(htmlMatch[1]);
+        var htmlCites = Number((htmlMatch[2] || '0').replace(/,/g, '')) || 0;
+        if (htmlTitle && !seen[htmlTitle]) {
+          seen[htmlTitle] = true;
+          papers.push({ name: htmlTitle, stars: htmlCites });
+        }
+        htmlMatch = htmlRe.exec(text);
+      }
+
+      if (papers.length) {
+        return papers;
+      }
+
+      var mdRe = /^\|\s*(?!Title)(.+?)\s*\|\s*(\d+)\s*\|\s*\d{4}\s*\|/gm;
+      var mdMatch = mdRe.exec(text);
+      while (mdMatch) {
+        var mdTitle = stripHtml(mdMatch[1]).replace(/\s+[A-Z]\s+[A-Za-z].*$/, function (tail) {
+          return /ESI|CVPR|IEEE|arXiv|Satellite|GPS|Geo-spatial|Proceedings/i.test(tail) ? tail : '';
+        }).trim();
+        var firstAuthorCut = mdTitle.search(/\s[A-Z]\s+[A-Za-z]/);
+        if (firstAuthorCut > 12) {
+          mdTitle = mdTitle.slice(0, firstAuthorCut).trim();
+        }
+        var mdCites = Number(mdMatch[2]);
+        if (mdTitle && Number.isFinite(mdCites) && !seen[mdTitle]) {
+          seen[mdTitle] = true;
+          papers.push({ name: mdTitle, stars: mdCites });
+        }
+        mdMatch = mdRe.exec(text);
+      }
+
+      return papers;
     };
     var parseScholarCitations = function (text) {
       var htmlPatterns = [
@@ -1253,6 +1356,22 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
       var numeric = Number(match[1].replace(/,/g, ''));
       return Number.isFinite(numeric) ? numeric : null;
+    };
+    var parseScholarPayload = function (text) {
+      var citations = parseScholarCitations(text);
+      var papers = parseScholarPapers(text);
+      if (citations === null && !papers.length) {
+        return null;
+      }
+      if (citations === null && papers.length) {
+        citations = papers.reduce(function (sum, paper) {
+          return sum + paper.stars;
+        }, 0);
+      }
+      return {
+        citations: citations,
+        breakdown: papers.length ? buildCitationBreakdown(papers) : null
+      };
     };
     var fetchTextWithRetries = function (url, retries) {
       var attemptsLeft = typeof retries === 'number' ? retries : 2;
@@ -1282,7 +1401,8 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       setTimeout(function () {
         if (!scholarMetricRendered && Number.isFinite(sharedScholarFallback.value) && sharedScholarFallback.value > 0) {
           renderMetricUpdate(citationNode, updatedNode, sharedScholarFallback.value, 'Google Scholar citations', {
-            updatedAt: sharedScholarFallback.updatedAt || 'shared fallback'
+            updatedAt: sharedScholarFallback.updatedAt || 'shared fallback',
+            breakdown: sharedScholarFallback.breakdown
           });
         }
       }, 3000);
@@ -1300,22 +1420,32 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
         return fetchTextWithRetries(proxies[idx], 2)
           .then(function (text) {
-            var citations = parseScholarCitations(text);
-            if (citations === null) {
+            var payload = parseScholarPayload(text);
+            if (!payload || payload.citations === null) {
               throw new Error('parse failed');
             }
-            return citations;
+            return payload;
           })
           .catch(function () {
             return tryFetch(idx + 1);
           });
       };
 
-      tryFetch(0).then(function (citations) {
-        if (citations === null) {
+      tryFetch(0).then(function (payload) {
+        if (!payload) {
           return;
         }
-        renderMetricUpdate(citationNode, updatedNode, citations, 'Google Scholar citations', writeMetricCache(scholarCacheKey, citations));
+        var breakdown = payload.breakdown && payload.breakdown.length
+          ? payload.breakdown
+          : sharedScholarFallback.breakdown;
+        var extra = breakdown && breakdown.length ? { breakdown: breakdown } : null;
+        renderMetricUpdate(
+          citationNode,
+          updatedNode,
+          payload.citations,
+          'Google Scholar citations',
+          writeMetricCache(scholarCacheKey, payload.citations, extra)
+        );
       });
     };
 
