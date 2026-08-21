@@ -697,6 +697,107 @@ redirect_from:
       padding: 1.1rem;
     }
   }
+
+  html[data-theme="dark"] .about-page {
+    --about-primary: #7dd3fc;
+    --about-accent: #5eead4;
+    --about-hover: #93c5fd;
+    --about-work: #fbbf24;
+    --about-author: #5eead4;
+    --about-author-bg: rgba(45, 212, 191, 0.14);
+    --about-ink: #e8edf5;
+    --about-muted: #9aa6b8;
+    --about-surface: #151b24;
+    --about-border: rgba(125, 211, 252, 0.18);
+  }
+
+  html[data-theme="dark"] .about-hero {
+    background:
+      radial-gradient(circle at top right, rgba(56, 189, 248, 0.14), transparent 34%),
+      linear-gradient(145deg, #12161e 0%, #0e131a 100%);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  }
+
+  html[data-theme="dark"] .about-chip {
+    border-color: rgba(125, 211, 252, 0.28);
+    color: #bae6fd;
+    background: rgba(14, 165, 233, 0.12);
+  }
+
+  html[data-theme="dark"] a.about-chip:hover {
+    border-color: rgba(125, 211, 252, 0.45);
+    background: rgba(56, 189, 248, 0.18);
+    color: #e0f2fe;
+  }
+
+  html[data-theme="dark"] .about-section-note {
+    color: #e2e8f0;
+  }
+
+  html[data-theme="dark"] .theme-card {
+    border-color: rgba(148, 163, 184, 0.16);
+    background: #12161e;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  html[data-theme="dark"] .theme-card:hover {
+    border-color: rgba(125, 211, 252, 0.35);
+    box-shadow: 0 18px 36px rgba(14, 165, 233, 0.12);
+  }
+
+  html[data-theme="dark"] .theme-preview {
+    background: linear-gradient(180deg, #151b24, #10151d);
+  }
+
+  html[data-theme="dark"] .theme-card h3,
+  html[data-theme="dark"] .about-page h2 {
+    color: #f1f5f9;
+  }
+
+  html[data-theme="dark"] .about-page h2 {
+    border-bottom-color: rgba(125, 211, 252, 0.2);
+  }
+
+  html[data-theme="dark"] .theme-icon {
+    background: rgba(56, 189, 248, 0.12);
+    color: #7dd3fc;
+  }
+
+  html[data-theme="dark"] .theme-paper-tag {
+    background: rgba(56, 189, 248, 0.12);
+  }
+
+  html[data-theme="dark"] .about-page a.theme-paper-tag {
+    color: #7dd3fc;
+  }
+
+  html[data-theme="dark"] .about-page a.theme-paper-tag:hover {
+    background: #0ea5e9;
+    color: #041018;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr {
+    background: #12161e;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr:hover {
+    background: #18202c;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  }
+
+  html[data-theme="dark"] .about-page .publication-authors,
+  html[data-theme="dark"] .about-page .project-authors {
+    color: #e2e8f0;
+  }
+
+  html[data-theme="dark"] .highlight-soft {
+    background: rgba(251, 191, 36, 0.18);
+    color: #fde68a;
+  }
+
+  .about-page h2 {
+    scroll-margin-top: 4.5rem;
+  }
 </style>
 
 <div class="about-page" markdown="1">

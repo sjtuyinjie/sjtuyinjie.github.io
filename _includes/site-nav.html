@@ -1,0 +1,46 @@
+{% include base_path %}
+
+<header class="site-nav" id="site-nav-bar">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="{{ base_path }}/">Jie Yin</a>
+
+    <button class="site-nav__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="site-nav__right" id="site-nav-menu">
+      <nav class="site-nav__links" aria-label="Primary">
+        <a href="{{ base_path }}/">About</a>
+        <a href="{{ base_path }}/#news">News</a>
+        <a href="{{ base_path }}/#research-themes">Research</a>
+        <a href="{{ base_path }}/#publication">Publications</a>
+        <a href="{{ base_path }}/#projects">Projects</a>
+      </nav>
+      {% include theme-toggle.html %}
+    </div>
+  </div>
+</header>
+<script>
+  (function () {
+    var bar = document.getElementById('site-nav-bar');
+    var burger = bar && bar.querySelector('.site-nav__burger');
+    var menu = document.getElementById('site-nav-menu');
+    if (!bar || !burger || !menu) {
+      return;
+    }
+
+    burger.addEventListener('click', function () {
+      var open = bar.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        bar.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  })();
+</script>

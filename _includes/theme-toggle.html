@@ -1,0 +1,44 @@
+<button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <span class="theme-toggle__icons" aria-hidden="true">
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4.2"></circle>
+      <path d="M12 2.6v2.2M12 19.2v2.2M4.8 12H2.6M21.4 12h-2.2M5.7 5.7l1.6 1.6M16.7 16.7l1.6 1.6M18.3 5.7l-1.6 1.6M7.3 16.7l-1.6 1.6"></path>
+    </svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.2 14.1A8.2 8.2 0 0 1 9.9 3.8 8.4 8.4 0 1 0 20.2 14.1z"></path>
+    </svg>
+  </span>
+</button>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var button = document.querySelector('.theme-toggle');
+    if (!button) {
+      return;
+    }
+
+    var applyTheme = function (theme) {
+      if (theme === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      button.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      try {
+        localStorage.setItem('site-theme', theme);
+      } catch (err) {}
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) {
+        meta.setAttribute('content', theme === 'dark' ? '#0a0c10' : '#ffffff');
+      }
+    };
+
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    applyTheme(current);
+
+    button.addEventListener('click', function () {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
