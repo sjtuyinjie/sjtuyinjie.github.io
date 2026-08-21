@@ -159,7 +159,7 @@
 
 html {
   color-scheme: light;
-  scroll-padding-top: 4.25rem;
+  scroll-padding-top: var(--site-nav-offset, 3.6rem);
 }
 
 html[data-theme="dark"] {

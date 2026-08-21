@@ -445,9 +445,11 @@ redirect_from:
   }
 
   .about-page h2 {
-    margin-top: 1.9rem;
+    margin-top: 0;
+    padding-top: 1.35rem;
     color: #0f172a;
     border-bottom-color: #dbeafe;
+    scroll-margin-top: 0;
   }
 
   .about-page .news {
@@ -869,10 +871,6 @@ redirect_from:
     background: rgba(251, 191, 36, 0.22);
     color: #fde68a;
     border: 1px solid rgba(251, 191, 36, 0.35);
-  }
-
-  .about-page h2 {
-    scroll-margin-top: 4.5rem;
   }
 </style>
 

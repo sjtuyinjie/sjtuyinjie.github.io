@@ -25,22 +25,77 @@
     var bar = document.getElementById('site-nav-bar');
     var burger = bar && bar.querySelector('.site-nav__burger');
     var menu = document.getElementById('site-nav-menu');
-    if (!bar || !burger || !menu) {
+    if (!bar) {
       return;
     }
 
-    burger.addEventListener('click', function () {
-      var open = bar.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
+    var syncNavOffset = function () {
+      var offset = Math.ceil(bar.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--site-nav-offset', offset + 'px');
+      return offset;
+    };
 
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        bar.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-        burger.setAttribute('aria-label', 'Open menu');
+    var closeMenu = function () {
+      if (!burger || !menu) {
+        return;
+      }
+      bar.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open menu');
+    };
+
+    var scrollToHash = function (hash, behavior) {
+      if (!hash || hash === '#') {
+        return false;
+      }
+      var target = document.querySelector(hash);
+      if (!target) {
+        return false;
+      }
+      var offset = syncNavOffset();
+      var top = window.scrollY + target.getBoundingClientRect().top - offset;
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: behavior || 'smooth'
+      });
+      return true;
+    };
+
+    syncNavOffset();
+    window.addEventListener('resize', syncNavOffset);
+
+    if (burger && menu) {
+      burger.addEventListener('click', function () {
+        var open = bar.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        syncNavOffset();
+      });
+    }
+
+    document.querySelectorAll('.site-nav__links a[href*="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var url = new URL(link.href, window.location.href);
+        if (url.pathname.replace(/\/$/, '') !== window.location.pathname.replace(/\/$/, '')) {
+          closeMenu();
+          return;
+        }
+        if (!url.hash) {
+          closeMenu();
+          return;
+        }
+        if (scrollToHash(url.hash, 'smooth')) {
+          event.preventDefault();
+          history.pushState(null, '', url.hash);
+        }
+        closeMenu();
       });
     });
+
+    if (window.location.hash) {
+      window.setTimeout(function () {
+        scrollToHash(window.location.hash, 'auto');
+      }, 0);
+    }
   })();
 </script>
