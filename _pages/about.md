@@ -502,6 +502,42 @@ redirect_from:
     background: #fff7cc;
   }
 
+  .representative-badge {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.12rem 0.42rem;
+    border-radius: 0.3rem;
+    background: #fff3a8;
+    color: #5b4500;
+    font-size: 0.7em;
+    font-weight: 650;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .about-page .hoverTable tr.publication-row--representative {
+    background: #fff8d6;
+    box-shadow: inset 3px 0 0 #eab308;
+  }
+
+  .about-page .hoverTable tr.publication-row--representative:hover {
+    background: #fff3b0;
+  }
+
+  .about-page .hoverTable tr.publication-row--representative .archive__item-title,
+  .about-page .hoverTable tr.publication-row--representative .publication-authors,
+  .about-page .hoverTable tr.publication-row--representative td {
+    color: #1f2937;
+  }
+
+  .about-page .hoverTable tr.publication-row--representative a {
+    color: #1d4ed8;
+  }
+
+  .about-page .hoverTable tr.publication-row--representative a:hover {
+    color: #6d28d9;
+  }
+
   .about-highlight-red {
     color: #dc2626;
     font-weight: 800;
@@ -793,6 +829,46 @@ redirect_from:
   html[data-theme="dark"] .highlight-soft {
     background: rgba(251, 191, 36, 0.18);
     color: #fde68a;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative {
+    background: linear-gradient(90deg, rgba(251, 191, 36, 0.16), rgba(251, 191, 36, 0.08));
+    box-shadow: inset 3px 0 0 #fbbf24;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative:hover {
+    background: linear-gradient(90deg, rgba(251, 191, 36, 0.22), rgba(251, 191, 36, 0.12));
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative .archive__item-title,
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative .publication-authors,
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative td,
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative strong {
+    color: #f8fafc;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative .publication-authors b,
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative .publication-authors strong {
+    color: var(--about-author);
+    background: var(--about-author-bg);
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative .venue-note {
+    color: #fca5a5;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative a {
+    color: #7dd3fc;
+  }
+
+  html[data-theme="dark"] .about-page .hoverTable tr.publication-row--representative a:hover {
+    color: #bae6fd;
+  }
+
+  html[data-theme="dark"] .representative-badge {
+    background: rgba(251, 191, 36, 0.22);
+    color: #fde68a;
+    border: 1px solid rgba(251, 191, 36, 0.35);
   }
 
   .about-page h2 {
