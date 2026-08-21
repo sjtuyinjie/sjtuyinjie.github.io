@@ -3,7 +3,7 @@ main:
     url: /
   - title: "News"
     url: /#news
-  - title: "Research"
+  - title: "Themes"
     url: /#research-themes
   - title: "Publications"
     url: /#publication
