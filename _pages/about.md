@@ -531,6 +531,103 @@ redirect_from:
     overflow: visible;
   }
 
+  .about-meta-note.github-stars-card {
+    width: 17.5rem;
+    max-width: min(17.5rem, calc(100vw - 1.5rem));
+    padding: 0.7rem 0.75rem 0.55rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 0.65rem;
+    background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.28);
+    white-space: normal;
+  }
+
+  .stars-card-title {
+    margin: 0 0 0.45rem;
+    color: #e2e8f0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .stars-stack {
+    display: flex;
+    width: 100%;
+    height: 0.42rem;
+    margin-bottom: 0.55rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.2);
+  }
+
+  .stars-stack-seg {
+    height: 100%;
+    min-width: 2px;
+  }
+
+  .stars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .stars-row {
+    display: grid;
+    grid-template-columns: 0.55rem minmax(0, 1fr) auto;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .stars-dot {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+  }
+
+  .stars-name {
+    overflow: hidden;
+    color: #f1f5f9;
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .stars-count {
+    color: #cbd5e1;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .stars-bar-track {
+    grid-column: 2 / 4;
+    height: 0.18rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.18);
+  }
+
+  .stars-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+  }
+
+  .stars-updated {
+    margin-top: 0.5rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+    color: #94a3b8;
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+
   .metric-tooltip-wrap {
     position: relative;
     display: inline-block;
@@ -606,7 +703,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note">loading latest GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note github-stars-card">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -1001,7 +1098,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       'SJTU-ViSYS/Sky-GVINS'
     ];
     var scholarCacheKey = 'aboutScholarCitations';
-    var githubStarsCacheKey = 'aboutGithubStars';
+    var githubStarsCacheKey = 'aboutGithubStarsV2';
     var scholarMetricRendered = false;
     var githubMetricRendered = false;
     var sharedScholarFallback = {
@@ -1012,6 +1109,8 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       value: Number('{{ site.data.github_stars.stars | default: 0 }}'),
       updatedAt: '{{ site.data.github_stars.updated_at | default: "" }}'
     };
+    var starPalette = ['#60a5fa', '#2dd4bf', '#fbbf24', '#f87171', '#38bdf8', '#a78bfa', '#34d399', '#fb923c'];
+    var othersColor = '#94a3b8';
     var nowString = function () {
       var d = new Date();
       var pad = function (n) {
@@ -1022,6 +1121,69 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     var formatNumber = function (value) {
       return value.toLocaleString('en-US');
     };
+    var shortRepoName = function (fullName) {
+      var parts = String(fullName || '').split('/');
+      return parts.length > 1 ? parts[parts.length - 1] : fullName;
+    };
+    var buildStarsBreakdown = function (repos) {
+      var sorted = repos.slice().sort(function (a, b) {
+        return b.stars - a.stars;
+      });
+      var major = [];
+      var others = 0;
+
+      sorted.forEach(function (repo) {
+        if (repo.stars > 100) {
+          major.push({
+            name: shortRepoName(repo.name),
+            stars: repo.stars
+          });
+        } else {
+          others += repo.stars;
+        }
+      });
+
+      if (others > 0) {
+        major.push({ name: 'Others', stars: others });
+      }
+
+      return major;
+    };
+    var renderGithubStarsCard = function (updatedNode, total, breakdown, updatedAt) {
+      if (!updatedNode) {
+        return;
+      }
+
+      if (!breakdown || !breakdown.length) {
+        updatedNode.textContent = updatedAt ? ('last update: ' + updatedAt) : 'loading latest GitHub stars...';
+        return;
+      }
+
+      var maxStars = Math.max.apply(null, breakdown.map(function (item) {
+        return item.stars;
+      }));
+      var stackHtml = breakdown.map(function (item, idx) {
+        var color = item.name === 'Others' ? othersColor : starPalette[idx % starPalette.length];
+        var width = total > 0 ? ((item.stars / total) * 100).toFixed(2) : 0;
+        return '<span class="stars-stack-seg" style="width:' + width + '%;background:' + color + ';"></span>';
+      }).join('');
+      var rowsHtml = breakdown.map(function (item, idx) {
+        var color = item.name === 'Others' ? othersColor : starPalette[idx % starPalette.length];
+        var barWidth = maxStars > 0 ? ((item.stars / maxStars) * 100).toFixed(2) : 0;
+        return '<li class="stars-row">' +
+          '<span class="stars-dot" style="background:' + color + ';"></span>' +
+          '<span class="stars-name">' + item.name + '</span>' +
+          '<span class="stars-count">' + formatNumber(item.stars) + '</span>' +
+          '<span class="stars-bar-track"><span class="stars-bar-fill" style="width:' + barWidth + '%;background:' + color + ';"></span></span>' +
+          '</li>';
+      }).join('');
+
+      updatedNode.innerHTML =
+        '<p class="stars-card-title">Stars by project</p>' +
+        '<div class="stars-stack">' + stackHtml + '</div>' +
+        '<ul class="stars-list">' + rowsHtml + '</ul>' +
+        (updatedAt ? ('<div class="stars-updated">last update: ' + updatedAt + '</div>') : '');
+    };
     var readMetricCache = function (key) {
       try {
         var cached = localStorage.getItem(key);
@@ -1030,11 +1192,17 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         return null;
       }
     };
-    var writeMetricCache = function (key, value) {
+    var writeMetricCache = function (key, value, extra) {
       var cache = {
         value: value,
         updatedAt: nowString()
       };
+
+      if (extra) {
+        Object.keys(extra).forEach(function (k) {
+          cache[k] = extra[k];
+        });
+      }
 
       try {
         localStorage.setItem(key, JSON.stringify(cache));
@@ -1053,6 +1221,8 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }
       if (node === githubStarsNode) {
         githubMetricRendered = true;
+        renderGithubStarsCard(updatedNode, value, cache && cache.breakdown, cache && cache.updatedAt);
+        return;
       }
       if (updatedNode && cache && cache.updatedAt) {
         updatedNode.textContent = 'last update: ' + cache.updatedAt;
@@ -1197,40 +1367,46 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         return fetchGithubJson(url, attemptsLeft - 1);
       });
     };
-    var fetchUserRepoStarsFromReposApi = function (type, page, total) {
+    var fetchUserReposFromReposApi = function (type, page, collected) {
       return fetchGithubJson('https://api.github.com/users/sjtuyinjie/repos?type=' + type + '&per_page=100&page=' + page)
         .then(function (repos) {
-          var pageTotal = repos.reduce(function (sum, repo) {
-            return sum + (repo.stargazers_count || 0);
-          }, total);
+          var next = collected.concat(repos.map(function (repo) {
+            return {
+              name: repo.full_name || repo.name,
+              stars: repo.stargazers_count || 0
+            };
+          }));
 
           if (repos.length === 100) {
-            return fetchUserRepoStarsFromReposApi(type, page + 1, pageTotal);
+            return fetchUserReposFromReposApi(type, page + 1, next);
           }
 
-          return pageTotal;
+          return next;
         });
     };
-    var fetchUserRepoStarsFromSearchApi = function (page, total) {
+    var fetchUserReposFromSearchApi = function (page, collected) {
       return fetchGithubJson('https://api.github.com/search/repositories?q=user:sjtuyinjie+fork:true&per_page=100&page=' + page)
         .then(function (result) {
           var repos = result.items || [];
-          var pageTotal = repos.reduce(function (sum, repo) {
-            return sum + (repo.stargazers_count || 0);
-          }, total);
+          var next = collected.concat(repos.map(function (repo) {
+            return {
+              name: repo.full_name || repo.name,
+              stars: repo.stargazers_count || 0
+            };
+          }));
 
           if (repos.length === 100 && page < 10) {
-            return fetchUserRepoStarsFromSearchApi(page + 1, pageTotal);
+            return fetchUserReposFromSearchApi(page + 1, next);
           }
 
-          return pageTotal;
+          return next;
         });
     };
-    var fetchUserRepoStars = function () {
+    var fetchUserRepos = function () {
       var methods = [
-        function () { return fetchUserRepoStarsFromReposApi('owner', 1, 0); },
-        function () { return fetchUserRepoStarsFromReposApi('all', 1, 0); },
-        function () { return fetchUserRepoStarsFromSearchApi(1, 0); }
+        function () { return fetchUserReposFromReposApi('owner', 1, []); },
+        function () { return fetchUserReposFromReposApi('all', 1, []); },
+        function () { return fetchUserReposFromSearchApi(1, []); }
       ];
       var tryMethod = function (idx) {
         if (idx >= methods.length) {
@@ -1247,7 +1423,10 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     var fetchRepoStars = function (fullName) {
       return fetchGithubJson('https://api.github.com/repos/' + fullName)
         .then(function (repo) {
-          return repo.stargazers_count || 0;
+          return {
+            name: fullName,
+            stars: repo.stargazers_count || 0
+          };
         });
     };
     var fetchRepoStarsWithFallback = function (fullName) {
@@ -1264,7 +1443,10 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
             if (!Number.isFinite(numeric)) {
               throw new Error('repo star parse failed');
             }
-            return Math.round(numeric);
+            return {
+              name: fullName,
+              stars: Math.round(numeric)
+            };
           });
       });
     };
@@ -1287,16 +1469,17 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }, 3000);
 
       Promise.all([
-        fetchUserRepoStars(),
+        fetchUserRepos(),
         Promise.all(featuredGithubRepos.map(fetchRepoStarsWithFallback))
       ]).then(function (results) {
-        var userStars = results[0];
-        var featuredStars = results[1].reduce(function (sum, stars) {
-          return sum + stars;
+        var allRepos = results[0].concat(results[1]);
+        var totalStars = allRepos.reduce(function (sum, repo) {
+          return sum + (repo.stars || 0);
         }, 0);
-        var totalStars = userStars + featuredStars;
+        var breakdown = buildStarsBreakdown(allRepos);
+        var cache = writeMetricCache(githubStarsCacheKey, totalStars, { breakdown: breakdown });
 
-        renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, totalStars, 'GitHub stars', writeMetricCache(githubStarsCacheKey, totalStars));
+        renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, totalStars, 'GitHub stars', cache);
       }).catch(function () {
         if (!githubMetricRendered && !cachedGithubStars && Number.isFinite(sharedGithubFallback.value) && sharedGithubFallback.value > 0) {
           renderMetricUpdate(githubStarsNode, githubStarsUpdatedNode, sharedGithubFallback.value, 'GitHub stars', {
