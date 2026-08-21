@@ -310,8 +310,8 @@ html[data-theme="dark"] .btn--inverse:hover {
 }
 
 .sidebar-social--email i {
-  color: #c14438;
-  background: rgba(193, 68, 56, 0.12);
+  color: #64748b;
+  background: rgba(148, 163, 184, 0.14);
 }
 
 .sidebar-social--github i {
@@ -350,8 +350,8 @@ html[data-theme="dark"] .sidebar-meta i {
 }
 
 html[data-theme="dark"] .sidebar-social--email i {
-  color: #fca5a5;
-  background: rgba(248, 113, 113, 0.16);
+  color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.18);
 }
 
 html[data-theme="dark"] .sidebar-social--github i {
