@@ -1820,6 +1820,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     updateGithubStarsOnVisit();
 
     var robotIconNames = ['hand', 'humanoid', 'smplx', 'quadruped', 'arm', 'wheeled'];
+    var robotIconIndex = 0;
 
     document.addEventListener('click', function (event) {
       if (event.target.closest(ignoredSelector)) {
@@ -1827,7 +1828,8 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       }
 
       var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      var name = robotIconNames[Math.floor(Math.random() * robotIconNames.length)];
+      var name = robotIconNames[robotIconIndex % robotIconNames.length];
+      robotIconIndex += 1;
       var robot = document.createElement('span');
       var img = document.createElement('img');
       robot.className = 'floating-robot';
