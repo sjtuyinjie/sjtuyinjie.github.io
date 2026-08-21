@@ -696,13 +696,13 @@ redirect_from:
     top: 0;
     z-index: 9999;
     display: inline-flex;
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 2.05rem;
+    height: 2.05rem;
     align-items: center;
     justify-content: center;
     pointer-events: none;
     color: #0f766e;
-    filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.18));
+    filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.2));
     transform: translate(-50%, -50%);
     animation: robot-fly-up 1.15s ease-out forwards;
     will-change: transform, opacity;
@@ -716,22 +716,23 @@ redirect_from:
 
   html[data-theme="dark"] .floating-robot {
     color: #5eead4;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4));
   }
 
   @keyframes robot-fly-up {
     0% {
       opacity: 0;
-      transform: translate(-50%, -20%) scale(0.78) rotate(-8deg);
+      transform: translate(-50%, -10%) translateY(8px);
     }
 
-    12% {
+    14% {
       opacity: 1;
+      transform: translate(-50%, -50%) translateY(0);
     }
 
     100% {
       opacity: 0;
-      transform: translate(calc(-50% + var(--robot-drift, 0px)), -130px) scale(1.25) rotate(12deg);
+      transform: translate(calc(-50% + var(--robot-drift, 0px)), -50%) translateY(-118px);
     }
   }
 
@@ -1819,12 +1820,12 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
     updateGithubStarsOnVisit();
 
     var robotIcons = [
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 11.2c.4-1.8 1.8-3.2 3.8-3.2s3.4 1.4 3.8 3.2"/><path d="M7 14.2c.6 2.2 2.5 3.8 5 3.8s4.4-1.6 5-3.8"/><path d="M9.2 8.4V5.8M12 7.6V4.8M14.8 8.4V5.8"/><path d="M8.4 12.2H6.6M15.6 12.2h1.8"/><circle cx="9.2" cy="5.4" r="0.7" fill="currentColor" stroke="none"/><circle cx="12" cy="4.5" r="0.7" fill="currentColor" stroke="none"/><circle cx="14.8" cy="5.4" r="0.7" fill="currentColor" stroke="none"/><circle cx="6.2" cy="12.2" r="0.7" fill="currentColor" stroke="none"/><circle cx="17.8" cy="12.2" r="0.7" fill="currentColor" stroke="none"/></svg>',
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9.1" y="3.2" width="5.8" height="4.2" rx="1.4"/><path d="M10.2 7.4h3.6v2.1H10.2z"/><path d="M8.4 9.5h7.2v5.4c0 .8-.6 1.4-1.4 1.4H9.8c-.8 0-1.4-.6-1.4-1.4z"/><path d="M8.4 11.2H6.5c-.7 0-1.2.5-1.2 1.2v2.4"/><path d="M15.6 11.2h1.9c.7 0 1.2.5 1.2 1.2v2.4"/><path d="M10.2 16.3v4.2M13.8 16.3v4.2"/><path d="M9.1 20.5h2.2M12.7 20.5h2.2"/><circle cx="10.8" cy="5.2" r="0.55" fill="currentColor" stroke="none"/><circle cx="13.2" cy="5.2" r="0.55" fill="currentColor" stroke="none"/></svg>',
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.6" r="1.7"/><path d="M12 6.3v4.2"/><path d="M8.2 9.1 12 10.5l3.8-1.4"/><path d="M12 10.5v4.4"/><path d="M9.1 19.4 12 14.9l2.9 4.5"/><circle cx="12" cy="4.6" r="0.45" fill="currentColor" stroke="none"/><circle cx="8.2" cy="9.1" r="0.45" fill="currentColor" stroke="none"/><circle cx="15.8" cy="9.1" r="0.45" fill="currentColor" stroke="none"/><circle cx="12" cy="10.5" r="0.45" fill="currentColor" stroke="none"/><circle cx="12" cy="14.9" r="0.45" fill="currentColor" stroke="none"/><circle cx="9.1" cy="19.4" r="0.45" fill="currentColor" stroke="none"/><circle cx="14.9" cy="19.4" r="0.45" fill="currentColor" stroke="none"/><path d="M7.4 7.8c1.2-1.4 2.8-2.1 4.6-2.1s3.4.7 4.6 2.1" opacity=".55"/><path d="M6.8 15.2c1.5 1.8 3.3 2.7 5.2 2.7s3.7-.9 5.2-2.7" opacity=".55"/></svg>',
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7.2" y="8.2" width="9.6" height="5.2" rx="1.6"/><path d="M16.8 10.2h1.7c.7 0 1.2.5 1.2 1.2v1.1"/><circle cx="18.9" cy="13.4" r="1.1"/><path d="M8.4 13.4 6.2 17M10.8 13.4l-.8 3.6M13.2 13.4l.8 3.6M15.6 13.4 17.8 17"/><circle cx="6.2" cy="17.4" r="1.15"/><circle cx="10" cy="17.4" r="1.15"/><circle cx="14" cy="17.4" r="1.15"/><circle cx="17.8" cy="17.4" r="1.15"/><path d="M9.4 8.2V6.6c0-.7.5-1.2 1.2-1.2h2.8c.7 0 1.2.5 1.2 1.2v1.6"/><circle cx="11.1" cy="6.7" r="0.45" fill="currentColor" stroke="none"/><circle cx="12.9" cy="6.7" r="0.45" fill="currentColor" stroke="none"/></svg>',
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 19.4h4.2"/><path d="M7.3 19.4V8.8"/><path d="M7.3 8.8h6.1c.9 0 1.6.7 1.6 1.6v1.1"/><path d="M15 11.5h2.4c.7 0 1.2.5 1.2 1.2v2.1"/><path d="M18.6 14.8h-2.1"/><path d="M16.5 14.8v2.1l1.5 1.3M16.5 16.9l-1.5 1.3"/><circle cx="7.3" cy="8.8" r="1.15"/><circle cx="15" cy="11.5" r="1.05"/><circle cx="18.6" cy="14.8" r="1.05"/></svg>',
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.2" y="9.4" width="13.6" height="6.2" rx="1.8"/><circle cx="8.1" cy="17.2" r="1.55"/><circle cx="15.9" cy="17.2" r="1.55"/><path d="M9.7 9.4V7.6c0-.7.5-1.2 1.2-1.2h2.2c.7 0 1.2.5 1.2 1.2v1.8"/><circle cx="12" cy="6.4" r="1.05"/><path d="M12 5.35V4.2"/><circle cx="12" cy="3.7" r="0.55" fill="currentColor" stroke="none"/><path d="M7.4 11.4h2.1M14.5 11.4h2.1"/></svg>'
+      '<svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M18.2 8.4c1.1-2.2 3.1-3.6 5.8-3.6s4.7 1.4 5.8 3.6c.3.6-.2 1.3-.9 1.3h-9.8c-.7 0-1.2-.7-.9-1.3z"/><path d="M14.8 12.8c0-1.2.9-2.1 2.1-2.1h14.2c1.2 0 2.1.9 2.1 2.1v2.4c0 4.6-3.4 8.5-7.9 9.4v2.7h3.4c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2H18.1c-.7 0-1.2-.5-1.2-1.2s.5-1.2 1.2-1.2h3.4v-2.7c-4.5-.9-7.9-4.8-7.9-9.4v-2.4z"/><path d="M11.6 15.1c-.8 0-1.5.7-1.5 1.5v4.8c0 1.8 1.1 3.4 2.8 4.1.5.2 1.1-.2 1.1-.8v-8.1c0-.8-.7-1.5-1.5-1.5z"/><path d="M36.4 15.1c.8 0 1.5.7 1.5 1.5v8.1c0 .6-.6 1-1.1.8-1.7-.7-2.8-2.3-2.8-4.1v-4.8c0-.8.7-1.5 1.5-1.5z"/><path d="M19.4 6.6c0-.7.5-1.2 1.2-1.2h.1c.7 0 1.2.5 1.2 1.2v1.1h-2.5V6.6z"/><path d="M26.1 6.6c0-.7.5-1.2 1.2-1.2h.1c.7 0 1.2.5 1.2 1.2v1.1h-2.5V6.6z"/><path opacity=".35" d="M20.2 15.4h7.6c.4 0 .7.3.7.7s-.3.7-.7.7h-7.6c-.4 0-.7-.3-.7-.7s.3-.7.7-.7z"/><path opacity=".35" d="M20.2 18.6h7.6c.4 0 .7.3.7.7s-.3.7-.7.7h-7.6c-.4 0-.7-.3-.7-.7s.3-.7.7-.7z"/></svg>',
+      '<svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M18.6 4.8h10.8c1.5 0 2.7 1.2 2.7 2.7v4.1c0 1.5-1.2 2.7-2.7 2.7h-1.1v1.6h3.8c1.7 0 3.1 1.4 3.1 3.1v8.6c0 1.7-1.4 3.1-3.1 3.1h-2.2v7.4c0 .8-.6 1.4-1.4 1.4h-2.2c-.8 0-1.4-.6-1.4-1.4V30.7h-1.8v7.4c0 .8-.6 1.4-1.4 1.4h-2.2c-.8 0-1.4-.6-1.4-1.4v-7.4h-2.2c-1.7 0-3.1-1.4-3.1-3.1v-8.6c0-1.7 1.4-3.1 3.1-3.1h3.8v-1.6h-1.1c-1.5 0-2.7-1.2-2.7-2.7V7.5c0-1.5 1.2-2.7 2.7-2.7z"/><path fill="#fff" opacity=".9" d="M20.4 7.2h2.2c.4 0 .7.3.7.7s-.3.7-.7.7h-2.2c-.4 0-.7-.3-.7-.7s.3-.7.7-.7z"/><path fill="#fff" opacity=".9" d="M25.4 7.2h2.2c.4 0 .7.3.7.7s-.3.7-.7.7h-2.2c-.4 0-.7-.3-.7-.7s.3-.7.7-.7z"/><path d="M12.8 18.8c-1.1 0-2 .9-2 2v5.4c0 1.8 1.1 3.3 2.7 3.9.5.2 1-.2 1-.7v-8.6c0-1.1-.9-2-2-2z"/><path d="M35.2 18.8c1.1 0 2 .9 2 2v8.6c0 .5-.5.9-1 .7-1.6-.6-2.7-2.1-2.7-3.9V20.8c0-1.1.9-2 2-2z"/><path fill="#fff" opacity=".28" d="M19.6 20.2h8.8c.5 0 .9.4.9.9v5.2c0 .5-.4.9-.9.9h-8.8c-.5 0-.9-.4-.9-.9v-5.2c0-.5.4-.9.9-.9z"/></svg>',
+      '<svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><circle cx="24" cy="8.2" r="4.1"/><path d="M24 13.2c.7 0 1.3.6 1.3 1.3v6.8c0 .7-.6 1.3-1.3 1.3s-1.3-.6-1.3-1.3v-6.8c0-.7.6-1.3 1.3-1.3z"/><path d="M15.6 16.4c.5-.5 1.3-.5 1.8 0l6.6 6.2 6.6-6.2c.5-.5 1.3-.5 1.8 0s.5 1.3 0 1.8l-7.1 6.7c-.4.4-1 .4-1.4 0l-7.1-6.7c-.5-.5-.5-1.3 0-1.8z"/><path d="M24 23.8c.7 0 1.3.6 1.3 1.3v7.4c0 .7-.6 1.3-1.3 1.3s-1.3-.6-1.3-1.3v-7.4c0-.7.6-1.3 1.3-1.3z"/><path d="M17.8 40.6c-.6.4-1.4.2-1.8-.4-.4-.6-.2-1.4.4-1.8l6.3-4.2c.8-.5 1.8-.5 2.6 0l6.3 4.2c.6.4.8 1.2.4 1.8-.4.6-1.2.8-1.8.4L24 36.8l-6.2 3.8z"/><circle cx="24" cy="8.2" r="1.15" fill="#fff" opacity=".85"/><circle cx="16.5" cy="17.2" r="1.05"/><circle cx="31.5" cy="17.2" r="1.05"/><circle cx="24" cy="22.6" r="1.05"/><circle cx="24" cy="32.4" r="1.05"/><circle cx="17.8" cy="39.4" r="1.05"/><circle cx="30.2" cy="39.4" r="1.05"/><path opacity=".3" d="M13.8 12.8c2.4-2.6 5.9-4.1 10.2-4.1s7.8 1.5 10.2 4.1c.4.4.3 1.1-.2 1.4-.4.3-1 .2-1.3-.2-1.9-2.1-4.8-3.3-8.7-3.3s-6.8 1.2-8.7 3.3c-.3.4-.9.5-1.3.2-.5-.3-.6-1-.2-1.4z"/></svg>',
+      '<svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M14.4 14.8h15.4c2.2 0 4 1.8 4 4v5.6c0 1.7-1.1 3.2-2.7 3.8l1.9 5.8c.2.7-.3 1.4-1 1.4h-2.1c-.5 0-1-.3-1.2-.8l-1.5-4.4h-7.4l-1.5 4.4c-.2.5-.7.8-1.2.8h-2.1c-.7 0-1.2-.7-1-1.4l1.9-5.8c-1.6-.6-2.7-2.1-2.7-3.8v-5.6c0-2.2 1.8-4 4-4z"/><path d="M29.8 14.8V11c0-1.8 1.4-3.2 3.2-3.2h.4c1.3 0 2.4 1.1 2.4 2.4v2.2c0 .7.6 1.3 1.3 1.3s1.3-.6 1.3-1.3v-2.2c0-2.8-2.2-5-5-5h-.4c-3.2 0-5.8 2.6-5.8 5.8v3.8h2.6z"/><circle cx="19.2" cy="19.4" r="1.3" fill="#fff" opacity=".9"/><circle cx="24.8" cy="19.4" r="1.3" fill="#fff" opacity=".9"/><path d="M11.4 28.2c-1.5 0-2.7 1.2-2.7 2.7v1.1c0 .7.6 1.3 1.3 1.3h2.8c.5 0 .9-.4 1.1-.8.4-1.4 1.3-2.5 2.5-3.3-.4-.6-1-1-1.7-1h-3.3z"/><path d="M36.6 28.2c1.5 0 2.7 1.2 2.7 2.7v1.1c0 .7-.6 1.3-1.3 1.3h-2.8c-.5 0-.9-.4-1.1-.8-.4-1.4-1.3-2.5-2.5-3.3.4-.6 1-1 1.7-1h3.3z"/><path opacity=".3" d="M17.6 24.8h9c.5 0 .9.4.9.9s-.4.9-.9.9h-9c-.5 0-.9-.4-.9-.9s.4-.9.9-.9z"/></svg>',
+      '<svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8.6 40.2h8.4c.8 0 1.4-.6 1.4-1.4s-.6-1.4-1.4-1.4h-2.8V18.6c0-2.6 2.1-4.7 4.7-4.7h8.2c2.3 0 4.2 1.9 4.2 4.2v2.4h3.1c1.9 0 3.4 1.5 3.4 3.4v4.6c0 1.5-1 2.8-2.4 3.2l-.2 3.1c-.1 1.3-1.2 2.3-2.5 2.3h-3.4c-1.3 0-2.4-1-2.5-2.3l-.2-2.4h-1.8c-.8 0-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4h4.4c.8 0 1.4.7 1.5 1.5l.2 2.3h2.8l.2-2.5c.1-.8.7-1.4 1.5-1.4h.1c.7 0 1.2-.5 1.2-1.2v-4.6c0-.4-.3-.7-.7-.7h-4.5c-.8 0-1.4-.6-1.4-1.4v-3.8c0-.8-.6-1.4-1.4-1.4h-8.2c-1.1 0-1.9.8-1.9 1.9v20.2H8.6c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4z"/><circle cx="17.5" cy="13.9" r="2.6"/><circle cx="31.2" cy="20.5" r="2.2"/><circle cx="36.8" cy="29.8" r="2.2"/><path d="M34.6 32.4c.5-.5 1.3-.5 1.8 0l2.4 2.4c.5.5.5 1.3 0 1.8s-1.3.5-1.8 0l-2.4-2.4c-.5-.5-.5-1.3 0-1.8z"/><path d="M34.6 36.6c.5.5.5 1.3 0 1.8l-2.4 2.4c-.5.5-1.3.5-1.8 0s-.5-1.3 0-1.8l2.4-2.4c.5-.5 1.3-.5 1.8 0z"/></svg>',
+      '<svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M10.2 16.8h27.6c2.3 0 4.2 1.9 4.2 4.2v8.4c0 2.3-1.9 4.2-4.2 4.2H10.2c-2.3 0-4.2-1.9-4.2-4.2v-8.4c0-2.3 1.9-4.2 4.2-4.2z"/><path d="M19.4 16.8V12c0-1.8 1.4-3.2 3.2-3.2h2.8c1.8 0 3.2 1.4 3.2 3.2v4.8h-9.2z"/><circle cx="24" cy="8.2" r="2.3"/><path d="M24 5.9V4.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="24" cy="3.5" r="1.1"/><circle cx="14.4" cy="35.2" r="3.4"/><circle cx="33.6" cy="35.2" r="3.4"/><circle cx="14.4" cy="35.2" r="1.3" fill="#fff" opacity=".85"/><circle cx="33.6" cy="35.2" r="1.3" fill="#fff" opacity=".85"/><path fill="#fff" opacity=".28" d="M13.2 20.2h6.2c.6 0 1.1.5 1.1 1.1v3.2c0 .6-.5 1.1-1.1 1.1h-6.2c-.6 0-1.1-.5-1.1-1.1v-3.2c0-.6.5-1.1 1.1-1.1z"/><path fill="#fff" opacity=".28" d="M28.6 20.2h6.2c.6 0 1.1.5 1.1 1.1v3.2c0 .6-.5 1.1-1.1 1.1h-6.2c-.6 0-1.1-.5-1.1-1.1v-3.2c0-.6.5-1.1 1.1-1.1z"/></svg>'
     ];
 
     document.addEventListener('click', function (event) {
