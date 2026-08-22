@@ -1,8 +1,8 @@
-citations: 648
+citations: 651
 updated_at: "2026-08-22"
 papers:
   - name: "M2DGR"
-    citations: 380
+    citations: 381
   - name: "EN-SLAM"
     citations: 45
   - name: "M2C-GVIO"
@@ -10,9 +10,9 @@ papers:
   - name: "Ground-Fusion"
     citations: 39
   - name: "LIGO"
-    citations: 29
+    citations: 30
   - name: "Innovation-KF"
-    citations: 28
+    citations: 29
   - name: "Ground-Challenge"
     citations: 27
   - name: "M3DGR & GF2"
