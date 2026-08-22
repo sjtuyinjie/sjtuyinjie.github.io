@@ -1827,13 +1827,12 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         return;
       }
 
-      var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
       var name = robotIconNames[robotIconIndex % robotIconNames.length];
       robotIconIndex += 1;
       var robot = document.createElement('span');
       var img = document.createElement('img');
       robot.className = 'floating-robot';
-      img.src = '/images/click-robots/' + theme + '-' + name + '.png';
+      img.src = '/images/click-robots/dark-' + name + '.png';
       img.alt = '';
       robot.appendChild(img);
       robot.style.left = event.clientX + 'px';
