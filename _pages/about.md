@@ -157,7 +157,7 @@ redirect_from:
 
   .themes-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
 
@@ -736,12 +736,6 @@ redirect_from:
     }
   }
 
-  @media (max-width: 1100px) {
-    .themes-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   @media (max-width: 768px) {
     .themes-grid {
       grid-template-columns: 1fr;
@@ -906,12 +900,12 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://wmcraftnet.github.io/">WM-Craftnet</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
+  <a href="#theme-dexterous-manipulation" class="about-chip">Dexterous Manipulation</a>
   <a href="#theme-fusion-slam" class="about-chip">Multi-sensor Fusion SLAM</a>
-  <span class="about-chip">Dexterous Manipulation</span>
   <a href="#theme-multimodal-reasoning" class="about-chip">Multi-modal Reasoning</a>
   <a href="#theme-whole-body-control" class="about-chip">Whole-Body Control</a>
 </div>
@@ -948,9 +942,65 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
 
 <div class="research-themes">
 
-<p class="research-intro">My research spans <strong>multi-sensor fusion SLAM</strong>, <strong>multi-modal reasoning</strong>, and <strong>whole-body control</strong> — building robust perception and embodied autonomy for real-world robots.</p>
+<p class="research-intro">My research spans <strong>dexterous manipulation</strong>, <strong>multi-sensor fusion SLAM</strong>, <strong>multi-modal reasoning</strong>, and <strong>whole-body control</strong> — building robust perception and embodied autonomy for real-world robots.</p>
 
 <div class="themes-grid">
+
+<div class="theme-card" id="theme-dexterous-manipulation">
+  <div class="theme-preview">
+    <div class="theme-slide active" data-duration="11055">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="WM-Craftnet teaser">
+            <source src="/gifs/wmcraftnet_teaser.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <span class="theme-slide-title">WM-Craftnet</span>
+      <span class="theme-slide-tag">Teaser</span>
+    </div>
+    <div class="theme-slide" data-duration="15234">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="WM-Craftnet simulation demo">
+            <source src="/gifs/wmcraftnet_sim.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <span class="theme-slide-title">In-Hand Rotation</span>
+      <span class="theme-slide-tag">Simulation</span>
+    </div>
+    <div class="theme-slide" data-duration="18000">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="WM-Craftnet real-robot recovery">
+            <source src="/gifs/wmcraftnet_real.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <span class="theme-slide-title">Perturbation Recovery</span>
+      <span class="theme-slide-tag">Real Robot</span>
+    </div>
+    <div class="theme-slide-dots">
+      <button class="theme-dot active" data-index="0" type="button" aria-label="Show WM-Craftnet teaser"></button>
+      <button class="theme-dot" data-index="1" type="button" aria-label="Show simulation demo"></button>
+      <button class="theme-dot" data-index="2" type="button" aria-label="Show real-robot recovery"></button>
+    </div>
+  </div>
+  <div class="theme-body">
+    <div class="theme-header">
+      <div class="theme-icon"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></div>
+      <h3>Dexterous Manipulation</h3>
+    </div>
+    <p class="theme-description">World-model priors for visuotactile dexterity — robust, object-ID-free in-hand manipulation under disturbance and transfer.</p>
+    <div class="theme-papers">
+      <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
+    </div>
+  </div>
+</div>
 
 <div class="theme-card" id="theme-fusion-slam">
   <div class="theme-preview">
@@ -1332,6 +1382,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       [/M2C-GVIO/i, 'M2C-GVIO'],
       [/Sky-GVINS/i, 'Sky-GVINS'],
       [/Ultra-Fusion/i, 'Ultra-Fusion'],
+      [/WM-Craftnet/i, 'WM-Craftnet'],
       [/In-P3 VIO/i, 'In-P3 VIO'],
       [/\bLIGO\b/i, 'LIGO'],
       [/\bM2DGR\b/i, 'M2DGR']

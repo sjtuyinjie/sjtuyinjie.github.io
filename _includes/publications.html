@@ -59,7 +59,7 @@
 {% assign hf_dataset_url = post.dataset %}
 {% endif %}
 {% assign is_representative = false %}
-{% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Ultra-Fusion" or title contains "Disentangled Acoustic Fields" %}
+{% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Ultra-Fusion" or title contains "Disentangled Acoustic Fields" or title contains "WM-Craftnet" %}
 {% assign is_representative = true %}
 {% endif %}
 
@@ -74,6 +74,8 @@
         {% assign gif_path = "/gifs/daf10x.gif" | prepend: base_path %}
       {% elsif title contains "Ground-Fusion" %}
         {% assign gif_path = "/gifs/gf10x.gif" | prepend: base_path %}
+      {% elsif title contains "WM-Craftnet" %}
+        {% assign gif_path = "/gifs/rotation.gif" | prepend: base_path %}
       {% endif %}
       {% if gif_path != "" %}
       <img class="clickable-gif" style="display:block;" width="80%" src="{{post.teaser}}" data-static="{{post.teaser}}" data-gif="{{gif_path}}" />
