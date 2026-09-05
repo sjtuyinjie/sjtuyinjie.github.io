@@ -416,14 +416,9 @@ redirect_from:
   .theme-description {
     flex: 1;
     margin: 0 0 0.65rem;
-    min-height: calc(0.76rem * 1.55 * 3);
     color: var(--about-muted);
     font-size: 0.76rem;
     line-height: 1.55;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   .theme-papers {
@@ -757,8 +752,6 @@ redirect_from:
 
     .theme-description {
       font-size: 0.8rem;
-      min-height: calc(0.8rem * 1.55 * 2);
-      -webkit-line-clamp: 2;
     }
 
     .theme-slide-title {
@@ -1010,7 +1003,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-hand" aria-hidden="true"></i></div>
       <h3>Dexterous Manipulation</h3>
     </div>
-    <p class="theme-description">World-model priors for robust, object-ID-free visuotactile in-hand manipulation.</p>
+    <p class="theme-description">Robust visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
       <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Multi-Object Rotation</a>
@@ -1078,7 +1071,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <h3>Multi-sensor Fusion SLAM</h3>
     </div>
-    <p class="theme-description">Fusion frameworks and benchmarks for robust localization under sensor failure and outdoor corner cases.</p>
+    <p class="theme-description">Multi-sensor fusion SLAM under sensor failure and outdoor corner cases.</p>
     <div class="theme-papers">
       <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ultra-Fusion</a>
       <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ground-Fusion</a>
@@ -1122,7 +1115,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-compass" aria-hidden="true"></i></div>
       <h3>Multi-modal Reasoning</h3>
     </div>
-    <p class="theme-description">Cross-modal perception and navigation using vision, audio, and LiDAR reflectance for scene understanding.</p>
+    <p class="theme-description">Cross-modal perception with vision, audio, and LiDAR reflectance.</p>
     <div class="theme-papers">
       <a href="https://sites.google.com/view/disentangled-acoustic-fields/home" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">DAF</a>
       <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">NIDAR</a>
@@ -1151,7 +1144,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-description">Whole-body control coordinating navigation, balance, and manipulation for mobile robots in human environments.</p>
+    <p class="theme-description">Whole-body control for mobile robots in human environments.</p>
     <div class="theme-papers">
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">IDC Robot</a>
     </div>
