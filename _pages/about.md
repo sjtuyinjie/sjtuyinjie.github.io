@@ -1003,7 +1003,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-hand" aria-hidden="true"></i></div>
       <h3>Dexterous Manipulation</h3>
     </div>
-    <p class="theme-description">Robust and generalizable visuotactile in-hand manipulation.</p>
+    <p class="theme-description">Generalizable and robust visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
       <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Multi-Object Rotation</a>
@@ -1071,7 +1071,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <h3>Multi-sensor Fusion SLAM</h3>
     </div>
-    <p class="theme-description">Multi-sensor fusion SLAM under degeneration and corner cases.</p>
+    <p class="theme-description">Multi-sensor fusion SLAM under sensor degeneration and corner cases.</p>
     <div class="theme-papers">
       <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ultra-Fusion</a>
       <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ground-Fusion</a>
@@ -1144,7 +1144,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-description">Whole-body control for mobile robots in human environments.</p>
+    <p class="theme-description">Whole-body navigation and manipulation for mobile robots in human environments.</p>
     <div class="theme-papers">
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">IDC Robot</a>
     </div>
