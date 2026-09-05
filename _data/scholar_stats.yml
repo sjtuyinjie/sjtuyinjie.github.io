@@ -1,8 +1,8 @@
-citations: 664
-updated_at: "2026-09-04"
+citations: 665
+updated_at: "2026-09-05"
 papers:
   - name: "M2DGR"
-    citations: 388
+    citations: 389
   - name: "EN-SLAM"
     citations: 45
   - name: "M2C-GVIO"
