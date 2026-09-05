@@ -1071,7 +1071,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
       <h3>Multi-sensor Fusion SLAM</h3>
     </div>
-    <p class="theme-description">Multi-sensor fusion SLAM under sensor failure and outdoor corner cases.</p>
+    <p class="theme-description">Multi-sensor fusion SLAM under degeneration and corner cases.</p>
     <div class="theme-papers">
       <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ultra-Fusion</a>
       <a href="https://github.com/SJTU-ViSYS/Ground-Fusion" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Ground-Fusion</a>
