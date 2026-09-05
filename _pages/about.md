@@ -1007,7 +1007,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
   </div>
   <div class="theme-body">
     <div class="theme-header">
-      <div class="theme-icon"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></div>
+      <div class="theme-icon"><i class="fa fa-hand" aria-hidden="true"></i></div>
       <h3>Dexterous Manipulation</h3>
     </div>
     <p class="theme-description">World-model priors for robust, object-ID-free visuotactile in-hand manipulation.</p>
