@@ -157,8 +157,8 @@ redirect_from:
 
   .themes-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.8rem;
   }
 
   .theme-card {
@@ -166,22 +166,23 @@ redirect_from:
     flex-direction: column;
     overflow: hidden;
     border: 1px solid #e2e8f0;
-    border-radius: 16px;
+    border-radius: 14px;
     background: #ffffff;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     scroll-margin-top: 5rem;
+    min-width: 0;
   }
 
   .theme-card:hover {
     border-color: #93c5fd;
-    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.14);
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.12);
     transform: translateY(-2px);
   }
 
   .theme-preview {
     position: relative;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: linear-gradient(180deg, #f8fafc, #eef6ff);
   }
@@ -226,8 +227,9 @@ redirect_from:
   .theme-slide video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 0.65rem;
+    object-fit: cover;
+    padding: 0;
+    background: #0f172a;
   }
 
   .theme-slide-title {
@@ -237,15 +239,15 @@ redirect_from:
     top: 50%;
     margin: 0;
     color: #ffffff;
-    font-size: 1.62rem;
+    font-size: clamp(0.92rem, 1.15vw, 1.28rem);
     font-weight: 800;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     line-height: 1.2;
     opacity: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
     white-space: nowrap;
-    -webkit-text-stroke: 2.5px #0f172a;
+    -webkit-text-stroke: 2px #0f172a;
     paint-order: stroke fill;
     text-shadow:
       -1px 0 0 #0f172a,
@@ -258,14 +260,14 @@ redirect_from:
   .theme-slide-tag {
     position: absolute;
     z-index: 3;
-    left: 0.65rem;
-    bottom: 0.55rem;
-    padding: 0.18rem 0.55rem;
+    left: 0.5rem;
+    bottom: 0.45rem;
+    padding: 0.14rem 0.45rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
     background: rgba(15, 23, 42, 0.88);
     color: #ffffff;
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     line-height: 1.2;
@@ -379,48 +381,55 @@ redirect_from:
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 1rem 1.05rem 1.1rem;
+    padding: 0.85rem 0.85rem 0.95rem;
   }
 
   .theme-header {
     display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 0.45rem;
+    align-items: flex-start;
+    gap: 0.45rem;
+    margin-bottom: 0.4rem;
   }
 
   .theme-icon {
     display: inline-flex;
-    width: 1.85rem;
-    height: 1.85rem;
+    flex-shrink: 0;
+    width: 1.65rem;
+    height: 1.65rem;
     align-items: center;
     justify-content: center;
-    border-radius: 0.55rem;
+    border-radius: 0.5rem;
     background: rgba(239, 246, 255, 0.95);
     color: var(--about-primary);
-    font-size: 0.82rem;
+    font-size: 0.75rem;
+    margin-top: 0.05rem;
   }
 
   .theme-card h3 {
     margin: 0;
     color: #0f172a;
-    font-size: 1.02rem;
+    font-size: clamp(0.82rem, 1.05vw, 0.95rem);
     font-weight: 700;
+    line-height: 1.28;
   }
 
   .theme-description {
     flex: 1;
-    margin: 0 0 0.75rem;
-    min-height: calc(0.84rem * 1.62 * 2);
+    margin: 0 0 0.65rem;
+    min-height: calc(0.76rem * 1.55 * 3);
     color: var(--about-muted);
-    font-size: 0.84rem;
-    line-height: 1.62;
+    font-size: 0.76rem;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .theme-papers {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
 
   .about-page a.theme-paper-tag {
@@ -429,10 +438,10 @@ redirect_from:
   }
 
   .theme-paper-tag {
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.35rem;
+    padding: 0.16rem 0.42rem;
+    border-radius: 0.3rem;
     background: rgba(239, 246, 255, 0.95);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     transition: background 0.18s ease, color 0.18s ease;
@@ -736,7 +745,28 @@ redirect_from:
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
+    .themes-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .theme-card h3 {
+      font-size: 0.95rem;
+    }
+
+    .theme-description {
+      font-size: 0.8rem;
+      min-height: calc(0.8rem * 1.55 * 2);
+      -webkit-line-clamp: 2;
+    }
+
+    .theme-slide-title {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
     .themes-grid {
       grid-template-columns: 1fr;
     }
@@ -952,42 +982,27 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="WM-Craftnet teaser">
+          <video muted playsinline preload="metadata" poster="/gifs/wmcraftnet_poster.jpg" aria-label="WM-Craftnet teaser">
             <source src="/gifs/wmcraftnet_teaser.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
       <span class="theme-slide-title">WM-Craftnet</span>
-      <span class="theme-slide-tag">Teaser</span>
+      <span class="theme-slide-tag">WM-Craftnet</span>
     </div>
-    <div class="theme-slide" data-duration="15234">
+    <div class="theme-slide" data-duration="15070">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="WM-Craftnet simulation demo">
-            <source src="/gifs/wmcraftnet_sim.mp4" type="video/mp4" />
-          </video>
+          <img src="/gifs/rotation.gif" alt="Multi-object rotation demo" loading="lazy" />
         </a>
       </div>
-      <span class="theme-slide-title">In-Hand Rotation</span>
-      <span class="theme-slide-tag">Simulation</span>
-    </div>
-    <div class="theme-slide" data-duration="18000">
-      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
-      <div class="theme-slide-media">
-        <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="WM-Craftnet real-robot recovery">
-            <source src="/gifs/wmcraftnet_real.mp4" type="video/mp4" />
-          </video>
-        </a>
-      </div>
-      <span class="theme-slide-title">Perturbation Recovery</span>
-      <span class="theme-slide-tag">Real Robot</span>
+      <span class="theme-slide-title">Multi-Object Rotation</span>
+      <span class="theme-slide-tag">Multi-Object Rotation</span>
     </div>
     <div class="theme-slide-dots">
       <button class="theme-dot active" data-index="0" type="button" aria-label="Show WM-Craftnet teaser"></button>
-      <button class="theme-dot" data-index="1" type="button" aria-label="Show simulation demo"></button>
-      <button class="theme-dot" data-index="2" type="button" aria-label="Show real-robot recovery"></button>
+      <button class="theme-dot" data-index="1" type="button" aria-label="Show multi-object rotation"></button>
     </div>
   </div>
   <div class="theme-body">
@@ -995,7 +1010,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></div>
       <h3>Dexterous Manipulation</h3>
     </div>
-    <p class="theme-description">World-model priors for visuotactile dexterity — robust, object-ID-free in-hand manipulation under disturbance and transfer.</p>
+    <p class="theme-description">World-model priors for robust, object-ID-free visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
     </div>
