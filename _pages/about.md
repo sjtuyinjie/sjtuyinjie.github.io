@@ -1399,6 +1399,7 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
       [/Sky-GVINS/i, 'Sky-GVINS'],
       [/Ultra-Fusion/i, 'Ultra-Fusion'],
       [/WM-Craftnet/i, 'WM-Craftnet'],
+      [/\bNIDAR\b/i, 'NIDAR'],
       [/In-P3 VIO/i, 'In-P3 VIO'],
       [/\bLIGO\b/i, 'LIGO'],
       [/\bM2DGR\b/i, 'M2DGR']
