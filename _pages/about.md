@@ -182,9 +182,9 @@ redirect_from:
 
   .theme-preview {
     position: relative;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: linear-gradient(180deg, #f8fafc, #eef6ff);
+    background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
   }
 
   .theme-slide {
@@ -227,9 +227,9 @@ redirect_from:
   .theme-slide video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    padding: 0;
-    background: #0f172a;
+    object-fit: contain;
+    padding: 0.28rem;
+    background: transparent;
   }
 
   .theme-slide-title {
@@ -993,7 +993,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     <div class="theme-slide" data-duration="15070">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
-        <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer">
           <img src="/gifs/rotation.gif" alt="Multi-object rotation demo" loading="lazy" />
         </a>
       </div>
@@ -1013,6 +1013,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     <p class="theme-description">World-model priors for robust, object-ID-free visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
+      <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Multi-Object Rotation</a>
     </div>
   </div>
 </div>
