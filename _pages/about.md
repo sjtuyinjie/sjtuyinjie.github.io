@@ -1003,7 +1003,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-hand" aria-hidden="true"></i></div>
       <h3>Dexterous Manipulation</h3>
     </div>
-    <p class="theme-description">Robust visuotactile in-hand manipulation.</p>
+    <p class="theme-description">Robust and generalizable visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
       <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Multi-Object Rotation</a>
