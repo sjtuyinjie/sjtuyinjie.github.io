@@ -1,0 +1,9 @@
+@inproceedings{yin2026wmcraftnet,
+  author    = {Jie Yin and Zeyuan Zhao and Xiaojing Tan and Yang Liu and Chiyu Wang and Xinyang Gu},
+  title     = {{WM-Craftnet}: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation},
+  booktitle = {Proceedings of the Conference on Robot Learning (CoRL)},
+  year      = {2026},
+  eprint    = {2609.07002},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
+}
