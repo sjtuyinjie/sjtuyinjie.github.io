@@ -58,6 +58,10 @@
 {% if post.dataset and post.dataset contains "huggingface.co/datasets/" %}
 {% assign hf_dataset_url = post.dataset %}
 {% endif %}
+{% assign hf_model_url = "" %}
+{% if post.huggingface and post.huggingface contains "huggingface.co/" %}
+{% assign hf_model_url = post.huggingface %}
+{% endif %}
 {% assign is_representative = false %}
 {% if title contains "M2DGR" or title contains "Ground-Fusion" or title contains "Ultra-Fusion" or title contains "Disentangled Acoustic Fields" or title contains "WM-Craftnet" %}
 {% assign is_representative = true %}
@@ -117,6 +121,9 @@
         {% endif %}
         {% if github_repo != "" %}
         <a href="{{ github_url }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo }}" src="https://img.shields.io/github/stars/{{ github_repo }}?style=flat-square" /></a>
+        {% endif %}
+        {% if hf_model_url != "" %}
+        <a href="{{ hf_model_url }}" target="_blank" rel="noopener"><img alt="Hugging Face Model" src="https://img.shields.io/badge/HuggingFace-Model-FFD21E?style=flat-square&logo=huggingface&logoColor=black" /></a>
         {% endif %}
         {% if github_repo_dataset != "" and github_repo_dataset != github_repo and github_repo_dataset != github_repo_extra %}
         <a href="{{ github_url_dataset }}" target="_blank" rel="noopener"><img alt="GitHub Stars for {{ github_repo_dataset }}" src="https://img.shields.io/github/stars/{{ github_repo_dataset }}?style=flat-square" /></a>

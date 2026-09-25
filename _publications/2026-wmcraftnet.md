@@ -16,5 +16,6 @@ videoresults:
 videotalk: 
 poster: 
 code: https://github.com/sharpa-robotics/WM-Craftnet
+huggingface: https://huggingface.co/SharpaIT/WM-Craftnet
 dataset: 
 ---

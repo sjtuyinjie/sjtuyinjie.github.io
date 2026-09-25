@@ -16,6 +16,7 @@ FEATURED_REPOS = [
     "SJTU-ViSYS/Ground-Fusion",
     "SJTU-ViSYS/M2DGR-plus",
     "SJTU-ViSYS/Sky-GVINS",
+    "sharpa-robotics/WM-Craftnet",
 ]
 OUTPUT_PATH = pathlib.Path("_data/github_stars.yml")
 HEADERS = {
