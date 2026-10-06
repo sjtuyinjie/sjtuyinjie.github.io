@@ -502,6 +502,15 @@ redirect_from:
     font-weight: 800;
   }
 
+  .about-page .venue-oral-tag {
+    color: #0f172a;
+    font-weight: 400;
+  }
+
+  html[data-theme="dark"] .about-page .venue-oral-tag {
+    color: #e2e8f0;
+  }
+
   .highlight-soft {
     padding: 0.05rem 0.28rem;
     border-radius: 0.3rem;
