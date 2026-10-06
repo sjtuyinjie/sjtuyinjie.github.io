@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2026-wmcraftnet
 date: 2026-9-05
 venue: "CoRL"
+venue_note: "<b style='color:red;'>CoRL Spotlight (Top 4.4%)</b>"
 authors: "<b>Jie Yin</b>, Zeyuan Zhao, Xiaojing Tan, Yang Liu, Chiyu Wang, Xinyang Gu"
 url: 
 project: https://wmcraftnet.github.io/
