@@ -100,7 +100,7 @@
         {% if venue_upper contains "ROBIO" or venue_upper contains "CASE" %}{% assign skip_venue_bold = true %}{% endif %}
         {% unless skip_venue_bold %}<strong>{% endunless %}{% if post.venue%}<span style="font-style:italic">{{ post.venue }}</span> {% endif %}{% if post.venue_year %}{{ post.venue_year }}{% elsif post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}{% unless skip_venue_bold %}</strong>{% endunless %}
         {% if post.venue_note %} <span class="venue-note">({{ post.venue_note }})</span>{% endif %}
-        {% if post.oral%}<font color="red"> &nbsp; (Oral Presentation)</font> {% endif %}
+        {% if post.oral%}<span class="venue-note"> &nbsp; (Oral Presentation)</span> {% endif %}
         <br>
         [{% if post.pdf%} <a href="{{ post.pdf }}">Paper</a>{% endif %}
         {% if post.openpdf%} <a href="{{ post.openpdf }}">Paper</a>{% endif %}
