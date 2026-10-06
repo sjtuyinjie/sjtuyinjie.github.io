@@ -504,7 +504,7 @@ redirect_from:
 
   .about-page .venue-oral-tag {
     color: #0f172a;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   html[data-theme="dark"] .about-page .venue-oral-tag {
