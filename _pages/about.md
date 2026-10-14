@@ -687,8 +687,127 @@ redirect_from:
   .metric-tooltip-wrap {
     position: relative;
     display: inline-block;
-    cursor: help;
+    cursor: default;
     overflow: visible;
+  }
+
+  .metric-tooltip-wrap--inline {
+    display: inline;
+  }
+
+  .ranking-trigger {
+    text-underline-offset: 0.14em;
+  }
+
+  .metric-tooltip-wrap:hover .ranking-trigger,
+  .metric-tooltip-wrap:focus-within .ranking-trigger {
+    text-decoration: underline dotted;
+  }
+
+  .ranking-breakdown-card {
+    width: 15rem;
+    max-width: min(15rem, calc(100vw - 2rem));
+  }
+
+  .ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.32rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ranking-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0.45rem;
+    align-items: center;
+  }
+
+  .ranking-system {
+    color: #e2e8f0;
+    font-size: 0.74rem;
+    font-weight: 600;
+  }
+
+  .ranking-value {
+    color: #fbbf24;
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+
+  .ranking-edition {
+    color: #94a3b8;
+    font-size: 0.66rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .org-preview-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: baseline;
+  }
+
+  .org-preview-card {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    z-index: 24;
+    display: flex;
+    width: max-content;
+    max-width: min(16rem, calc(100vw - 2rem));
+    align-items: flex-start;
+    gap: 0.55rem;
+    padding: 0.55rem 0.65rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 0.6rem;
+    background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.2rem);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+    visibility: hidden;
+  }
+
+  .org-preview-wrap:hover .org-preview-card,
+  .org-preview-wrap:focus-within .org-preview-card {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .org-preview-logo {
+    flex: 0 0 auto;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 0.25rem;
+    margin-top: 0.05rem;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .org-preview-body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+
+  .org-preview-name {
+    color: #f8fafc;
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .org-preview-tagline {
+    color: #cbd5e1;
+    font-size: 0.68rem;
+    line-height: 1.35;
   }
 
   .metric-tooltip-wrap:hover .about-meta-note,
@@ -924,11 +1043,11 @@ redirect_from:
 <!-- <p class="about-eyebrow">Research Engineer · Robotics & Embodied AI</p> -->
 
 <p class="about-intro">
-I am a passionate researcher and engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from <strong><a class="org-link" href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a> (ARWU30, QS 36, US News 37, THE 40)</strong>, where I was advised by <strong><a class="person-name" href="https://sais.sjtu.edu.cn/faculty/zoudanping.html">Prof. Danping Zou</a></strong> and <strong><a class="person-name" href="https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm">Prof. Wenxian Yu</a></strong> at <strong><a class="org-link" href="https://drone.sjtu.edu.cn/">SJTU-VISYS Lab</a></strong>.
+I am a passionate researcher and engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from {% include sjtu_link.html %}, where I was advised by <strong><a class="person-name" href="https://sais.sjtu.edu.cn/faculty/zoudanping.html">Prof. Danping Zou</a></strong> and <strong><a class="person-name" href="https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm">Prof. Wenxian Yu</a></strong> at <strong>{% include org_link.html key="sjtu-visys" %}</strong>.
 </p>
 
 <p class="about-intro">
-I have also been fortunate to work with <strong><a class="person-name" href="https://people.csail.mit.edu/ganchuang/">Prof. Chuang Gan</a></strong> as a research intern at the <strong><a class="org-link" href="https://mitibmwatsonailab.mit.edu/">MIT-IBM Watson AI Lab</a></strong>, and with <strong><a class="person-name" href="https://mech.hku.hk/academic-staff/zhang-f/">Prof. Fu Zhang</a></strong> during <a class="org-link" href="https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023">SRP2023</a> at <strong><a class="org-link" href="https://github.com/hku-mars">HKU MaRS Lab</a></strong>. Previously, I spent productive and memorable time at <strong><a class="org-link" href="https://roboticsx.tencent.com/#/">Tencent Robotics X Lab</a></strong>, <strong><a class="org-link" href="https://www.shlab.org.cn/">Shanghai AI Lab </a></strong><strong><a class="org-link" href="https://www.pjlab-ipec.com/">IPEC group</a></strong>, and <strong><a class="org-link" href="http://www.bdi.org.cn/">Shanghai Beidou Research Institute</a></strong>, working on robotics and intelligent systems.
+I have also been fortunate to work with <strong><a class="person-name" href="https://people.csail.mit.edu/ganchuang/">Prof. Chuang Gan</a></strong> as a research intern at <strong>{% include org_link.html key="mit-ibm-watson" %}</strong>, and with <strong><a class="person-name" href="https://mech.hku.hk/academic-staff/zhang-f/">Prof. Fu Zhang</a></strong> during <a class="org-link" href="https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023">SRP2023</a> at <strong>{% include org_link.html key="hku-mars" %}</strong>. Previously, I spent productive and memorable time at <strong>{% include org_link.html key="tencent-robotics-x" %}</strong>, <strong>{% include org_link.html key="shanghai-ai-lab" %}</strong>, <strong>{% include org_link.html key="shanghai-ai-lab-ipec" %}</strong>, and <strong>{% include org_link.html key="beidou" %}</strong>, working on robotics and intelligent systems.
 </p>
 
 <p class="about-intro">

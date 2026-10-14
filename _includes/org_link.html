@@ -1,0 +1,13 @@
+{% assign preview = site.data.org_previews[include.key] %}
+{% if preview %}
+<span class="org-preview-wrap">
+  <a class="org-link" href="{{ preview.url }}" target="_blank" rel="noopener noreferrer">{{ preview.name }}</a>
+  <span class="org-preview-card" aria-hidden="true">
+    <img class="org-preview-logo" src="https://www.google.com/s2/favicons?domain={{ preview.domain }}&sz=64" alt="" width="20" height="20" loading="lazy" />
+    <span class="org-preview-body">
+      <span class="org-preview-name">{{ preview.name }}</span>
+      <span class="org-preview-tagline">{{ preview.tagline }}</span>
+    </span>
+  </span>
+</span>
+{% endif %}

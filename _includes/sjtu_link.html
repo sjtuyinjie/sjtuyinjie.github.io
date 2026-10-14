@@ -1,0 +1,18 @@
+{% assign rankings = site.data.sjtu_rankings.rankings %}
+{% assign sjtu = site.data.org_previews.sjtu %}
+<span class="metric-tooltip-wrap metric-tooltip-wrap--inline">
+  <strong><a class="org-link ranking-trigger" href="{{ sjtu.url }}" target="_blank" rel="noopener noreferrer">Shanghai Jiao Tong University</a></strong>
+  <span class="about-meta-note metric-breakdown-card ranking-breakdown-card">
+    <p class="stars-card-title">Global rankings</p>
+    <ul class="ranking-list">
+      {% for item in rankings %}
+      <li class="ranking-row">
+        <span class="ranking-system">{{ item.system }}</span>
+        <span class="ranking-value">#{{ item.rank }}</span>
+        <span class="ranking-edition">{{ item.edition }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="stars-updated">as of {{ site.data.sjtu_rankings.updated_at }}</div>
+  </span>
+</span>
