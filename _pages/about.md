@@ -594,6 +594,21 @@ redirect_from:
     white-space: normal;
   }
 
+  .about-meta-note.ranking-breakdown-card {
+    top: 50%;
+    bottom: auto;
+    left: calc(100% + 0.55rem);
+    width: 15rem;
+    max-width: min(15rem, calc(100vw - 2rem));
+    padding: 0.7rem 0.75rem 0.55rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 0.65rem;
+    background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.28);
+    white-space: normal;
+    transform: translateY(-50%) translateX(0.25rem);
+  }
+
   .stars-card-title {
     margin: 0 0 0.45rem;
     color: #e2e8f0;
@@ -707,6 +722,12 @@ redirect_from:
     max-width: min(15rem, calc(100vw - 2rem));
   }
 
+  .metric-tooltip-wrap:hover .ranking-breakdown-card,
+  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
+    transform: translateY(-50%) translateX(0);
+
+  }
+
   .ranking-list {
     display: flex;
     flex-direction: column;
@@ -802,10 +823,19 @@ redirect_from:
     line-height: 1.35;
   }
 
-  .metric-tooltip-wrap:hover .about-meta-note,
-  .metric-tooltip-wrap:focus-within .about-meta-note {
+  .metric-tooltip-wrap:hover .about-meta-note:not(.metric-breakdown-card):not(.ranking-breakdown-card),
+  .metric-tooltip-wrap:focus-within .about-meta-note:not(.metric-breakdown-card):not(.ranking-breakdown-card) {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+    visibility: visible;
+  }
+
+  .metric-tooltip-wrap:hover .metric-breakdown-card,
+  .metric-tooltip-wrap:focus-within .metric-breakdown-card,
+  .metric-tooltip-wrap:hover .ranking-breakdown-card,
+  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
     visibility: visible;
   }
 
