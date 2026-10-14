@@ -598,8 +598,17 @@ redirect_from:
   }
 
   .about-meta-note.ranking-breakdown-card {
+    top: 50%;
+    bottom: auto;
+    left: calc(100% + 0.55rem);
     width: 15rem;
     max-width: min(15rem, calc(100vw - 2rem));
+    transform: translateY(-50%) translateX(0.25rem);
+  }
+
+  .metric-tooltip-wrap:hover .about-meta-note.ranking-breakdown-card,
+  .metric-tooltip-wrap:focus-within .about-meta-note.ranking-breakdown-card {
+    transform: translateY(-50%) translateX(0);
   }
 
   .stars-card-title {
