@@ -582,8 +582,10 @@ redirect_from:
     overflow: visible;
   }
 
-  .about-meta-note.metric-breakdown-card,
-  .about-meta-note.ranking-breakdown-card {
+  .about-meta-note.metric-breakdown-card {
+    top: 50%;
+    bottom: auto;
+    left: calc(100% + 0.55rem);
     width: 17.5rem;
     max-width: min(17.5rem, calc(100vw - 2rem));
     padding: 0.7rem 0.75rem 0.55rem;
@@ -592,21 +594,12 @@ redirect_from:
     background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
     box-shadow: 0 14px 36px rgba(15, 23, 42, 0.28);
     white-space: normal;
+    transform: translateY(-50%) translateX(0.25rem);
   }
 
   .about-meta-note.ranking-breakdown-card {
-    top: 50%;
-    bottom: auto;
-    left: calc(100% + 0.55rem);
     width: 15rem;
     max-width: min(15rem, calc(100vw - 2rem));
-    padding: 0.7rem 0.75rem 0.55rem;
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    border-radius: 0.65rem;
-    background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
-    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.28);
-    white-space: normal;
-    transform: translateY(-50%) translateX(0.25rem);
   }
 
   .stars-card-title {
@@ -701,31 +694,6 @@ redirect_from:
     display: inline-block;
     cursor: help;
     overflow: visible;
-  }
-
-  .metric-tooltip-wrap--inline {
-    display: inline-block;
-    cursor: default;
-  }
-
-  .ranking-trigger {
-    text-underline-offset: 0.14em;
-  }
-
-  .metric-tooltip-wrap:hover .ranking-trigger,
-  .metric-tooltip-wrap:focus-within .ranking-trigger {
-    text-decoration: underline dotted;
-  }
-
-  .ranking-breakdown-card {
-    width: 15rem;
-    max-width: min(15rem, calc(100vw - 2rem));
-  }
-
-  .metric-tooltip-wrap:hover .ranking-breakdown-card,
-  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
-    transform: translateY(-50%) translateX(0);
-
   }
 
   .ranking-list {
@@ -823,20 +791,16 @@ redirect_from:
     line-height: 1.35;
   }
 
-  .metric-tooltip-wrap:hover .about-meta-note:not(.metric-breakdown-card):not(.ranking-breakdown-card),
-  .metric-tooltip-wrap:focus-within .about-meta-note:not(.metric-breakdown-card):not(.ranking-breakdown-card) {
+  .metric-tooltip-wrap:hover .about-meta-note,
+  .metric-tooltip-wrap:focus-within .about-meta-note {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
     visibility: visible;
   }
 
-  .metric-tooltip-wrap:hover .metric-breakdown-card,
-  .metric-tooltip-wrap:focus-within .metric-breakdown-card,
-  .metric-tooltip-wrap:hover .ranking-breakdown-card,
-  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
-    opacity: 1;
+  .metric-tooltip-wrap:hover .about-meta-note.metric-breakdown-card,
+  .metric-tooltip-wrap:focus-within .about-meta-note.metric-breakdown-card {
     transform: translateY(-50%) translateX(0);
-    visibility: visible;
   }
 
   .floating-robot {
@@ -1068,7 +1032,7 @@ I have also been fortunate to work with <strong><a class="person-name" href="htt
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong><a class="work-link" href="https://wmcraftnet.github.io/">WM-Craftnet</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/M2DGR">M2DGR</a></strong>, <strong><a class="work-link" href="https://sjtuyinjie.github.io/ultrafusion-web/">Ultra-Fusion</a></strong>, <strong><a class="work-link" href="https://github.com/SJTU-ViSYS/Ground-Fusion">Ground-Fusion</a></strong>, <strong><a class="work-link" href="https://arxiv.org/abs/2407.11333">DAF</a></strong>, <strong><a class="work-link" href="https://github.com/sjtuyinjie/Ground-Fusion2">Ground-Fusion++ / M3DGR</a></strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong>{% include project_link.html key="wmcraftnet" %}</strong>, <strong>{% include project_link.html key="m2dgr" %}</strong>, <strong>{% include project_link.html key="ultrafusion" %}</strong>, <strong>{% include project_link.html key="groundfusion" %}</strong>, <strong>{% include project_link.html key="daf" %}</strong>, <strong>{% include project_link.html key="groundfusion2" %}</strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">

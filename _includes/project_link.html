@@ -1,0 +1,11 @@
+{% assign preview = site.data.project_previews[include.key] %}
+{% if preview %}
+<span class="org-preview-wrap">
+  <a class="work-link" href="{{ preview.url }}" target="_blank" rel="noopener noreferrer">{{ preview.name }}</a>
+  <span class="org-preview-card" aria-hidden="true">
+    <span class="org-preview-body">
+      <span class="org-preview-tagline">{{ preview.tagline }}</span>
+    </span>
+  </span>
+</span>
+{% endif %}

@@ -1,0 +1,29 @@
+wmcraftnet:
+  name: WM-Craftnet
+  url: https://wmcraftnet.github.io/
+  tagline: Dexterous in-hand manipulation via whole-body mobile humanoids
+
+m2dgr:
+  name: M2DGR
+  url: https://github.com/SJTU-ViSYS/M2DGR
+  tagline: Multi-sensor SLAM dataset for ground robots (ESI Top 1%)
+
+ultrafusion:
+  name: Ultra-Fusion
+  url: https://sjtuyinjie.github.io/ultrafusion-web/
+  tagline: Resilient multi-sensor fusion SLAM under degradation
+
+groundfusion:
+  name: Ground-Fusion
+  url: https://github.com/SJTU-ViSYS/Ground-Fusion
+  tagline: Low-cost ground SLAM robust to corner cases
+
+daf:
+  name: DAF
+  url: https://arxiv.org/abs/2407.11333
+  tagline: Disentangled acoustic fields for multimodal physical scene understanding
+
+groundfusion2:
+  name: Ground-Fusion++ / M3DGR
+  url: https://github.com/sjtuyinjie/Ground-Fusion2
+  tagline: Robust sensor-fusion ground SLAM benchmark and framework
