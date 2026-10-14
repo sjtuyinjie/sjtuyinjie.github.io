@@ -2,19 +2,19 @@ sjtu:
   name: Shanghai Jiao Tong University
   url: https://en.sjtu.edu.cn/
   domain: en.sjtu.edu.cn
-  tagline: Research university · Shanghai, China
+  tagline: Top 40 global university · China
 
 sjtu-visys:
   name: SJTU-VISYS Lab
   url: https://drone.sjtu.edu.cn/
   domain: drone.sjtu.edu.cn
-  tagline: Visual intelligent systems · SJTU
+  tagline: Visual & intelligent systems research group · SJTU
 
 mit-ibm-watson:
   name: MIT-IBM Watson AI Lab
   url: https://mitibmwatsonailab.mit.edu/
   domain: mitibmwatsonailab.mit.edu
-  tagline: Multimodal AI · MIT × IBM
+  tagline: Joint MIT–IBM AI research lab
 
 hku-mars:
   name: HKU MaRS Lab
@@ -25,23 +25,23 @@ hku-mars:
 tencent-robotics-x:
   name: Tencent Robotics X Lab
   url: https://roboticsx.tencent.com/
-  domain: roboticsx.tencent.com
-  tagline: Embodied AI & robotics · Tencent
+  logo: /images/org-logos/tencent.png
+  tagline: Top-tier industrial robotics lab in China
 
 shanghai-ai-lab:
   name: Shanghai AI Lab
   url: https://www.shlab.org.cn/
-  domain: shlab.org.cn
-  tagline: National AI research institute
+  logo: /images/org-logos/shlab.png
+  tagline: National-level AI research institute in China
 
 shanghai-ai-lab-ipec:
   name: Shanghai AI Lab IPEC
   url: https://www.pjlab-ipec.com/
   domain: pjlab-ipec.com
-  tagline: Embodied intelligence · Shanghai AI Lab
+  tagline: Embodied intelligence research group · Shanghai AI Lab
 
 beidou:
   name: Shanghai Beidou Research Institute
   url: http://www.bdi.org.cn/
-  domain: bdi.org.cn
-  tagline: Navigation & positioning research
+  logo: /images/org-logos/beidou.png
+  tagline: National BDS/GNSS navigation innovation platform

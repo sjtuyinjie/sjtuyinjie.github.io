@@ -687,12 +687,12 @@ redirect_from:
   .metric-tooltip-wrap {
     position: relative;
     display: inline-block;
-    cursor: default;
+    cursor: pointer;
     overflow: visible;
   }
 
   .metric-tooltip-wrap--inline {
-    display: inline;
+    display: inline-block;
   }
 
   .ranking-trigger {
@@ -707,6 +707,15 @@ redirect_from:
   .ranking-breakdown-card {
     width: 15rem;
     max-width: min(15rem, calc(100vw - 2rem));
+    top: auto;
+    bottom: calc(100% + 0.55rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(0.25rem);
+  }
+
+  .metric-tooltip-wrap:hover .ranking-breakdown-card,
+  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
+    transform: translateX(-50%) translateY(0);
   }
 
   .ranking-list {
@@ -760,9 +769,9 @@ redirect_from:
     display: flex;
     width: max-content;
     max-width: min(16rem, calc(100vw - 2rem));
-    align-items: flex-start;
+    align-items: center;
     gap: 0.55rem;
-    padding: 0.55rem 0.65rem;
+    padding: 0.5rem 0.7rem;
     border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: 0.6rem;
     background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
@@ -783,11 +792,12 @@ redirect_from:
 
   .org-preview-logo {
     flex: 0 0 auto;
-    width: 1.15rem;
-    height: 1.15rem;
-    border-radius: 0.25rem;
-    margin-top: 0.05rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.35rem;
+    object-fit: contain;
     background: rgba(255, 255, 255, 0.92);
+    padding: 0.12rem;
   }
 
   .org-preview-body {
@@ -797,29 +807,19 @@ redirect_from:
     gap: 0.12rem;
   }
 
-  .org-preview-name {
-    color: #f8fafc;
-    font-size: 0.74rem;
-    font-weight: 700;
-    line-height: 1.25;
-  }
-
   .org-preview-tagline {
     color: #cbd5e1;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     line-height: 1.35;
   }
 
-  .metric-tooltip-wrap:hover .about-meta-note,
-  .metric-tooltip-wrap:focus-within .about-meta-note {
+  .metric-tooltip-wrap:hover .about-meta-note:not(.ranking-breakdown-card),
+  .metric-tooltip-wrap:focus-within .about-meta-note:not(.ranking-breakdown-card),
+  .metric-tooltip-wrap:hover .ranking-breakdown-card,
+  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
     visibility: visible;
-  }
-
-  .metric-tooltip-wrap:hover .about-meta-note.metric-breakdown-card,
-  .metric-tooltip-wrap:focus-within .about-meta-note.metric-breakdown-card {
-    transform: translateY(-50%) translateX(0);
   }
 
   .floating-robot {
