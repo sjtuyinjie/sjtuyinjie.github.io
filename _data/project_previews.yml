@@ -1,7 +1,7 @@
 wmcraftnet:
   name: WM-Craftnet
   url: https://wmcraftnet.github.io/
-  tagline: "[CoRL'2024 Spotlight] World model for generalizable visuotactile in-hand manipulation"
+  tagline: "[CoRL'2026 Spotlight] World model for generalizable visuotactile in-hand manipulation"
 
 m2dgr:
   name: M2DGR

@@ -3,16 +3,16 @@
 <span class="metric-tooltip-wrap">
   <strong><a class="org-link" href="{{ sjtu.url }}" target="_blank" rel="noopener noreferrer">Shanghai Jiao Tong University</a></strong>
   <span class="about-meta-note metric-breakdown-card ranking-breakdown-card">
-    <p class="stars-card-title">Global rankings</p>
-    <ul class="ranking-list">
+    <span class="stars-card-title">Global rankings</span>
+    <span class="ranking-list">
       {% for item in rankings %}
-      <li class="ranking-row">
+      <span class="ranking-row">
         <span class="ranking-system">{{ item.system }}</span>
         <span class="ranking-value">#{{ item.rank }}</span>
         <span class="ranking-edition">{{ item.edition }}</span>
-      </li>
+      </span>
       {% endfor %}
-    </ul>
-    <div class="stars-updated">as of {{ site.data.sjtu_rankings.updated_at }}</div>
+    </span>
+    <span class="stars-updated">as of {{ site.data.sjtu_rankings.updated_at }}</span>
   </span>
 </span>

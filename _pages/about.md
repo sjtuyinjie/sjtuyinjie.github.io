@@ -612,6 +612,7 @@ redirect_from:
   }
 
   .stars-card-title {
+    display: block;
     margin: 0 0 0.45rem;
     color: #e2e8f0;
     font-size: 0.68rem;
@@ -690,6 +691,7 @@ redirect_from:
   }
 
   .stars-updated {
+    display: block;
     margin-top: 0.5rem;
     padding-top: 0.4rem;
     border-top: 1px solid rgba(148, 163, 184, 0.2);
