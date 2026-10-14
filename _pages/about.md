@@ -582,10 +582,8 @@ redirect_from:
     overflow: visible;
   }
 
-  .about-meta-note.metric-breakdown-card {
-    top: 50%;
-    bottom: auto;
-    left: calc(100% + 0.55rem);
+  .about-meta-note.metric-breakdown-card,
+  .about-meta-note.ranking-breakdown-card {
     width: 17.5rem;
     max-width: min(17.5rem, calc(100vw - 2rem));
     padding: 0.7rem 0.75rem 0.55rem;
@@ -594,7 +592,6 @@ redirect_from:
     background: linear-gradient(165deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.96));
     box-shadow: 0 14px 36px rgba(15, 23, 42, 0.28);
     white-space: normal;
-    transform: translateY(-50%) translateX(0.25rem);
   }
 
   .stars-card-title {
@@ -687,12 +684,13 @@ redirect_from:
   .metric-tooltip-wrap {
     position: relative;
     display: inline-block;
-    cursor: pointer;
+    cursor: help;
     overflow: visible;
   }
 
   .metric-tooltip-wrap--inline {
     display: inline-block;
+    cursor: default;
   }
 
   .ranking-trigger {
@@ -707,15 +705,6 @@ redirect_from:
   .ranking-breakdown-card {
     width: 15rem;
     max-width: min(15rem, calc(100vw - 2rem));
-    top: auto;
-    bottom: calc(100% + 0.55rem);
-    left: 50%;
-    transform: translateX(-50%) translateY(0.25rem);
-  }
-
-  .metric-tooltip-wrap:hover .ranking-breakdown-card,
-  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
-    transform: translateX(-50%) translateY(0);
   }
 
   .ranking-list {
@@ -813,10 +802,8 @@ redirect_from:
     line-height: 1.35;
   }
 
-  .metric-tooltip-wrap:hover .about-meta-note:not(.ranking-breakdown-card),
-  .metric-tooltip-wrap:focus-within .about-meta-note:not(.ranking-breakdown-card),
-  .metric-tooltip-wrap:hover .ranking-breakdown-card,
-  .metric-tooltip-wrap:focus-within .ranking-breakdown-card {
+  .metric-tooltip-wrap:hover .about-meta-note,
+  .metric-tooltip-wrap:focus-within .about-meta-note {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
     visibility: visible;
