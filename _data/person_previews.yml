@@ -16,14 +16,14 @@ chuang-gan:
   name: Prof. Chuang Gan
   url: https://people.csail.mit.edu/ganchuang/
   photo: /images/people/chuang-gan.jpg
-  role: Professor · UMass Amherst
+  role: Professor · MIT-IBM Watson AI Lab
   research: Computer vision, multimodal AI, embodied intelligence, and robotics
 
 andrew-luo:
-  name: Andrew Luo
+  name: Prof. Andrew Luo
   url: https://www.cs.cmu.edu/~afluo/
   photo: /images/people/andrew-luo.png
-  role: PhD Student · Carnegie Mellon University
+  role: Professor · The University of Hong Kong
   research: Generative models, visual perception, computational neuroscience, and 3D vision
 
 yilun-du:
