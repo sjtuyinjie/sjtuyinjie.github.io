@@ -1,0 +1,13 @@
+{% assign person = site.data.person_previews[include.key] %}
+{% if person %}
+<span class="org-preview-wrap">
+  <a class="person-name" href="{{ person.url }}" target="_blank" rel="noopener noreferrer">{{ person.name }}</a>
+  <span class="org-preview-card person-preview-card" aria-hidden="true">
+    <img class="person-preview-photo" src="{{ person.photo }}" alt="" width="48" height="48" loading="lazy" />
+    <span class="org-preview-body">
+      <span class="person-preview-role">{{ person.role }}</span>
+      <span class="org-preview-tagline">{{ person.research }}</span>
+    </span>
+  </span>
+</span>
+{% endif %}

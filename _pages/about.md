@@ -707,6 +707,11 @@ redirect_from:
     overflow: visible;
   }
 
+  .ranking-tooltip-wrap,
+  .ranking-tooltip-wrap .org-link {
+    cursor: default;
+  }
+
   .ranking-list {
     display: flex;
     flex-direction: column;
@@ -789,6 +794,13 @@ redirect_from:
     padding: 0.12rem;
   }
 
+  .org-preview-logos {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
   .org-preview-body {
     display: flex;
     min-width: 0;
@@ -800,6 +812,26 @@ redirect_from:
     color: #cbd5e1;
     font-size: 0.72rem;
     line-height: 1.35;
+  }
+
+  .person-preview-card {
+    max-width: min(22rem, calc(100vw - 2rem));
+  }
+
+  .person-preview-photo {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .person-preview-role {
+    color: #f8fafc;
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
   .metric-tooltip-wrap:hover .about-meta-note,
@@ -1035,11 +1067,11 @@ redirect_from:
 <!-- <p class="about-eyebrow">Research Engineer · Robotics & Embodied AI</p> -->
 
 <p class="about-intro">
-I am a passionate researcher and engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from {% include sjtu_link.html %}, where I was advised by <strong><a class="person-name" href="https://sais.sjtu.edu.cn/faculty/zoudanping.html">Prof. Danping Zou</a></strong> and <strong><a class="person-name" href="https://english.seiee.sjtu.edu.cn/english/detail/842_811.htm">Prof. Wenxian Yu</a></strong> at <strong>{% include org_link.html key="sjtu-visys" %}</strong>.
+I am a passionate researcher and engineer working at the intersection of <strong>Robotics</strong> and <strong>Embodied AI</strong>. I graduated from {% include sjtu_link.html %}, where I was advised by <strong>{% include person_link.html key="danping-zou" %}</strong> and <strong>{% include person_link.html key="wenxian-yu" %}</strong> at <strong>{% include org_link.html key="sjtu-visys" %}</strong>.
 </p>
 
 <p class="about-intro">
-I have also been fortunate to work with <strong><a class="person-name" href="https://people.csail.mit.edu/ganchuang/">Prof. Chuang Gan</a></strong> as a research intern at <strong>{% include org_link.html key="mit-ibm-watson" %}</strong>, and with <strong><a class="person-name" href="https://mech.hku.hk/academic-staff/zhang-f/">Prof. Fu Zhang</a></strong> during <a class="org-link" href="https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023">SRP2023</a> at <strong>{% include org_link.html key="hku-mars" %}</strong>. Previously, I spent productive and memorable time at <strong>{% include org_link.html key="tencent-robotics-x" %}</strong>, <strong>{% include org_link.html key="shanghai-ai-lab" %}</strong>, <strong>{% include org_link.html key="shanghai-ai-lab-ipec" %}</strong>, and <strong>{% include org_link.html key="beidou" %}</strong>, working on robotics and intelligent systems.
+I have also been fortunate to work with <strong>{% include person_link.html key="chuang-gan" %}</strong> as a research intern at <strong>{% include org_link.html key="mit-ibm-watson" %}</strong>, and with <strong>{% include person_link.html key="fu-zhang" %}</strong> during <a class="org-link" href="https://gradsch.hku.hk/news_and_events/news_and_future_events/summer-research-programme-2023">SRP2023</a> at <strong>{% include org_link.html key="hku-mars" %}</strong>. Previously, I spent productive and memorable time at <strong>{% include org_link.html key="tencent-robotics-x" %}</strong>, <strong>{% include org_link.html key="shanghai-ai-lab-ipec" %}</strong>, and <strong>{% include org_link.html key="beidou" %}</strong>, working on robotics and intelligent systems.
 </p>
 
 <p class="about-intro">

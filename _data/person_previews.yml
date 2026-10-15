@@ -1,0 +1,27 @@
+danping-zou:
+  name: Prof. Danping Zou
+  url: https://sais.sjtu.edu.cn/faculty/zoudanping.html
+  photo: /images/people/danping-zou.png
+  role: Professor · Shanghai Jiao Tong University
+  research: 3D vision, visual localization, embodied intelligence, and autonomous systems
+
+wenxian-yu:
+  name: Prof. Wenxian Yu
+  url: https://sais.sjtu.edu.cn/faculty/yuwenxian.html
+  photo: /images/people/wenxian-yu.png
+  role: Chair Professor · Shanghai Jiao Tong University
+  research: Information fusion, target recognition, remote sensing, and navigation
+
+chuang-gan:
+  name: Prof. Chuang Gan
+  url: https://people.csail.mit.edu/ganchuang/
+  photo: /images/people/chuang-gan.jpg
+  role: Professor · UMass Amherst
+  research: Computer vision, multimodal AI, embodied intelligence, and robotics
+
+fu-zhang:
+  name: Prof. Fu Zhang
+  url: https://mech.hku.hk/academic-staff/zhang-f/
+  photo: /images/people/fu-zhang.jpg
+  role: Professor · The University of Hong Kong
+  research: Navigation, control, and LiDAR-based SLAM

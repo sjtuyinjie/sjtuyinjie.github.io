@@ -3,7 +3,13 @@
 <span class="org-preview-wrap">
   <a class="org-link" href="{{ preview.url }}" target="_blank" rel="noopener noreferrer">{{ preview.name }}</a>
   <span class="org-preview-card" aria-hidden="true">
-    {% if preview.logo %}
+    {% if preview.logos %}
+    <span class="org-preview-logos">
+      {% for logo in preview.logos %}
+      <img class="org-preview-logo" src="{{ logo }}" alt="" width="32" height="32" loading="lazy" />
+      {% endfor %}
+    </span>
+    {% elsif preview.logo %}
     <img class="org-preview-logo" src="{{ preview.logo }}" alt="" width="20" height="20" loading="lazy" />
     {% elsif preview.domain %}
     <img class="org-preview-logo" src="https://www.google.com/s2/favicons?domain={{ preview.domain }}&sz=64" alt="" width="20" height="20" loading="lazy" />

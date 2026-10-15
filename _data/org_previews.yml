@@ -18,27 +18,25 @@ mit-ibm-watson:
 
 hku-mars:
   name: HKU MaRS Lab
-  url: https://github.com/hku-mars
-  domain: hku.hk
-  tagline: Robotics & autonomous systems · HKU
+  url: https://mars.hku.hk/
+  logos:
+    - /images/org-logos/hku.png
+    - /images/org-logos/hku-mars.png
+  tagline: Leading aerial robotics, LiDAR SLAM, and autonomous systems lab
 
 tencent-robotics-x:
   name: Tencent Robotics X Lab
   url: https://roboticsx.tencent.com/
   logo: /images/org-logos/tencent.png
-  tagline: Top-tier industrial robotics lab in China
-
-shanghai-ai-lab:
-  name: Shanghai AI Lab
-  url: https://www.shlab.org.cn/
-  logo: /images/org-logos/shlab.png
-  tagline: National-level AI research institute in China
+  tagline: Top-tier industrial robotics lab
 
 shanghai-ai-lab-ipec:
   name: Shanghai AI Lab IPEC
   url: https://www.pjlab-ipec.com/
-  domain: pjlab-ipec.com
-  tagline: Embodied intelligence research group · Shanghai AI Lab
+  logos:
+    - /images/org-logos/shlab.png
+    - /images/org-logos/ipec.png
+  tagline: Embodied intelligence, autonomous robotics, and heterogeneous-agent collaboration
 
 beidou:
   name: Shanghai Beidou Research Institute
