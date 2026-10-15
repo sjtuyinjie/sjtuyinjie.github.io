@@ -19,6 +19,20 @@ chuang-gan:
   role: Professor · UMass Amherst
   research: Computer vision, multimodal AI, embodied intelligence, and robotics
 
+andrew-luo:
+  name: Andrew Luo
+  url: https://www.cs.cmu.edu/~afluo/
+  photo: /images/people/andrew-luo.png
+  role: PhD Student · Carnegie Mellon University
+  research: Generative models, visual perception, computational neuroscience, and 3D vision
+
+yilun-du:
+  name: Prof. Yilun Du
+  url: https://yilundu.github.io/
+  photo: /images/people/yilun-du.jpg
+  role: Assistant Professor · Harvard University
+  research: Compositional generative models, world models, reasoning, and robotics
+
 fu-zhang:
   name: Prof. Fu Zhang
   url: https://mech.hku.hk/academic-staff/zhang-f/
