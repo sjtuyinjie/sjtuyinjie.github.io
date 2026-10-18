@@ -27,7 +27,9 @@ hku-mars:
 tencent-robotics-x:
   name: Tencent Robotics X Lab
   url: https://roboticsx.tencent.com/
-  logo: /images/org-logos/tencent.png
+  logos:
+    - /images/org-logos/tencent.png
+    - /images/org-logos/roboticsx.png
   tagline: Top-tier industrial robotics lab
 
 shanghai-ai-lab-ipec:
