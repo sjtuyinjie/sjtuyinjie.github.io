@@ -1165,12 +1165,12 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
 
 <div class="theme-card" id="theme-fusion-slam">
   <div class="theme-preview">
-    <div class="theme-slide active" data-duration="20400">
+    <div class="theme-slide active" data-duration="14334">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://sjtuyinjie.github.io/ultrafusion-web/" target="_blank" rel="noopener noreferrer">
           <video muted playsinline preload="metadata" aria-label="Ultra-Fusion demo">
-            <source src="/gifs/ultrafusion_corridor.mp4" type="video/mp4" />
+            <source src="/gifs/ultrafusion_hero.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
