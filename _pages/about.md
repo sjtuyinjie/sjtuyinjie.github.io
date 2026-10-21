@@ -1135,6 +1135,30 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <span class="theme-slide-title">WM-Craftnet</span>
       <span class="theme-slide-tag">WM-Craftnet</span>
     </div>
+    <div class="theme-slide" data-duration="10050" data-playback-rate="2">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="TacBPM multi-object downstream rotation demo">
+            <source src="/gifs/tacbpm_multi_object.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <span class="theme-slide-title">TacBPM</span>
+      <span class="theme-slide-tag">TacBPM</span>
+    </div>
+    <div class="theme-slide" data-duration="20100">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://junxiaolin.github.io/poise-website/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="POISE hammer reaching demo">
+            <source src="/gifs/poise_hammer.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <span class="theme-slide-title">POISE</span>
+      <span class="theme-slide-tag">POISE</span>
+    </div>
     <div class="theme-slide" data-duration="15070">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
@@ -1147,7 +1171,9 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     </div>
     <div class="theme-slide-dots">
       <button class="theme-dot active" data-index="0" type="button" aria-label="Show WM-Craftnet teaser"></button>
-      <button class="theme-dot" data-index="1" type="button" aria-label="Show multi-object rotation"></button>
+      <button class="theme-dot" data-index="1" type="button" aria-label="Show TacBPM"></button>
+      <button class="theme-dot" data-index="2" type="button" aria-label="Show POISE"></button>
+      <button class="theme-dot" data-index="3" type="button" aria-label="Show multi-object rotation"></button>
     </div>
   </div>
   <div class="theme-body">
@@ -1158,6 +1184,8 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     <p class="theme-description">Generalizable and robust visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
+      <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">TacBPM</a>
+      <a href="https://junxiaolin.github.io/poise-website/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">POISE</a>
       <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Multi-Object Rotation</a>
     </div>
   </div>
@@ -1245,12 +1273,12 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <span class="theme-slide-title">DAF</span>
       <span class="theme-slide-tag">DAF</span>
     </div>
-    <div class="theme-slide" data-duration="21367">
+    <div class="theme-slide" data-duration="21479">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://nidar-web.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="NIDAR demo">
-            <source src="/gifs/nidar.mp4" type="video/mp4" />
+          <video muted playsinline preload="metadata" aria-label="NIDAR FAST-LIO SLAM demo">
+            <source src="/gifs/nidar_fastlio.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
