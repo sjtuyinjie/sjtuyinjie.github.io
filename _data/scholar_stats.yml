@@ -1,8 +1,8 @@
-citations: 733
-updated_at: "2026-10-21"
+citations: 734
+updated_at: "2026-10-22"
 papers:
   - name: "M2DGR"
-    citations: 415
+    citations: 416
   - name: "EN-SLAM"
     citations: 46
   - name: "Ground-Fusion"
