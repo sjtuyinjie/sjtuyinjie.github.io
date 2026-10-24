@@ -1343,6 +1343,7 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       var timer = null;
       var introTimer = null;
       var videoEndHandler = null;
+      var carouselEnabled = false;
       var AUTO_INTERVAL = 10000;
       var INTRO_DURATION = 1600;
 
@@ -1354,6 +1355,14 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
         if (introTimer) {
           clearTimeout(introTimer);
           introTimer = null;
+        }
+      }
+
+      function clearVideoEndHandler(slide) {
+        var video = slide && slide.querySelector('video');
+        if (video && videoEndHandler) {
+          video.removeEventListener('ended', videoEndHandler);
+          videoEndHandler = null;
         }
       }
 
@@ -1376,18 +1385,6 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
         if (tag) {
           tag.style.animation = 'none';
         }
-      }
-
-      function clearVideoEndHandler(slide) {
-        var video = slide.querySelector('video');
-        if (video && videoEndHandler) {
-          video.removeEventListener('ended', videoEndHandler);
-          videoEndHandler = null;
-        }
-      }
-
-      function resetSlideMedia(slide) {
-        clearSlideState(slide);
       }
 
       function slideDuration(slide) {
@@ -1422,19 +1419,29 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
         });
       }
 
-      function startSlideMedia(slide) {
+      function playVideo(slide, loop) {
         var video = slide.querySelector('video');
-        var img = slide.querySelector('img');
-
-        if (video) {
-          prepareVideoPlayback(video, slide);
-          var playPromise = video.play();
-          if (playPromise && typeof playPromise.catch === 'function') {
-            playPromise.catch(function () {});
-          }
+        if (!video) {
           return;
         }
+        clearVideoEndHandler(slide);
+        prepareVideoPlayback(video, slide);
+        if (loop) {
+          videoEndHandler = function () {
+            video.currentTime = 0;
+            video.play().catch(function () {});
+          };
+          video.addEventListener('ended', videoEndHandler);
+        }
+        video.play().catch(function () {});
+      }
 
+      function startSlideMedia(slide, loop) {
+        var img = slide.querySelector('img');
+        if (slide.querySelector('video')) {
+          playVideo(slide, loop);
+          return;
+        }
         if (img) {
           restartGif(img);
         }
@@ -1469,18 +1476,24 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       function runSlideIntro(slide, fromManualNav, onAdvance) {
         restartLabelAnimation(slide);
         slide.classList.add('introducing');
-        startSlideMedia(slide);
+        startSlideMedia(slide, false);
 
         introTimer = setTimeout(function () {
           slide.classList.remove('introducing');
         }, INTRO_DURATION);
 
         if (fromManualNav) {
-          scheduleAfterFullPlayback(slide, onAdvance);
+          if (carouselEnabled) {
+            scheduleAfterFullPlayback(slide, onAdvance);
+          } else {
+            startSlideMedia(slide, true);
+          }
           return;
         }
 
-        timer = setTimeout(onAdvance, AUTO_INTERVAL);
+        if (carouselEnabled) {
+          timer = setTimeout(onAdvance, AUTO_INTERVAL);
+        }
       }
 
       function showSlide(index, fromManualNav) {
@@ -1493,8 +1506,42 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
         dots[current].classList.add('active');
 
         runSlideIntro(slides[current], fromManualNav, function () {
-          showSlide(current + 1, false);
+          if (carouselEnabled) {
+            showSlide(current + 1, false);
+          }
         });
+      }
+
+      function resetToFirstSlide(shouldPlay) {
+        clearAdvanceTimer();
+        slides.forEach(function (slide, index) {
+          if (index !== current) {
+            clearSlideState(slide);
+            slide.classList.remove('active', 'introducing');
+          }
+        });
+        clearSlideState(slides[current]);
+        slides[current].classList.remove('active', 'introducing');
+        dots[current].classList.remove('active');
+        current = 0;
+        slides[0].classList.add('active');
+        dots[0].classList.add('active');
+        if (shouldPlay) {
+          startSlideMedia(slides[0], !carouselEnabled);
+        }
+      }
+
+      function enableCarousel() {
+        if (carouselEnabled) {
+          return;
+        }
+        carouselEnabled = true;
+        showSlide(0, false);
+      }
+
+      function disableCarousel() {
+        carouselEnabled = false;
+        resetToFirstSlide(false);
       }
 
       dots.forEach(function (dot) {
@@ -1504,7 +1551,34 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
         });
       });
 
-      showSlide(0, false);
+      resetToFirstSlide(false);
+
+      var card = preview.closest('.theme-card');
+      if (card && 'IntersectionObserver' in window) {
+        var cardVisible = false;
+        var cardObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.target !== card) {
+              return;
+            }
+            if (entry.isIntersecting) {
+              if (!cardVisible) {
+                cardVisible = true;
+                enableCarousel();
+              }
+            } else if (cardVisible) {
+              cardVisible = false;
+              disableCarousel();
+            }
+          });
+        }, {
+          threshold: 0.35,
+          rootMargin: '0px 0px -10% 0px'
+        });
+        cardObserver.observe(card);
+      } else {
+        enableCarousel();
+      }
     });
   });
 </script>
