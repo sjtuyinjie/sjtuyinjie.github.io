@@ -1,5 +1,5 @@
-citations: 738
-updated_at: "2026-10-27"
+citations: 741
+updated_at: "2026-10-28"
 papers:
   - name: "M2DGR"
     citations: 418
@@ -10,12 +10,12 @@ papers:
   - name: "M2C-GVIO"
     citations: 45
   - name: "LIGO"
-    citations: 42
+    citations: 43
   - name: "M3DGR & GF2"
     citations: 41
   - name: "Innovation-KF"
     citations: 32
   - name: "Ground-Challenge"
-    citations: 30
+    citations: 31
   - name: "Others"
-    citations: 39
+    citations: 40
