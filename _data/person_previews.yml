@@ -9,8 +9,22 @@ wenxian-yu:
   name: Prof. Wenxian Yu
   url: https://sais.sjtu.edu.cn/faculty/yuwenxian.html
   photo: /images/people/wenxian-yu.png
-  role: Chair Professor · Shanghai Jiao Tong University
-  research: Information fusion, target recognition, remote sensing, and navigation
+  role: Chair Professor · Shanghai Jiao Tong University · President, Shanghai Beidou Research Institute
+  research: Integrated navigation and positioning, information fusion, and remote sensing (multiple National Science and Technology Progress Awards)
+
+zhengyou-zhang:
+  name: Dr. Zhengyou Zhang
+  url: https://scholar.google.com/citations?user=1I-DKy8AAAAJ&hl=en
+  photo: /images/people/zhengyou-zhang.jpg
+  role: Chief Scientist · Tencent · Director, Tencent AI Lab & Robotics X · IEEE Fellow · ACM Fellow
+  research: Computer vision, camera calibration, robotics, and multimodal AI
+
+dong-wang:
+  name: Dr. Dong Wang
+  url: https://scholar.google.com/citations?user=dasL9V4AAAAJ&hl=zh-CN
+  photo: /images/people/dong-wang.jpg
+  role: Research Lead · Shanghai AI Laboratory (IPEC)
+  research: Embodied AI, robot vision, robot foundation models, and visual SLAM
 
 chuang-gan:
   name: Prof. Chuang Gan
