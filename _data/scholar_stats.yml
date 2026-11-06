@@ -1,23 +1,4 @@
-citations: 751
-updated_at: "2026-11-05"
+citations: 2024
+updated_at: "2026-11-06"
 papers:
-  - name: "M2DGR"
-    citations: 422
-  - name: "EN-SLAM"
-    citations: 46
-  - name: "M2C-GVIO"
-    citations: 46
-  - name: "Ground-Fusion"
-    citations: 45
-  - name: "LIGO"
-    citations: 44
-  - name: "M3DGR & GF2"
-    citations: 41
-  - name: "Innovation-KF"
-    citations: 32
-  - name: "Ground-Challenge"
-    citations: 31
-  - name: "Sky-GVINS"
-    citations: 25
-  - name: "Others"
-    citations: 19
+  []
