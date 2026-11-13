@@ -787,12 +787,21 @@ redirect_from:
 
   .org-preview-logo {
     flex: 0 0 auto;
+    box-sizing: border-box;
     width: 2rem;
     height: 2rem;
     border-radius: 0.35rem;
     object-fit: contain;
     background: rgba(255, 255, 255, 0.92);
     padding: 0.12rem;
+  }
+
+  .org-preview-logo[src*="roboticsx"] {
+    border: 1px solid #000000;
+  }
+
+  .org-preview-logo[src*="ipec"] {
+    border: 1px solid rgb(4, 63, 181);
   }
 
   .org-preview-logos {
