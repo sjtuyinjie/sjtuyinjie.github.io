@@ -759,7 +759,7 @@ redirect_from:
     position: absolute;
     bottom: calc(100% + 0.4rem);
     top: auto;
-    left: 0;
+    left: 50%;
     z-index: 24;
     display: flex;
     width: max-content;
@@ -773,7 +773,7 @@ redirect_from:
     box-shadow: 0 14px 28px rgba(15, 23, 42, 0.28);
     opacity: 0;
     pointer-events: none;
-    transform: translateY(0.2rem);
+    transform: translateX(-50%) translateY(0.2rem);
     transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
     visibility: hidden;
   }
@@ -781,7 +781,7 @@ redirect_from:
   .org-preview-wrap:hover .org-preview-card,
   .org-preview-wrap:focus-within .org-preview-card {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     visibility: visible;
   }
 
