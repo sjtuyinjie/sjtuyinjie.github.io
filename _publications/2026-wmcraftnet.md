@@ -1,5 +1,5 @@
 ---
-title: "WM-Craftnet: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation (<b style='color:red;'>CoRL Spotlight (Top 4.4%)</b>)"
+title: "WM-Craftnet: World Synesthesia Model for Generalizable and Robust Dexterous In-Hand Manipulation (<b style='color:red;'>CoRL Spotlight, Top 4.4%</b>)"
 collection: publications
 permalink: /publication/2026-wmcraftnet
 date: 2026-9-05

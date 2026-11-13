@@ -757,7 +757,8 @@ redirect_from:
 
   .org-preview-card {
     position: absolute;
-    top: calc(100% + 0.4rem);
+    bottom: calc(100% + 0.4rem);
+    top: auto;
     left: 0;
     z-index: 24;
     display: flex;
