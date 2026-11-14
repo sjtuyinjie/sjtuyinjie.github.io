@@ -6,7 +6,7 @@ wmcraftnet:
 m2dgr:
   name: M2DGR
   url: https://github.com/SJTU-ViSYS/M2DGR
-  tagline: "[RA-L'2021 & ICRA'2022 Oral] Multi-sensor SLAM dataset for ground robots (ESI Top 1%)"
+  tagline: "[RA-L'2021 & ICRA'2022 Oral] Multi-sensor SLAM dataset · ESI highly cited paper (Top 1%) · most cited paper #4/1,607 in RA-L 2022 vol (Top 0.25%)"
 
 ultrafusion:
   name: Ultra-Fusion
