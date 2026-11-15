@@ -1,5 +1,5 @@
-citations: 758
-updated_at: "2026-11-14"
+citations: 761
+updated_at: "2026-11-15"
 papers:
   - name: "M2DGR"
     citations: 422
@@ -9,15 +9,15 @@ papers:
     citations: 46
   - name: "EN-SLAM"
     citations: 46
+  - name: "M3DGR & GF2"
+    citations: 45
   - name: "LIGO"
     citations: 44
-  - name: "M3DGR & GF2"
-    citations: 43
   - name: "Innovation-KF"
     citations: 32
   - name: "Ground-Challenge"
     citations: 31
   - name: "Sky-GVINS"
-    citations: 27
+    citations: 28
   - name: "Others"
     citations: 20
