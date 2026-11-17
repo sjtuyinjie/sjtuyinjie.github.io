@@ -1,13 +1,13 @@
-citations: 761
-updated_at: "2026-11-15"
+citations: 762
+updated_at: "2026-11-17"
 papers:
   - name: "M2DGR"
     citations: 422
+  - name: "EN-SLAM"
+    citations: 47
   - name: "M2C-GVIO"
     citations: 47
   - name: "Ground-Fusion"
-    citations: 46
-  - name: "EN-SLAM"
     citations: 46
   - name: "M3DGR & GF2"
     citations: 45
