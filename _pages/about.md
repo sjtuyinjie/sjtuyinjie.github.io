@@ -1127,7 +1127,7 @@ I have also been fortunate to work with <strong>{% include person_link.html key=
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong>{% include project_link.html key="wmcraftnet" %}</strong>, <strong>{% include project_link.html key="m2dgr" %}</strong>, <strong>{% include project_link.html key="ultrafusion" %}</strong>, <strong>{% include project_link.html key="groundfusion" %}</strong>, <strong>{% include project_link.html key="daf" %}</strong>, <strong>{% include project_link.html key="groundfusion2" %}</strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong>{% include project_link.html key="wmcraftnet" %}</strong>, <strong>{% include project_link.html key="tacbpm" %}</strong>, <strong>{% include project_link.html key="m2dgr" %}</strong>, <strong>{% include project_link.html key="ultrafusion" %}</strong>, <strong>{% include project_link.html key="groundfusion" %}</strong>, <strong>{% include project_link.html key="daf" %}</strong>, <strong>{% include project_link.html key="groundfusion2" %}</strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
@@ -1187,18 +1187,6 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <span class="theme-slide-title">WM-Craftnet</span>
       <span class="theme-slide-tag">WM-Craftnet</span>
     </div>
-    <div class="theme-slide" data-duration="10050" data-playback-rate="2">
-      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
-      <div class="theme-slide-media">
-        <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="TacBPM multi-object downstream rotation demo">
-            <source src="/gifs/tacbpm_multi_object.mp4" type="video/mp4" />
-          </video>
-        </a>
-      </div>
-      <span class="theme-slide-title">TacBPM</span>
-      <span class="theme-slide-tag">TacBPM</span>
-    </div>
     <div class="theme-slide" data-duration="20100">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
@@ -1223,9 +1211,8 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     </div>
     <div class="theme-slide-dots">
       <button class="theme-dot active" data-index="0" type="button" aria-label="Show WM-Craftnet teaser"></button>
-      <button class="theme-dot" data-index="1" type="button" aria-label="Show TacBPM"></button>
-      <button class="theme-dot" data-index="2" type="button" aria-label="Show POISE"></button>
-      <button class="theme-dot" data-index="3" type="button" aria-label="Show multi-object rotation"></button>
+      <button class="theme-dot" data-index="1" type="button" aria-label="Show POISE"></button>
+      <button class="theme-dot" data-index="2" type="button" aria-label="Show multi-object rotation"></button>
     </div>
   </div>
   <div class="theme-body">
@@ -1236,7 +1223,6 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     <p class="theme-description">Generalizable and robust visuotactile in-hand manipulation.</p>
     <div class="theme-papers">
       <a href="https://wmcraftnet.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">WM-Craftnet</a>
-      <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">TacBPM</a>
       <a href="https://junxiaolin.github.io/poise-website/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">POISE</a>
       <a href="https://www.sharpa.com/pages/wave" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">Multi-Object Rotation</a>
     </div>
@@ -1357,18 +1343,31 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
 
 <div class="theme-card" id="theme-whole-body-control">
   <div class="theme-preview">
-    <div class="theme-slide active" data-duration="4800">
+    <div class="theme-slide active" data-duration="8300">
+      <div class="theme-slide-intro-veil" aria-hidden="true"></div>
+      <div class="theme-slide-media">
+        <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer">
+          <video muted playsinline preload="metadata" aria-label="TacBPM sim-to-real arm-hand inference">
+            <source src="/gifs/tacbpm_sim2real2.mp4" type="video/mp4" />
+          </video>
+        </a>
+      </div>
+      <span class="theme-slide-title">TacBPM</span>
+      <span class="theme-slide-tag">TacBPM · Sim-to-real</span>
+    </div>
+    <div class="theme-slide" data-duration="4800">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://mp.weixin.qq.com/s/Avhnn3QPbnm8lRxSwvRB3g" target="_blank" rel="noopener noreferrer">
-          <img src="/gifs/idc.gif" alt=" demo" loading="lazy" />
+          <img src="/gifs/idc.gif" alt="IDC Robot demo" loading="lazy" />
         </a>
       </div>
       <span class="theme-slide-title">IDC Robot</span>
       <span class="theme-slide-tag">IDC Robot</span>
     </div>
     <div class="theme-slide-dots">
-      <button class="theme-dot active" data-index="0" type="button" aria-label="Show IDC Robot"></button>
+      <button class="theme-dot active" data-index="0" type="button" aria-label="Show TacBPM"></button>
+      <button class="theme-dot" data-index="1" type="button" aria-label="Show IDC Robot"></button>
     </div>
   </div>
   <div class="theme-body">
@@ -1376,8 +1375,9 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <div class="theme-icon"><i class="fa fa-robot" aria-hidden="true"></i></div>
       <h3>Whole-body Control</h3>
     </div>
-    <p class="theme-description">Whole-body navigation and manipulation for mobile robots in human environments.</p>
+    <p class="theme-description">Coupled arm-hand grasp, lift, transport, and goal-pose reaching with sim-to-real transfer.</p>
     <div class="theme-papers">
+      <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">TacBPM</a>
       <a href="https://www.youtube.com/watch?v=WplE1GW5K3o" target="_blank" rel="noopener noreferrer" class="theme-paper-tag">IDC Robot</a>
     </div>
   </div>

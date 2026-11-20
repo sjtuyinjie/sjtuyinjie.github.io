@@ -1,0 +1,9 @@
+@article{yin2026tacbpm,
+  author    = {Jie Yin and Wanli Xing and Zeyuan Zhao and Xuezhou Zhu and Zhijie Deng and Kaifeng Zhang},
+  title     = {{TacBPM}: A Tactile-conditioned Behavior Prior Model for Dexterous Reorientation},
+  journal   = {arXiv preprint arXiv:2609.18174},
+  year      = {2026},
+  eprint    = {2609.18174},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
+}

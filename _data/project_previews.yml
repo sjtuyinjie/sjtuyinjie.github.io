@@ -3,6 +3,11 @@ wmcraftnet:
   url: https://wmcraftnet.github.io/
   tagline: "[CoRL'2026 Spotlight] World model for generalizable visuotactile in-hand manipulation"
 
+tacbpm:
+  name: TacBPM
+  url: https://tacbpm.github.io/
+  tagline: Tactile-conditioned behavior prior for dexterous reorientation and arm-hand sim-to-real transfer
+
 m2dgr:
   name: M2DGR
   url: https://github.com/SJTU-ViSYS/M2DGR
