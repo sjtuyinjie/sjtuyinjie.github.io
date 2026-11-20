@@ -1366,8 +1366,8 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
           </video>
         </a>
       </div>
-      <span class="theme-slide-title">TacBPM</span>
-      <span class="theme-slide-tag">TacBPM · Sim-to-real</span>
+      <span class="theme-slide-title">TacBPM on North</span>
+      <span class="theme-slide-tag">TacBPM</span>
     </div>
     <div class="theme-slide" data-duration="4800">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
