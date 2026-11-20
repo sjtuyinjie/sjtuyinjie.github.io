@@ -7,7 +7,7 @@ venue: "arXiv"
 authors: "Junxiao Lin, Tianyue Wu, <b>Jie Yin</b>, Jia Pan, Kaifeng Zhang, Weiming Zhi"
 url: 
 project: https://junxiaolin.github.io/poise-website/
-bibtex: 
+bibtex: files/2026_poise.txt
 arxiv: https://arxiv.org/abs/2609.13761
 openpdf: https://arxiv.org/pdf/2609.13761
 supp: 
@@ -15,6 +15,6 @@ teaser: images/2026_poise.png
 videoresults: 
 videotalk: 
 poster: 
-code: 
+code: https://github.com/junxiaolin/Poise
 dataset: 
 ---

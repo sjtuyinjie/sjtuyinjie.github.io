@@ -1,0 +1,9 @@
+@article{lin2026poise,
+  author    = {Junxiao Lin and Tianyue Wu and Jie Yin and Jia Pan and Kaifeng Zhang and Weiming Zhi},
+  title     = {{POISE}: Learning In-Hand Object Reaching to General 6D Poses},
+  journal   = {arXiv preprint arXiv:2609.13761},
+  year      = {2026},
+  eprint    = {2609.13761},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
+}
