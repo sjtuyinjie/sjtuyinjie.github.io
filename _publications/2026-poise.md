@@ -8,10 +8,10 @@ authors: "Junxiao Lin, Tianyue Wu, <b>Jie Yin</b>, Jia Pan, Kaifeng Zhang, Weimi
 url: 
 project: https://junxiaolin.github.io/poise-website/
 bibtex: 
-arxiv: 
-openpdf: 
+arxiv: https://arxiv.org/abs/2609.13761
+openpdf: https://arxiv.org/pdf/2609.13761
 supp: 
-teaser: images/2026_poise.jpg
+teaser: images/2026_poise.png
 videoresults: 
 videotalk: 
 poster: 
