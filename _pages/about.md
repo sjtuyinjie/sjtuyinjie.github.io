@@ -1129,6 +1129,222 @@ redirect_from:
     color: #f8fafc;
   }
 
+  @media (min-width: 925px) {
+  @media (prefers-reduced-motion: no-preference) {
+    #main:has(.about-page) {
+      transition: gap 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #main:has(.about-page) > .sidebar.sticky {
+      transition:
+        flex 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        min-width 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #main:has(.about-page) > article.page {
+      transition:
+        flex 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        max-width 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        margin 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .sidebar-rail {
+      transition: left 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .sidebar-rail::before {
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    .sidebar-rail-btn {
+      transition:
+        opacity 0.26s ease,
+        transform 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.26s ease,
+        background 0.2s ease;
+    }
+
+    .sidebar-rail-btn-glyph {
+      transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+    #main:has(.about-page) {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.15rem;
+    }
+
+    #main:has(.about-page) > .sidebar.sticky {
+      float: none;
+      flex: 0 0 15.5%;
+      min-width: 158px;
+      width: auto;
+      opacity: 1;
+      transform: translateX(0);
+      filter: none;
+      overflow: hidden;
+    }
+
+    html.sidebar-collapsed #main:has(.about-page) > .sidebar.sticky {
+      flex: 0 0 0;
+      min-width: 0;
+      opacity: 0;
+      transform: translateX(-14px);
+      filter: blur(1px);
+      pointer-events: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #main:has(.about-page) > article.page {
+      float: none !important;
+      flex: 1 1 auto;
+      width: auto !important;
+      min-width: 0;
+      margin: 0 !important;
+      max-width: none;
+    }
+
+    html.sidebar-collapsed #main:has(.about-page) > article.page {
+      flex: 1 1 100%;
+      max-width: 950px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    html.sidebar-layout-busy .sidebar-rail {
+      pointer-events: none;
+    }
+
+    .sidebar-rail {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 22px;
+      z-index: 10002;
+      pointer-events: none;
+    }
+
+    .sidebar-rail::before {
+      content: "";
+      position: absolute;
+      top: 10vh;
+      bottom: 10vh;
+      left: 50%;
+      width: 1px;
+      transform: translateX(-50%) scaleY(0.92);
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(148, 163, 184, 0.55) 18%,
+        rgba(148, 163, 184, 0.55) 82%,
+        transparent 100%
+      );
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .sidebar-rail.is-hot::before,
+    html.sidebar-collapsed .sidebar-rail::before {
+      opacity: 0.65;
+      transform: translateX(-50%) scaleY(1);
+    }
+
+    .sidebar-rail-hit {
+      position: absolute;
+      inset: 0;
+      pointer-events: auto;
+      cursor: col-resize;
+    }
+
+    .sidebar-rail-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      width: 22px;
+      height: 52px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(255, 255, 255, 0.82);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      color: #64748b;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      opacity: 0;
+      pointer-events: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: 0.82rem;
+      line-height: 1;
+    }
+
+    .sidebar-rail.is-hot .sidebar-rail-btn,
+    .sidebar-rail:focus-within .sidebar-rail-btn,
+  html.sidebar-collapsed .sidebar-rail .sidebar-rail-btn {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    html.sidebar-collapsed .sidebar-rail:not(.is-hot) .sidebar-rail-btn {
+      opacity: 0.78;
+    }
+
+    .sidebar-rail-btn:hover {
+      color: var(--about-primary);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      transform: translate(-50%, -50%) scale(1.04);
+    }
+
+    .sidebar-rail-btn:active {
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+
+    .sidebar-rail-btn-glyph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    html.sidebar-collapsed .sidebar-rail-btn-glyph {
+      transform: rotate(180deg);
+    }
+
+    html[data-theme="dark"] .sidebar-rail::before {
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(100, 116, 139, 0.65) 18%,
+        rgba(100, 116, 139, 0.65) 82%,
+        transparent 100%
+      );
+    }
+
+    html[data-theme="dark"] .sidebar-rail-btn {
+      background: rgba(30, 41, 59, 0.86);
+      border-color: rgba(71, 85, 105, 0.65);
+      color: #94a3b8;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    html[data-theme="dark"] .sidebar-rail-btn:hover {
+      color: #93c5fd;
+      border-color: rgba(147, 197, 253, 0.4);
+    }
+  }
+
 </style>
 
 <div class="about-page" markdown="1">
@@ -2218,6 +2434,109 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
 
     updateScholarOnVisit();
     updateGithubStarsOnVisit();
+
+    var sidebarCollapseKey = 'aboutSidebarCollapsed';
+    var sidebarRailMedia = window.matchMedia('(min-width: 925px)');
+    var initSidebarCollapseRail = function () {
+      var main = document.getElementById('main');
+      var sidebar = main && main.querySelector('.sidebar.sticky');
+      var page = main && main.querySelector('article.page');
+      if (!main || !sidebar || !page || !page.querySelector('.about-page')) {
+        return;
+      }
+
+      var rail = document.createElement('div');
+      rail.className = 'sidebar-rail';
+      rail.innerHTML = '<div class="sidebar-rail-hit" aria-hidden="true"></div><button type="button" class="sidebar-rail-btn" aria-pressed="false" aria-label="Hide profile sidebar"><span class="sidebar-rail-btn-glyph"><i class="fas fa-angle-left" aria-hidden="true"></i></span></button>';
+      document.body.appendChild(rail);
+
+      var hit = rail.querySelector('.sidebar-rail-hit');
+      var btn = rail.querySelector('.sidebar-rail-btn');
+      var collapsed = false;
+      var layoutBusyTimer = null;
+      var railRaf = 0;
+
+      var setLayoutBusy = function (busy) {
+        document.documentElement.classList.toggle('sidebar-layout-busy', busy);
+        if (layoutBusyTimer) {
+          clearTimeout(layoutBusyTimer);
+          layoutBusyTimer = null;
+        }
+        if (busy) {
+          layoutBusyTimer = setTimeout(function () {
+            document.documentElement.classList.remove('sidebar-layout-busy');
+          }, 460);
+        }
+      };
+
+      var applyCollapsed = function (nextCollapsed) {
+        collapsed = !!nextCollapsed;
+        setLayoutBusy(true);
+        document.documentElement.classList.toggle('sidebar-collapsed', collapsed);
+        btn.setAttribute('aria-pressed', collapsed ? 'true' : 'false');
+        btn.setAttribute('aria-label', collapsed ? 'Show profile sidebar' : 'Hide profile sidebar');
+        try {
+          localStorage.setItem(sidebarCollapseKey, collapsed ? '1' : '0');
+        } catch (err) {}
+        placeRail();
+      };
+
+      var placeRail = function () {
+        if (!sidebarRailMedia.matches) {
+          rail.style.display = 'none';
+          document.documentElement.classList.remove('sidebar-collapsed');
+          return;
+        }
+        rail.style.display = 'block';
+        document.documentElement.classList.toggle('sidebar-collapsed', collapsed);
+        var anchor = collapsed ? page.getBoundingClientRect() : sidebar.getBoundingClientRect();
+        var x = collapsed ? anchor.left : anchor.right;
+        rail.style.left = (x - 11) + 'px';
+      };
+
+      var schedulePlaceRail = function () {
+        if (railRaf) {
+          cancelAnimationFrame(railRaf);
+        }
+        railRaf = requestAnimationFrame(function () {
+          railRaf = 0;
+          placeRail();
+        });
+      };
+
+      try {
+        if (localStorage.getItem(sidebarCollapseKey) === '1') {
+          applyCollapsed(true);
+        }
+      } catch (err) {}
+
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        applyCollapsed(!collapsed);
+      });
+
+      hit.addEventListener('mouseenter', function () {
+        rail.classList.add('is-hot');
+      });
+      hit.addEventListener('mouseleave', function () {
+        rail.classList.remove('is-hot');
+      });
+
+      page.addEventListener('transitionend', schedulePlaceRail);
+      sidebar.addEventListener('transitionend', schedulePlaceRail);
+
+      window.addEventListener('resize', schedulePlaceRail);
+      window.addEventListener('scroll', schedulePlaceRail, { passive: true });
+      if (sidebarRailMedia.addEventListener) {
+        sidebarRailMedia.addEventListener('change', schedulePlaceRail);
+      } else if (sidebarRailMedia.addListener) {
+        sidebarRailMedia.addListener(schedulePlaceRail);
+      }
+      placeRail();
+    };
+
+    initSidebarCollapseRail();
 
     var robotIconNames = ['hand', 'humanoid', 'smplx', 'quadruped', 'arm', 'wheeled'];
     var robotIconIndex = 0;
