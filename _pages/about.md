@@ -1258,10 +1258,7 @@ redirect_from:
     }
 
     .sidebar-rail-hit {
-      position: absolute;
-      inset: 0;
-      pointer-events: auto;
-      cursor: col-resize;
+      display: none;
     }
 
     .sidebar-rail-btn {
@@ -1269,15 +1266,15 @@ redirect_from:
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.9);
-      width: 22px;
-      height: 52px;
+      width: 20px;
+      height: 46px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(255, 255, 255, 0.82);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      color: #64748b;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      background: rgba(255, 255, 255, 0.28);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      color: rgba(71, 85, 105, 0.85);
+      box-shadow: none;
       opacity: 0;
       pointer-events: none;
       cursor: pointer;
@@ -1292,19 +1289,21 @@ redirect_from:
     .sidebar-rail.is-hot .sidebar-rail-btn,
     .sidebar-rail:focus-within .sidebar-rail-btn,
   html.sidebar-collapsed .sidebar-rail .sidebar-rail-btn {
-      opacity: 1;
+      opacity: 0.52;
       pointer-events: auto;
       transform: translate(-50%, -50%) scale(1);
     }
 
     html.sidebar-collapsed .sidebar-rail:not(.is-hot) .sidebar-rail-btn {
-      opacity: 0.78;
+      opacity: 0.38;
     }
 
     .sidebar-rail-btn:hover {
+      opacity: 0.88 !important;
       color: var(--about-primary);
-      border-color: rgba(37, 99, 235, 0.35);
-      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba(37, 99, 235, 0.32);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
       transform: translate(-50%, -50%) scale(1.04);
     }
 
@@ -1333,15 +1332,16 @@ redirect_from:
     }
 
     html[data-theme="dark"] .sidebar-rail-btn {
-      background: rgba(30, 41, 59, 0.86);
-      border-color: rgba(71, 85, 105, 0.65);
-      color: #94a3b8;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      background: rgba(15, 23, 42, 0.32);
+      border-color: rgba(100, 116, 139, 0.38);
+      color: rgba(148, 163, 184, 0.9);
+      box-shadow: none;
     }
 
     html[data-theme="dark"] .sidebar-rail-btn:hover {
       color: #93c5fd;
-      border-color: rgba(147, 197, 253, 0.4);
+      background: rgba(30, 41, 59, 0.55);
+      border-color: rgba(147, 197, 253, 0.35);
     }
   }
 
@@ -2516,10 +2516,34 @@ Currently, I focus on <strong>reinforcement learning</strong>, <strong>dexterous
         applyCollapsed(!collapsed);
       });
 
-      hit.addEventListener('mouseenter', function () {
+      var syncRailHot = function (event) {
+        if (!sidebarRailMedia.matches) {
+          rail.classList.remove('is-hot');
+          return;
+        }
+        if (event && (rail.contains(event.target) || btn === event.target)) {
+          rail.classList.add('is-hot');
+          return;
+        }
+        if (!event || typeof event.clientX !== 'number') {
+          return;
+        }
+        var rect = rail.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var nearX = Math.abs(event.clientX - cx) <= 11;
+        var midY = window.innerHeight * 0.5;
+        var nearY = Math.abs(event.clientY - midY) <= 130;
+        rail.classList.toggle('is-hot', nearX && nearY);
+      };
+
+      document.addEventListener('mousemove', syncRailHot, { passive: true });
+      rail.addEventListener('mouseleave', function () {
+        rail.classList.remove('is-hot');
+      });
+      btn.addEventListener('focus', function () {
         rail.classList.add('is-hot');
       });
-      hit.addEventListener('mouseleave', function () {
+      btn.addEventListener('blur', function () {
         rail.classList.remove('is-hot');
       });
 
