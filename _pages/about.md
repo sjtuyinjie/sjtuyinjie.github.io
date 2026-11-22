@@ -87,6 +87,25 @@ redirect_from:
     color: #1d4ed8;
   }
 
+  .about-page a.org-link-neutral {
+    color: var(--about-ink);
+    font-weight: 700;
+  }
+
+  .about-page a.org-link-neutral:hover {
+    color: #111827;
+  }
+
+  .about-page .representative-project-list,
+  .about-page .representative-project-list a.work-link {
+    color: var(--about-primary);
+    font-weight: 700;
+  }
+
+  .about-page .representative-project-list a.work-link:hover {
+    color: #1d4ed8;
+  }
+
   .about-page a.work-link {
     color: var(--about-work);
     font-weight: 700;
@@ -460,39 +479,9 @@ redirect_from:
     font-size: 0.82em;
   }
 
-  .about-page .news ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    overflow: visible;
-  }
-
+  .about-page .news ul,
   .about-page .news li {
-    position: relative;
     overflow: visible;
-    padding: 0.52rem 0.75rem 0.52rem 0.85rem;
-    border: 1px solid transparent;
-    border-left: 3px solid transparent;
-    border-radius: 0.5rem;
-    background: #ffffff;
-    line-height: 1.55;
-    transition:
-      background 0.2s ease,
-      border-color 0.2s ease,
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .about-page .news li:hover {
-    z-index: 2;
-    background: #f8fbff;
-    border-color: rgba(37, 99, 235, 0.14);
-    border-left-color: var(--about-primary);
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
-    transform: translateX(2px);
   }
 
   .about-page .news .about-meta-note.news-source-note {
@@ -1142,18 +1131,23 @@ redirect_from:
     border: 1px solid rgba(251, 191, 36, 0.35);
   }
 
-  html[data-theme="dark"] .about-page .news li {
-    background: #12161e;
-    border-color: transparent;
-    border-left-color: transparent;
+  html[data-theme="dark"] .about-page a.org-link-neutral {
+    color: #e2e8f0;
   }
 
-  html[data-theme="dark"] .about-page .news li:hover {
-    background: #18202c;
-    border-color: rgba(147, 197, 253, 0.16);
-    border-left-color: #60a5fa;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  html[data-theme="dark"] .about-page a.org-link-neutral:hover {
+    color: #f8fafc;
   }
+
+  html[data-theme="dark"] .about-page .representative-project-list,
+  html[data-theme="dark"] .about-page .representative-project-list a.work-link {
+    color: #60a5fa;
+  }
+
+  html[data-theme="dark"] .about-page .representative-project-list a.work-link:hover {
+    color: #93c5fd;
+  }
+
 </style>
 
 <div class="about-page" markdown="1">
@@ -1170,7 +1164,7 @@ I have also been fortunate to work with <strong>{% include person_link.html key=
 </p>
 
 <p class="about-intro">
-My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <strong>{% include project_link.html key="wmcraftnet" %}</strong>, <strong>{% include project_link.html key="tacbpm" %}</strong>, <strong>{% include project_link.html key="m2dgr" %}</strong>, <strong>{% include project_link.html key="ultrafusion" %}</strong>, <strong>{% include project_link.html key="groundfusion" %}</strong>, <strong>{% include project_link.html key="daf" %}</strong>, <strong>{% include project_link.html key="groundfusion2" %}</strong> and so on, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
+My work has appeared in leading robotics and AI venues, including <strong>CoRL, ICRA, IROS, RA-L, CVPR, TRO, TAES</strong>, and <strong>GPS Solutions</strong>. My research has been supported by the National Key R&D Program and the <a class="org-link-neutral" href="https://www.nsfc.gov.cn/english/site_1/index.html">NSFC</a>. Representative projects include <span class="representative-project-list"><strong>{% include project_link.html key="wmcraftnet" %}</strong>, <strong>{% include project_link.html key="tacbpm" %}</strong>, <strong>{% include project_link.html key="m2dgr" %}</strong>, <strong>{% include project_link.html key="ultrafusion" %}</strong>, <strong>{% include project_link.html key="groundfusion" %}</strong>, <strong>{% include project_link.html key="daf" %}</strong>, <strong>{% include project_link.html key="groundfusion2" %}</strong> and so on</span>, with <span class="metric-tooltip-wrap"><span id="scholar-citations" class="about-highlight-red"><strong>Google Scholar citations</strong></span><span id="scholar-last-updated" class="about-meta-note metric-breakdown-card">loading latest citation count...</span></span>. I am also an active open-source contributor, with <span class="metric-tooltip-wrap"><span id="github-stars" class="about-highlight-red"><strong>GitHub stars</strong></span><span id="github-stars-last-updated" class="about-meta-note metric-breakdown-card">loading latest GitHub stars...</span></span> across my projects.
 </p>
 
 <div class="about-chip-row" aria-label="Research interests">
