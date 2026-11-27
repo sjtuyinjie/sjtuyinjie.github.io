@@ -1,21 +1,28 @@
 - org: sjtu-visys
+  logo: /images/org-logos/sjtu.png
+  role: Ph.D. student · VISYS Lab
   pis:
     - danping-zou
     - wenxian-yu
 - org: tencent-robotics-x
+  role: Robotics research · Robotics X
   pis:
     - zhengyou-zhang
 - org: shanghai-ai-lab-ipec
+  role: Research intern · IPEC
   pis:
     - dong-wang
 - org: beidou
+  role: Research intern
   pis:
     - wenxian-yu
 - org: mit-ibm-watson
+  role: Research intern
   pis:
     - chuang-gan
     - andrew-luo
     - yilun-du
 - org: hku-mars
+  role: Summer Research Programme
   pis:
     - fu-zhang

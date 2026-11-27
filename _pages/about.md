@@ -163,20 +163,21 @@ redirect_from:
 
   .affiliations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-    gap: 1rem 1.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: 0.9rem 1rem;
   }
 
   .affiliation-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0.85rem 0.65rem 0.9rem;
+    align-items: stretch;
+    padding: 0.95rem 0.75rem 0.85rem;
     border: 1px solid var(--about-border);
     border-radius: 14px;
     background: linear-gradient(180deg, #ffffff 0%, var(--about-surface) 100%);
     text-align: center;
     transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    min-height: 100%;
   }
 
   .affiliation-card:hover {
@@ -202,30 +203,47 @@ redirect_from:
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.45rem;
-    min-height: 48px;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    min-height: 52px;
+    margin-bottom: 0.15rem;
   }
 
   .affiliation-logo {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
     border-radius: 10px;
     background: #fff;
-    padding: 4px;
+    padding: 5px;
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  }
+
+  .affiliation-logos .affiliation-logo[width="44"] {
+    width: 44px;
+    height: 44px;
   }
 
   .affiliation-logo[src*="roboticsx"],
   .affiliation-logo[src*="ipec"] {
-    padding: 2px;
+    padding: 3px;
   }
 
   .affiliation-org-name {
     color: var(--about-ink);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.4;
+    padding: 0 0.15rem;
+  }
+
+  .affiliation-role {
+    margin: 0.4rem 0 0;
+    padding: 0 0.2rem;
+    font-size: 0.71rem;
+    line-height: 1.45;
+    font-weight: 600;
+    color: var(--about-accent);
   }
 
   .affiliation-org-link:hover .affiliation-org-name {
@@ -233,9 +251,11 @@ redirect_from:
   }
 
   .affiliation-pi-line {
-    margin: 0.55rem 0 0;
-    font-size: 0.72rem;
-    line-height: 1.45;
+    margin: 0.45rem 0 0;
+    padding-top: 0.45rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.28);
+    font-size: 0.68rem;
+    line-height: 1.5;
     color: var(--about-muted);
   }
 
@@ -280,6 +300,14 @@ redirect_from:
 
   html[data-theme="dark"] .affiliation-org-link:hover .affiliation-org-name {
     color: #93c5fd;
+  }
+
+  html[data-theme="dark"] .affiliation-role {
+    color: #5eead4;
+  }
+
+  html[data-theme="dark"] .affiliation-pi-line {
+    border-top-color: rgba(71, 85, 105, 0.55);
   }
 
   .research-themes {
