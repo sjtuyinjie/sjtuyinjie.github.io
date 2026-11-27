@@ -1,0 +1,21 @@
+- org: sjtu-visys
+  pis:
+    - danping-zou
+    - wenxian-yu
+- org: tencent-robotics-x
+  pis:
+    - zhengyou-zhang
+- org: shanghai-ai-lab-ipec
+  pis:
+    - dong-wang
+- org: beidou
+  pis:
+    - wenxian-yu
+- org: mit-ibm-watson
+  pis:
+    - chuang-gan
+    - andrew-luo
+    - yilun-du
+- org: hku-mars
+  pis:
+    - fu-zhang

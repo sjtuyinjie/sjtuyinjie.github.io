@@ -153,6 +153,135 @@ redirect_from:
     line-height: 1.65;
   }
 
+  .affiliations {
+    margin: 2.2rem 0 2.4rem;
+  }
+
+  .affiliations h2 {
+    margin-bottom: 1rem;
+  }
+
+  .affiliations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 1rem 1.1rem;
+  }
+
+  .affiliation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.85rem 0.65rem 0.9rem;
+    border: 1px solid var(--about-border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--about-surface) 100%);
+    text-align: center;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .affiliation-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .affiliation-org-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .affiliation-org-link:hover {
+    text-decoration: none;
+  }
+
+  .affiliation-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 48px;
+  }
+
+  .affiliation-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #fff;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  }
+
+  .affiliation-logo[src*="roboticsx"],
+  .affiliation-logo[src*="ipec"] {
+    padding: 2px;
+  }
+
+  .affiliation-org-name {
+    color: var(--about-ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .affiliation-org-link:hover .affiliation-org-name {
+    color: var(--about-primary);
+  }
+
+  .affiliation-pi-line {
+    margin: 0.55rem 0 0;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: var(--about-muted);
+  }
+
+  .affiliation-pi-label {
+    font-weight: 600;
+    margin-right: 0.2rem;
+  }
+
+  .affiliation-pi {
+    color: var(--about-accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .affiliation-pi:hover {
+    color: #0b5f58;
+    text-decoration: underline;
+  }
+
+  .affiliation-pi-sep {
+    margin: 0 0.15rem;
+    color: var(--about-muted);
+  }
+
+  html[data-theme="dark"] .affiliation-card {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    border-color: #334155;
+  }
+
+  html[data-theme="dark"] .affiliation-card:hover {
+    border-color: #475569;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  }
+
+  html[data-theme="dark"] .affiliation-logo {
+    background: #f8fafc;
+  }
+
+  html[data-theme="dark"] .affiliation-org-name {
+    color: #e2e8f0;
+  }
+
+  html[data-theme="dark"] .affiliation-org-link:hover .affiliation-org-name {
+    color: #93c5fd;
+  }
+
   .research-themes {
     margin: 0.5rem 0 1.8rem;
   }
@@ -1421,12 +1550,12 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
       <span class="theme-slide-title">WM-Craftnet</span>
       <span class="theme-slide-tag">WM-Craftnet</span>
     </div>
-    <div class="theme-slide" data-duration="10050" data-playback-rate="2">
+    <div class="theme-slide" data-duration="17350" data-playback-rate="2">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="TacBPM multi-object downstream rotation demo">
-            <source src="/gifs/tacbpm_multi_object.mp4" type="video/mp4" />
+          <video muted playsinline preload="metadata" aria-label="TacBPM overview dexterous manipulation demo">
+            <source src="/gifs/tacbpm_overview_dex.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
@@ -1591,12 +1720,12 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
 
 <div class="theme-card" id="theme-whole-body-control">
   <div class="theme-preview">
-    <div class="theme-slide active" data-duration="8300">
+    <div class="theme-slide active" data-duration="5000">
       <div class="theme-slide-intro-veil" aria-hidden="true"></div>
       <div class="theme-slide-media">
         <a href="https://tacbpm.github.io/" target="_blank" rel="noopener noreferrer">
-          <video muted playsinline preload="metadata" aria-label="TacBPM sim-to-real arm-hand inference">
-            <source src="/gifs/tacbpm_sim2real2.mp4" type="video/mp4" />
+          <video muted playsinline preload="metadata" aria-label="TacBPM on North whole-body demo">
+            <source src="/gifs/tacbpm_overview_north.mp4" type="video/mp4" />
           </video>
         </a>
       </div>
@@ -1882,6 +2011,8 @@ My work has appeared in leading robotics and AI venues, including <strong>CoRL, 
     });
   });
 </script>
+
+{% include affiliations.html %}
 
 ## Publication
 <p class="about-section-note">

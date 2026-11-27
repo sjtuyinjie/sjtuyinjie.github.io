@@ -2,18 +2,23 @@ sjtu:
   name: Shanghai Jiao Tong University
   url: https://en.sjtu.edu.cn/
   domain: en.sjtu.edu.cn
+  logo: /images/org-logos/sjtu.png
   tagline: Top 40 global university · China
 
 sjtu-visys:
   name: SJTU-VISYS Lab
   url: https://drone.sjtu.edu.cn/
   domain: drone.sjtu.edu.cn
+  logos:
+    - /images/org-logos/sjtu.png
+    - /images/org-logos/sjtu-visys.png
   tagline: Visual & intelligent systems research group · SJTU
 
 mit-ibm-watson:
   name: MIT-IBM Watson AI Lab
   url: https://mitibmwatsonailab.mit.edu/
   domain: mitibmwatsonailab.mit.edu
+  logo: /images/org-logos/mit-ibm-watson.png
   tagline: Joint MIT–IBM AI research lab
 
 hku-mars:
